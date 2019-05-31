@@ -1,12 +1,15 @@
 import React from 'react';
 import './styles/Home.css';
+import Navbar from './Navbar.js';
+
 
 class Home extends React.Component{
     render() {
         return(
 <section id="team" class="pb-5">
+    <Navbar/>
     <div class="container">
-        <h5 class="section-title h1">ENCUENTRA TU TIENDA FAVORITA</h5>
+        <h5 class="section-title h1">Tu tienda favorita</h5>
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
