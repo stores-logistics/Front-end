@@ -1,13 +1,8 @@
-    /* #homebg{
-      background: url('https://images.pexels.com/photos/1451360/pexels-photo-1451360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-      background-size: auto;
-    } */
-
-
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 #team {
-    background: #eee !important;
-}
+    background:url('https://images.pexels.com/photos/1451360/pexels-photo-1451360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-size: cover;
+  }
 
 .btn-primary:hover,
 .btn-primary:focus {
