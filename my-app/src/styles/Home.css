@@ -1,6 +1,6 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 #team {
-    background:url('https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background:url('http://wallpapers.ae/wp-content/uploads/2017/12/IMG_5394.jpg');
     background-size: cover;
   }
 
@@ -28,14 +28,14 @@ section .section-title {
     font-size: 3em;
     margin-bottom: 50px;
     /* text-transform: uppercase; */
-    font-family: 'Noto Sans HK', sans-serif;
-    font-weight: bold;
+    font-family: 'Philosopher', sans-serif;
+    /* font-weight: bold; */
 }
 
 #team .card {
     border: none;
     background: #ffffff;
-    opacity: 0.8;
+    /* opacity: 0.8; */
 }
 
 .image-flip:hover .backside,
@@ -123,7 +123,8 @@ section .section-title {
 .frontside .card .card-title,
 .backside .card .card-title {
     color: #4C4C4C !important;
-    font-family: 'Noto Sans HK', sans-serif;
+    font-size: 2em;
+    font-family: 'Philosopher', sans-serif;
     font-weight: bold;
 }
 
@@ -133,4 +134,6 @@ section .section-title {
     border-radius: 50%;
 }
     
-    
+.card-text{
+    font-family: 'Noto Sans HK', sans-serif;
+}
