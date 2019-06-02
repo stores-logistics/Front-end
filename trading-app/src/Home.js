@@ -1,13 +1,13 @@
 import React from 'react';
 import './styles/Home.css';
-import Navbar from './Navbar.js';
-
+// import Navbar from './stores/NSInfo.js';
+ /* eslint-disable */
 
 class Home extends React.Component{
     render() {
         return(
 <section id="team" class="pb-5">
-<Navbar/>
+{/* <Navbar/> */}
 
     <div class="container">
 
