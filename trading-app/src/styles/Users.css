@@ -23,11 +23,17 @@
     color: white;
 }
 
-#usercont #creditc #basic-addon1{
+#usercont #creditc #basic-addon1 #font{
     font-family: 'Noto Sans HK', sans-serif;
 }
 
 #basic-addon1 {
     background-color: #00577b;
     color: white;
+}
+
+#head_table{
+    background-color: #D3D3D3;
+    color: #00577b;
+    font-family: 'Noto Sans HK', sans-serif;
 }

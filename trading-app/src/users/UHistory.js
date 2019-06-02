@@ -55,8 +55,8 @@ class NSHistory extends React.Component{
                                 <div class="card-body text-center">
                                     <h4 class="card-title">Historial de compras</h4>
                                     <table class="table">
-                                        <thead>
-                                            <tr>
+                                        <thead >
+                                            <tr id = "head_table" >
                                                 <th scope="col">Operación #</th>
                                                 <th scope="col">Tienda</th>
                                                 <th scope="col">Producto</th>
@@ -64,6 +64,42 @@ class NSHistory extends React.Component{
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <tr  id = "font" >
+                                                <td>127891</td>
+                                                <td>Tiffany&Co.</td>
+                                                <td>Collar de perlas</td>
+                                                <td>1586</td>
+                                            </tr>
+                                            <tr  id = "font" >
+                                                <td>127668</td>
+                                                <td>Pepe Ganga</td>
+                                                <td>Balón</td>
+                                                <td>733</td>
+                                            </tr>
+                                            <tr  id = "font" >
+                                                <td>179452</td>
+                                                <td>La Roche-Posay</td>
+                                                <td>Bloqueador solar</td>
+                                                <td>7.55</td>
+                                            </tr>
+                                            <tr  id = "font" >
+                                                <td>127891</td>
+                                                <td>Tiffany&Co.</td>
+                                                <td>Collar de perlas</td>
+                                                <td>1586</td>
+                                            </tr>
+                                            <tr>
+                                                <td>127668</td>
+                                                <td>Pepe Ganga</td>
+                                                <td>Balón</td>
+                                                <td>733</td>
+                                            </tr>
+                                            <tr>
+                                                <td>179452</td>
+                                                <td>La Roche-Posay</td>
+                                                <td>Bloqueador solar</td>
+                                                <td>7.55</td>
+                                            </tr>
                                             <tr>
                                                 <td>127891</td>
                                                 <td>Tiffany&Co.</td>
