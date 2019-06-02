@@ -50,22 +50,51 @@ class NSHistory extends React.Component{
                 <div class = "col-8">
                   <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                     <div class="mainflip">
-                        <div class="frontside"> 
+                        {/* <div class="frontside">  */}
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <h4 class="card-title">Historial de compras</h4>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Operación #</th>
+                                                <th scope="col">Tienda</th>
+                                                <th scope="col">Producto</th>
+                                                <th scope="col">Valor</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>127891</td>
+                                                <td>Tiffany&Co.</td>
+                                                <td>Collar de perlas</td>
+                                                <td>1586</td>
+                                            </tr>
+                                            <tr>
+                                                <td>127668</td>
+                                                <td>Pepe Ganga</td>
+                                                <td>Balón</td>
+                                                <td>733</td>
+                                            </tr>
+                                            <tr>
+                                                <td>179452</td>
+                                                <td>La Roche-Posay</td>
+                                                <td>Bloqueador solar</td>
+                                                <td>7.55</td>
+                                            </tr>
+                                        </tbody>
+                                        </table>
+                                </div>
+                            </div>
+                        {/* </div> */}
+                        {/* <div class="backside">
                             <div class="card">
                                 <div class="card-body text-center">
                                     <h4 class="card-title">Información</h4>
                                     <p class="card-text">Productos exclusivos de diseños especiales directamente dentro del crucero</p>
                                      <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>                                </div>
                             </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <h4 class="card-title">Información</h4>
-                                    <p class="card-text">Productos exclusivos de diseños especiales directamente dentro del crucero</p>
-                                     <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>                                </div>
-                            </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
               </div>

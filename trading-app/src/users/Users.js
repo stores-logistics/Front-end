@@ -49,41 +49,76 @@ class Users extends React.Component{
                           <div class = "col-8">
                             <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                               <div class="mainflip">
-                                  <div class="frontside"> 
+                                  {/* <div class="frontside">  */}
                                       <div class="card">
                                           <div class="card-body text-center">
                                               <h4 class="card-title">Mi información</h4>
-                                              <div class="container-fluid">
-                                                  <div class = "row">
-                                                      <div class = "col-6">
-                                                          Nombre:
-                                                      </div>
-                                                      <div class = "col-6">
-                                                          <input></input>
-                                                      </div>
-                                                  </div>
-                                                  <div class = "row">
-                                                      <div class = "col-6">
-                                                          Apellido:
-                                                      </div>
-                                                      <div class = "col-6">
-                                                          <input></input>
-                                                      </div>
-                                                  </div>
+                                              <div id = "usercont" class="container-fluid">
+                                                 <div class ="row">
+                                                    <div class = "col-6">
+                                                        <div class="input-group mb-3">
+                                                             <div class="input-group-prepend">
+                                                                  <span class="input-group-text"  id = "basic-addon1">Nombre</span>
+                                                            </div>
+                                                            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1"></input>
+                                                        </div>  
+                                                    </div>
+                                                    <div class = "col-6">
+                                                         <div class="input-group mb-3">
+                                                             <div class="input-group-prepend">
+                                                                  <span class="input-group-text" id = "basic-addon1">Apellido</span>
+                                                            </div>
+                                                            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1"></input>
+                                                        </div>  
+                                                    </div>
+
+                                                 </div>
                                                   <hr></hr>
+                                                <h4 class="card-title">Información de facturación</h4>
                                                   <div class = "row">
-                                                      <div class = "col-6">
-                                                          Nombre:
+                                                      <div class = "col-3">
                                                       </div>
                                                       <div class = "col-6">
-                                                          <input></input>
+                                                          <div class="input-group">
+                                                                <input type="text" class="form-control" placeholder="5180 9200 0034 5656"></input>
+                                                                <div class="input-group-append">
+                                                                <button id = "creditc" class="btn" type="button">
+                                                                  <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+                                                                </button>
+                                                                </div>
+                                                            </div>
+                                                      </div>
+                                                      <div class = "col-3">
+                                                      </div>
+                                                  </div>
+                                                  .
+                                                  <div class = "row">
+                                                      <div class = "col-3">
+                                                      </div>
+                                                      <div class = "col-3">
+                                                        <div class="input-group mb-3">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text" id="basic-addon1">CVV</span>
+                                                            </div>
+                                                            <input type="text" class="form-control" placeholder="901" aria-label="Username" aria-describedby="basic-addon1"></input>
+                                                        </div>
+                                                      </div>
+                                                      <div class = "col-3">
+                                                        <div class="input-group mb-3">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                            </div>
+                                                            <input type="text" class="form-control" placeholder="05/22" aria-label="Username" aria-describedby="basic-addon1"></input>
+                                                        </div>
+                                                      </div>
+                                                      <div class = "col-3">
                                                       </div>
                                                   </div>
                                               </div>
-                                               <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>                                </div>
+                                            </div>
                                       </div>
-                                  </div>
-                                  <div class="backside">
+                                  {/* </div> */}
+                                  {/* <div class="frontside">
                                       <div class="card">
                                           <div class="card-body text-center">
                                           <div class="container-fluid">
@@ -116,7 +151,7 @@ class Users extends React.Component{
                                                <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>           
                                            </div>
                                       </div>
-                                  </div>
+                                  </div> */}
                               </div>
                           </div>
                         </div>

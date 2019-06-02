@@ -16,3 +16,18 @@
     min-width: 300px;
     font-family: 'Noto Sans HK', sans-serif;
 }
+
+#creditc{
+    border-radius: 0;
+    background-color: #00577b;
+    color: white;
+}
+
+#usercont #creditc #basic-addon1{
+    font-family: 'Noto Sans HK', sans-serif;
+}
+
+#basic-addon1 {
+    background-color: #00577b;
+    color: white;
+}
