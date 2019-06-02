@@ -15,7 +15,7 @@ class Users extends React.Component{
                           <div class = "col-4">
                               <div class="card">
                                   <div class="card-body text-center">
-                                      <h4 class="card-title">Soraya Montenegro</h4>
+                                      <h4 class="card-title">Iván Herrera</h4>
                                       <p><img class=" img-fluid" src="https://image.flaticon.com/icons/svg/1805/1805781.svg   " alt="card image" height="50" width="50"></img></p>
                                       <div class="container-fluid">
                                        <div class= "row">
@@ -53,6 +53,7 @@ class Users extends React.Component{
                                       <div class="card">
                                           <div class="card-body text-center">
                                               <h4 class="card-title">Mi información</h4>
+
                                               <div id = "usercont" class="container-fluid">
                                                  <div class ="row">
                                                     <div class = "col-6">
