@@ -43,7 +43,7 @@ class NSHistory extends React.Component{
                                </div>
                              </div>
                              <hr></hr>
-                            <a href="/users" class="btn btn-primary btn-sm">Ver mi información</a>                      
+                            <a href="/users" id = "verhcompras" class="btn btn-primary btn-sm">Ver mi información</a>                      
                             </div>
                         </div>
                     </div>

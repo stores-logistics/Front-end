@@ -1,4 +1,18 @@
 #symbol{
     background-color: #D3D3D3;
-    color:darkblue;
+    color:#00577b;
+}
+.card-title {
+    color: #00577b !important;
+    font-size: 2em;
+    font-family: 'Crimson Text', serif;
+}
+
+#verhcompras{
+    border-radius: 0;
+    background-color: #00577b;
+    color: white;
+    min-height: 8px;
+    min-width: 300px;
+    font-family: 'Noto Sans HK', sans-serif;
 }

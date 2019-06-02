@@ -42,7 +42,7 @@ class Users extends React.Component{
                                          </div>
                                        </div>
                                        <hr></hr>
-                                      <a href="/users/history" class="btn btn-primary btn-sm">Ver historial de compras</a>                      
+                                      <a href="/users/history" id ="verhcompras" class="btn">Ver historial de compras</a>                      
                                       </div>
                                   </div>
                               </div>
