@@ -54,11 +54,11 @@ class NSInventory extends React.Component{
                                   {/* <div class="frontside">  */}
                                       <div class="card">
                                           <div class="card-body text-center">
-                                              <h4 class="card-title">Historial de ventas</h4>
+                                              <h4 class="card-title">Catálogo</h4>
                                           <div class = "container-fluid">
                                               <div class = "row">
                                               <div class="input-group">
-                                                  <input type="text" class="form-control" placeholder="Buscar una operación"></input>
+                                                  <input type="text" class="form-control" placeholder="Buscar un producto por ID"></input>
                                                        <div class="input-group-append">
                                                            <button id = "creditc" class="btn" type="button">
                                                                <i class="fa fa-search" aria-hidden="true"></i>
@@ -72,69 +72,86 @@ class NSInventory extends React.Component{
                                               <table class="table">
                                                   <thead >
                                                       <tr id = "head_table" >
-                                                          <th scope="col">Operación #</th>
-                                                          <th scope="col">Cliente</th>
+                                                          <th scope="col">ID</th>
                                                           <th scope="col">Producto</th>
+                                                          <th scope="col">Stock</th>
                                                           <th scope="col">Valor</th>
                                                       </tr>
                                                   </thead>
                                                   <tbody>
                                                       <tr  id = "font" >
-                                                          <td>127891</td>
-                                                          <td>Iván Herrera</td>
+                                                          <td>123455</td>
                                                           <td>Collar de perlas</td>
-                                                          <td>1586</td>
+                                                          <td>11</td>
+                                                          <td>736</td>
                                                       </tr>
                                                       <tr  id = "font" >
-                                                          <td>127668</td>
-                                                          <td>Esteban Peña</td>
-                                                          <td>Balón</td>
-                                                          <td>733</td>
+                                                          <td>153494</td>
+                                                          <td>Anillo de diamantes</td>
+                                                          <td>2</td>
+                                                          <td>8550</td>
                                                       </tr>
                                                       <tr  id = "font" >
-                                                          <td>179452</td>
-                                                          <td>Camilo Nieto</td>
-                                                          <td>Bloqueador solar</td>
-                                                          <td>7.55</td>
+                                                          <td>128905</td>
+                                                          <td>Reloj de rubies</td>
+                                                          <td>19</td>
+                                                          <td>1894</td>
                                                       </tr>
                                                       <tr  id = "font" >
-                                                          <td>127891</td>
-                                                          <td>Yonatan Cuervo</td>
+                                                          <td>123455</td>
                                                           <td>Collar de perlas</td>
-                                                          <td>1586</td>
+                                                          <td>11</td>
+                                                          <td>736</td>
                                                       </tr>
                                                       <tr>
-                                                          <td>127668</td>
-                                                          <td>Camilo Nieto</td>
-                                                          <td>Balón</td>
-                                                          <td>733</td>
-                                                      </tr>
-                                                      <tr>
-                                                          <td>179452</td>
-                                                          <td>Yonatan Cuervo</td>
-                                                          <td>Bloqueador solar</td>
-                                                          <td>7.55</td>
-                                                      </tr>
-                                                      <tr>
-                                                          <td>127891</td>
-                                                          <td>Camilo Nieto</td>
+                                                          <td>123455</td>
                                                           <td>Collar de perlas</td>
-                                                          <td>1586</td>
+                                                          <td>11</td>
+                                                          <td>736</td>
                                                       </tr>
                                                       <tr>
-                                                          <td>127668</td>
-                                                          <td>Iván Herrera</td>
-                                                          <td>Balón</td>
-                                                          <td>733</td>
+                                                          <td>123455</td>
+                                                          <td>Collar de perlas</td>
+                                                          <td>11</td>
+                                                          <td>736</td>
                                                       </tr>
                                                       <tr>
-                                                          <td>179452</td>
-                                                          <td>Camilo Nieto</td>
-                                                          <td>Bloqueador solar</td>
-                                                          <td>7.55</td>
+                                                          <td>123455</td>
+                                                          <td>Collar de perlas</td>
+                                                          <td>11</td>
+                                                          <td>736</td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td>123455</td>
+                                                          <td>Collar de perlas</td>
+                                                          <td>11</td>
+                                                          <td>736</td>
+                                                      </tr>
+                                                      <tr>
+                                                           <td>123455</td>
+                                                          <td>Collar de perlas</td>
+                                                          <td>11</td>
+                                                          <td>736</td>
                                                       </tr>
                                                   </tbody>
                                                   </table>
+                                              <div class = "row">
+                                                  <div class ="col-3">
+                                                  </div>
+                                                  <div class ="col-3">
+                                                  </div>
+                                                  <div class ="col-3">
+                                                  </div>
+                                                  <div class ="col-3 text center">
+                                                    <div class = "btn btn-primary text">
+                                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                                    </div>
+                                                    .  .
+                                                    <div class = "btn btn-primary text">
+                                                         <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </div>
+                                                  </div>
+                                              </div>
                                           </div>
                                       </div>
                                   {/* </div> */}

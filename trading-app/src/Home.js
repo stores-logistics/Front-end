@@ -7,7 +7,12 @@ class Home extends React.Component{
     render() {
         return(
 <section id="team" class="pb-5">
-{/* <Navbar/> */}
+            {/* <nav class="navbar">
+                <a id = "nav "class="navbar-brand" href="#">
+                  <i class="fa fa-ship fa-2x" aria-hidden="true"></i>
+                   <a id = "title">Stores Manager</a>
+                 </a>
+            </nav> */}
 
     <div class="container">
 
