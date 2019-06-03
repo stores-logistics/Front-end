@@ -2,6 +2,7 @@
 import React from 'react';
 import {Route,Switch,BrowserRouter} from 'react-router-dom'
 import Home from './Home'
+import Login from './Login'
 import Stores from './stores/Stores'  
 import SInventory from './stores/SInventory'  
 import SOperations from './stores/SOperations'
@@ -19,6 +20,7 @@ class App extends React.Component{
          <BrowserRouter>
             <Switch>
               <Route exact path = "/" component = {Home} />
+              <Route exact path = "/login" component = {Login} />
               <Route exact path = "/stores" component = {Stores} />
               <Route exact path = "/stores/inventory" component = {SInventory} />
               <Route exact path = "/stores/operations" component = {SOperations} />

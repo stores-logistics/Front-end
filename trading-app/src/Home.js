@@ -6,17 +6,24 @@ import './styles/Home.css';
 class Home extends React.Component{
     render() {
         return(
-<section id="team" class="pb-5">
-            {/* <nav class="navbar">
+        <section id="team" class="pb-5">
+         <nav class="navbar navbar-dark">
                 <a id = "nav "class="navbar-brand" href="#">
-                  <i class="fa fa-ship fa-2x" aria-hidden="true"></i>
+                  <i class="fa fa-ship fa-1x" aria-hidden="true"></i>
                    <a id = "title">Stores Manager</a>
                  </a>
-            </nav> */}
+                 <form class="form-inline my-2 my-lg-0">
+                     <a href="/login" class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
+                 </form>
 
+            </nav> 
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
     <div class="container">
 
-        <h5 class="section-title h1">Tu tienda favorita</h5>
+        {/* <h5 class="section-title h1">Tu tienda favorita</h5> */}
         <form class="form-inline">
                     {/* <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"></input> */}
         </form>
