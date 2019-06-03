@@ -16,6 +16,7 @@ class SAdd extends React.Component{
                               <div class="card">
                                   <div class="card-body text-center">
                                       <h4 class="card-title">Añadir producto</h4>
+                                      <hr></hr>
                                       <div class="container-fluid">
                                          <div class ="form-group-row">  
                                            <input type="text" class="form-control" id="inlineFormInputName" placeholder="Nombre"></input>
