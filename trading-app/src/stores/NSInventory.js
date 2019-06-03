@@ -6,6 +6,16 @@ class NSInventory extends React.Component{
     render() {
         return(
           <section id="team" class="pb-5">
+                       <nav class="navbar navbar-dark">
+                <a id = "nav "class="navbar-brand" href="/">
+                  <i class="fa fa-ship fa-1x" aria-hidden="true"></i>
+                   <a id = "title">Stores Manager</a>
+                 </a>
+                 <form class="form-inline my-2 my-lg-0">
+                     <a href="/login" class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
+                 </form>
+
+            </nav> 
           {/* <Navbar/> */}
           
               <div class="container">

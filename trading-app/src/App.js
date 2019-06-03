@@ -1,6 +1,7 @@
  /* eslint-disable */
 import React from 'react';
 import {Route,Switch,BrowserRouter} from 'react-router-dom'
+import Catalog from './Catalog'
 import Home from './Home'
 import Login from './Login'
 import Stores from './stores/Stores'  
@@ -20,6 +21,7 @@ class App extends React.Component{
          <BrowserRouter>
             <Switch>
               <Route exact path = "/" component = {Home} />
+              <Route exact path = "/catalog" component = {Catalog} />
               <Route exact path = "/login" component = {Login} />
               <Route exact path = "/stores" component = {Stores} />
               <Route exact path = "/stores/inventory" component = {SInventory} />
