@@ -12,9 +12,8 @@
     border-radius: 0;
     background-color: #00577b;
     color: white;
-    min-height: 8px;
-    min-width: 300px;
     font-family: 'Noto Sans HK', sans-serif;
+    width: 100%;
 }
 
 #creditc{
