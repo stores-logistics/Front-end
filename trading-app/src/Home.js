@@ -18,14 +18,17 @@ class Home extends React.Component{
 
             </nav> 
                 <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
     <div class="container">
-
-        {/* <h5 class="section-title h1">Tu tienda favorita</h5> */}
+        {/* <div id="onboard" class = "container">    */}
+                <h1 id = "onboard">Bienvenido a bordo</h1>
+                <hr id = "hr"></hr>
+            {/* </div> */}
+        <br></br>
+{/* 
+     <h4 id = "lemma">Ese objeto que deseas, a un click</h4>
+        <br></br> */}
         <form class="form-inline">
-                    {/* <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"></input> */}
+   
         </form>
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-4">
@@ -44,30 +47,11 @@ class Home extends React.Component{
                         <div class="backside">
                             <div class="card">
                                 <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Horarios</h4>
+                                    <h5 class="card-title">Horarios</h5>
                                     <p class="card-text">Abierto de lunes a jueves 9:00 a.m - 5:00 p.m</p>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                <i class="fa fa-skype"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                <i class="fa fa-google"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <h4 class="card-title">Ubicación</h4>
+                                    <p class="card-text">Ubicado en el local 4-136</p>
+                                    <a href="/catalog" id ="verhcompras" class="btn">Ver productos</a>                                
                                 </div>
                             </div>
                         </div>

@@ -7,7 +7,6 @@ class Stores extends React.Component{
         return(
             <section id="team" class="pb-5">
           {/* <Navbar/> */}
-          
               <div class="container">
                   <form class="form-inline">
                   </form>
