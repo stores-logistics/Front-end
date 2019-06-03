@@ -15,7 +15,16 @@ class Stores extends React.Component{
                           <div class = "col-4">
                               <div class="card">
                                   <div class="card-body text-center">
-                                      <h4 class="card-title">Tiffany&Co.</h4>
+                                    <div class = "row">
+                                        <div class = "col-2">
+                                        </div>
+                                        <div class = "col-8">
+                                        <h4 class="card-title">Tiffany&Co.</h4>
+                                        </div>
+                                        <div class = "col-2">
+                                        <a href="/stores/edit" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
                                       <p><img class=" img-fluid" src="https://res-5.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1475836144/gvs96ywgysb53ivoaxs5.png" alt="card image" height="100" width="100"></img></p>
                                       <div class="container-fluid">
                                        <div class= "row">
@@ -44,7 +53,7 @@ class Stores extends React.Component{
                                        <hr></hr>
                                       <a href="/stores/operations" id ="verhcompras" class="btn">Ver historial de ventas</a>
                                         <hr></hr>
-                                    <a href="/stores/inventory" id ="verhcompras" class="btn">Catálogo</a>                      
+                                    <a href="/stores/inventory" id ="verhcompras" class="btn">Inventario</a>                      
                                       </div>
                                   </div>
                               </div>
@@ -54,66 +63,15 @@ class Stores extends React.Component{
                                   {/* <div class="frontside">  */}
                                       <div class="card">
                                           <div class="card-body text-center">
-                                              <h4 class="card-title">Mi información</h4>
-
-                                              <div id = "usercont" class="container-fluid">
-                                                 <div class ="row">
-                                                     <div class ="col-3">
-                                                     </div>
-                                                    <div class = "col-6">
-                                                        <div class="input-group mb-3">
-                                                             <div class="input-group-prepend">
-                                                                  <span class="input-group-text"  id = "basic-addon1">Nombre</span>
-                                                            </div>
-                                                            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1"></input>
-                                                        </div>  
-                                                    </div>
-                                                    <div class ="col-3">
-                                                     </div>
-                                                 </div>
-                                                  <hr></hr>
-                                                <h4 class="card-title">Información de facturación</h4>
-                                                  <div class = "row">
-                                                      <div class = "col-3">
-                                                      </div>
-                                                      <div class = "col-6">
-                                                          <div class="input-group">
-                                                                <input type="text" class="form-control" placeholder="5180 9200 0034 5656"></input>
-                                                                <div class="input-group-append">
-                                                                <button id = "creditc" class="btn" type="button">
-                                                                  <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
-                                                                </button>
-                                                                </div>
-                                                            </div>
-                                                      </div>
-                                                      <div class = "col-3">
-                                                      </div>
-                                                  </div>
-                                                  .
-                                                  <div class = "row">
-                                                      <div class = "col-3">
-                                                      </div>
-                                                      <div class = "col-3">
-                                                        <div class="input-group mb-3">
-                                                            <div class="input-group-prepend">
-                                                                <span class="input-group-text" id="basic-addon1">CVV</span>
-                                                            </div>
-                                                            <input type="text" class="form-control" placeholder="901" aria-label="Username" aria-describedby="basic-addon1"></input>
-                                                        </div>
-                                                      </div>
-                                                      <div class = "col-3">
-                                                        <div class="input-group mb-3">
-                                                            <div class="input-group-prepend">
-                                                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                                                            </div>
-                                                            <input type="text" class="form-control" placeholder="05/22" aria-label="Username" aria-describedby="basic-addon1"></input>
-                                                        </div>
-                                                      </div>
-                                                      <div class = "col-3">
-                                                      </div>
-                                                  </div>
-                                                  <hr></hr>
-                                              </div>
+                                          <h1>.</h1>
+                      <h1>.</h1>
+                      <h1>.</h1>
+                      <h1>.</h1>
+                      <h1>.</h1>
+                      <h1>.</h1>
+                      <h1>.</h1>
+                      <h1>.</h1>
+                      <h1>.</h1>
                                             </div>
                                       </div>
                                   {/* </div> */}

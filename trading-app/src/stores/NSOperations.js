@@ -15,7 +15,16 @@ class NSOperations extends React.Component{
                           <div class = "col-4">
                               <div class="card">
                                   <div class="card-body text-center">
-                                      <h4 class="card-title">Tiffany&Co.</h4>
+                                  <div class = "row">
+                                        <div class = "col-2">
+                                        </div>
+                                        <div class = "col-8">
+                                        <h4 class="card-title">Tiffany&Co.</h4>
+                                        </div>
+                                        <div class = "col-2">
+                                        <a href="/stores/edit" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
                                       <p><img class=" img-fluid" src="https://res-5.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1475836144/gvs96ywgysb53ivoaxs5.png" alt="card image" height="100" width="100"></img></p>
                                       <div class="container-fluid">
                                        <div class= "row">
@@ -44,7 +53,7 @@ class NSOperations extends React.Component{
                                        <hr></hr>
                                       <a href="/stores/operations" id ="verhcompras" class="btn">Ver historial de ventas</a>
                                         <hr></hr>
-                                    <a href="/stores/inventory" id ="verhcompras" class="btn">Catálogo</a>                      
+                                    <a href="/stores/inventory" id ="verhcompras" class="btn">Inventario</a>                      
                                       </div>
                                   </div>
                               </div>

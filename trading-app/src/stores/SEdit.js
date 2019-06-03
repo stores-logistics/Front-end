@@ -30,7 +30,7 @@ class SEdit extends React.Component{
                                                 </div>
                                              </div>
                                              <input type="text" class="form-control" id="inlineFormInputName" placeholder="Descripción"></input>
-                                             .<a href="/stores/operations" id ="verhcompras" class="btn">Guardar cambios</a>
+                                             .<a href="/stores/inventory" id ="verhcompras" class="btn">Guardar cambios</a>
                                               </div>   
                                          </div>                                        
                                         </div>
@@ -42,7 +42,7 @@ class SEdit extends React.Component{
                                     {/* <div class="frontside">  */}
                                         <div class="card">
                                             <div class="card-body text-center">
-                                                <h4 class="card-title">Catálogo</h4>
+                                                <h4 class="card-title">Inventario</h4>
                                             <div class = "container-fluid">
                                                 <div class = "row">
                                                 <div class="input-group">
