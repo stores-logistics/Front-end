@@ -143,14 +143,14 @@ class NSInventory extends React.Component{
                                                   <div class ="col-3">
                                                   </div>
                                                   <div class ="col-3 text center">
-                                                    <div class = "btn btn-primary text">
-                                                        <i class="fa fa-pencil" aria-hidden="true"></i>
-                                                    </div>
+                                                  <a href="/stores/inventory/edit" class="btn btn-primary">                      
+                                                           <i href = "/add" class="fa fa-pencil" aria-hidden="true"></i>
+                                                    </a>  
                                                     .  .
-                                                    <div class = "btn btn-primary text">
-                                                         <i class="fa fa-plus" aria-hidden="true"></i>
-                                                    </div>
-                                                  </div>
+                                                    <a href="/stores/inventory/add" class="btn btn-primary">                      
+                                                           <i href = "/add" class="fa fa-plus" aria-hidden="true"></i>
+                                                    </a>  
+                                                 </div>
                                               </div>
                                           </div>
                                       </div>
