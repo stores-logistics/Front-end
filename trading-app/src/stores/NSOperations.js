@@ -5,6 +5,19 @@ import { graphql } from 'react-apollo';
 
 class NSOperations extends React.Component{
 
+        // const RequestQL = gql` 
+        // query{
+        //     allTradings{
+        //       user_id
+        //     }
+        //   }
+        // `
+        // ReturnData = graphql(
+        //     RequestQL,
+        //     {
+
+        //     }
+        // )
 
 
     render() {

@@ -1,7 +1,7 @@
  /* eslint-disable */
 import React from 'react';
 import {Route,Switch,BrowserRouter} from 'react-router-dom'
-import Catalog from './Catalog'
+import Catalog from './catalog/Catalog'
 import Home from './Home'
 import Login from './Login'
 import Stores from './stores/Stores'  

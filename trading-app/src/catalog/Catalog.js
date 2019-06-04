@@ -1,5 +1,6 @@
 import React from 'react';
-import './styles/Catalog.css';
+import '../styles/Catalog.css';
+import CProducts from './CProducts';
 
 
 class Catalog extends React.Component{
@@ -62,16 +63,9 @@ class Catalog extends React.Component{
                                 <div class="card">
                                     <div class="card-body text-center">
                                     <h4 class="card-title">Productos disponibles</h4>
-                <h1>.</h1>
-                <h1>.</h1>
-                <h1>.</h1>
-                <h1>.</h1>
-                <h1>.</h1>
-                <h1>.</h1>
-                <h1>.</h1>
-                <h1>.</h1>
-                                      </div>
+                                    <CProducts/>
                                 </div>
+                            </div>
                         </div>
                     </div>
                   </div>
