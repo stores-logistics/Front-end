@@ -20,7 +20,7 @@ class SOperations extends React.Component{
               <div class="container">
                   <form class="form-inline">
                   </form>
-                  <div class ="row">
+                  <div class="row">
                           <div class="col-4">
                               <div class="card">
                                   <div class="card-body text-center">
@@ -36,7 +36,7 @@ class SOperations extends React.Component{
                                     </div>
                                       <p><img class=" img-fluid" src="https://res-5.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1475836144/gvs96ywgysb53ivoaxs5.png" alt="card image" height="100" width="100"></img></p>
                                       <div id="cat" class="container-fluid">
-                                       <div class= "row">
+                                       <div class="row">
                                          <div id="symbol" class="col-4">
                                             <i class="fa fa-id-badge" aria-hidden="true"></i>
                                           </div>
@@ -47,7 +47,7 @@ class SOperations extends React.Component{
                                           <i class="fa fa-map-marker" aria-hidden="true"></i>
                                           </div>
                                          </div>
-                                         <div class= "row">
+                                         <div class="row">
                                          <div class="col-4">
                                             <a id="cat">123545</a>
                                           </div>
@@ -60,9 +60,9 @@ class SOperations extends React.Component{
                                          </div>
                                        </div>
                                        <hr></hr>
-                                      <a href="/stores/operations" id ="verhcompras" class="btn">Ver historial de ventas</a>
+                                      <a href="/stores/operations" id="verhcompras" class="btn">Ver historial de ventas</a>
                                         <hr></hr>
-                                    <a href="/stores/inventory" id ="verhcompras" class="btn">Inventario</a>                      
+                                    <a href="/stores/inventory" id="verhcompras" class="btn">Inventario</a>                      
                                       </div>
                                   </div>
                               </div>

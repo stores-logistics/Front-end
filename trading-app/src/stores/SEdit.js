@@ -11,14 +11,14 @@ class SEdit extends React.Component{
                 <div class="container">
                     <form class="form-inline">
                     </form>
-                    <div class ="row">
+                    <div class="row">
                             <div class="col-4">
                                 <div class="card">
                                     <div class="card-body text-center">
                                         <h4 class="card-title">Editar producto</h4>
                                         <hr></hr>
                                         <div class="container-fluid">
-                                           <div class ="form-group-row">  
+                                           <div class="form-group-row">  
                                              <input type="text" class="form-control" id="inlineFormInputName" placeholder="Nombre"></input>
                                            .
                                             <div class="form-group row">
@@ -30,7 +30,7 @@ class SEdit extends React.Component{
                                                 </div>
                                              </div>
                                              <input type="text" class="form-control" id="inlineFormInputName" placeholder="Descripción"></input>
-                                             .<a href="/stores/inventory" id ="verhcompras" class="btn">Guardar cambios</a>
+                                             .<a href="/stores/inventory" id="verhcompras" class="btn">Guardar cambios</a>
                                               </div>   
                                          </div>                                        
                                         </div>
@@ -124,16 +124,13 @@ class SEdit extends React.Component{
                                                     </tbody>
                                                     </table>
                                                 <div class="row">
-                                                    <div class ="col-3">
+                                                    <div class="col-3">
                                                     </div>
-                                                    <div class ="col-3">
+                                                    <div class="col-3">
                                                     </div>
-                                                    <div class ="col-3">
+                                                    <div class="col-3">
                                                     </div>
-                                                    <div class ="col-3 text center">
-                                                    <a href="/stores/inventory/edit" class="btn btn-primary">                      
-                                                             <i href="/add" class="fa fa-pencil" aria-hidden="true"></i>
-                                                      </a>  
+                                                    <div class="col-3 text center">
                                                       .  .
                                                       <a href="/stores/inventory/add" class="btn btn-primary">                      
                                                              <i href="/add" class="fa fa-plus" aria-hidden="true"></i>

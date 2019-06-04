@@ -1,41 +1,15 @@
 import React from 'react';
 import '../styles/Stores.css';
-import axios from 'axios';
-import Stores from './Stores';
+import gql from 'graphql-tag';
+import { graphql } from 'react-apollo';
 
 class NSOperations extends React.Component{
 
-    state = {
-        stores: [],
-    };
-
-    componentDidMount(){
-        const axios = require("axios")
-        axios({
-          url: 'http://192.168.99.101:5000/graphiql',
-          method: 'post',
-          data: {
-            query: `
-              query{
-                allTradings{
-                  user_id
-                }
-              }
-              `
-          }
-        }).then(res => {
-          this.setState({ stores: res.data});
-        })
-        
-      }
 
 
     render() {
         return(
             <div id="operations">
-                <ul>
-                {this.state.stores.map(operation => <li>{Stores.product_id}</li>)}
-                </ul>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="input-group">

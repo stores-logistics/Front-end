@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/Users.css';
-import Home from '../Home'
 
 class Users extends React.Component{
     render() {
