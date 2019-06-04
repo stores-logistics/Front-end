@@ -2,6 +2,8 @@ import React from 'react';
 import '../styles/Stores.css';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
+import axios from "axios";
+
 
 class NSOperations extends React.Component{
 
@@ -19,6 +21,20 @@ class NSOperations extends React.Component{
         //     }
         // )
 
+
+        componentDidMount(){
+            const axios = require("axios")
+            axios.get(`http://54.167.116.21:5000/graphiql`, {
+                query: `{ allTradings{
+                    user_id
+                  }
+             }}`
+            }).then(res => {
+              console.log(this.setState({stores: res.data}));
+            }).catch(function(error) {
+                console.log(error);
+            })    
+        };
 
     render() {
         return(
@@ -47,10 +63,22 @@ class NSOperations extends React.Component{
                     </thead>
                     <tbody>                    
                         <tr>
-                            <td>179452</td>
-                            <td>Camilo Nieto</td>
-                            <td>Bloqueador solar</td>
-                            <td>7.55</td>
+                            <td>5cf5ddfde65d16001d96c536</td>
+                            <td>2</td>
+                            <td>12ujashd1221dssadsa</td>
+                            <td>12.2</td>
+                        </tr>
+                        <tr>
+                            <td>5cf5ddfde65d16001d96c536</td>
+                            <td>2</td>
+                            <td>12ujashd1221dssadsa</td>
+                            <td>12.2</td>
+                        </tr>
+                        <tr>
+                            <td>5cf5ddfde65d16001d96c536</td>
+                            <td>2</td>
+                            <td>12ujashd1221dssadsa</td>
+                            <td>12.2</td>
                         </tr>
                     </tbody>
                 </table>
