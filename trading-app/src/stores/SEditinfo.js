@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Stores.css';
+import CProducts from '../catalog/CProducts';
 
 
 class SEditinfo extends React.Component{
@@ -14,9 +15,7 @@ class SEditinfo extends React.Component{
                  <form class="form-inline my-2 my-lg-0">
                      <a href="/login" class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
                  </form>
-
-            </nav> 
-          
+            </nav>           
               <div class="container">
                   <form class="form-inline">
                   </form>
@@ -59,16 +58,10 @@ class SEditinfo extends React.Component{
                                   {/* <div class="frontside">  */}
                                       <div class="card">
                                           <div class="card-body text-center">
-                      <h1>.</h1>
-                      <h1>.</h1>
-                      <h1>.</h1>
-                      <h1>.</h1>
-                      <h1>.</h1>
-                      <h1>.</h1>
-                      <h1>.</h1>
-                      <h1>.</h1>
-                      <h1>.</h1>
-
+                                          <div class="card-body text-center">
+                                            <h4 class="card-title">Mi tienda</h4>
+                                            <CProducts/>                                      
+                                            </div>
                                           </div>
                                       </div>
                                   {/* </div> */}

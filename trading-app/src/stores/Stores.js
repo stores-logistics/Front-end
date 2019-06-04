@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Stores.css';
+import CProducts from '../catalog/CProducts'
 
 
 class Stores extends React.Component{
@@ -71,15 +72,8 @@ class Stores extends React.Component{
                                   {/* <div class="frontside">  */}
                                       <div class="card">
                                           <div class="card-body text-center">
-                                          <h1>.</h1>
-                      <h1>.</h1>
-                      <h1>.</h1>
-                      <h1>.</h1>
-                      <h1>.</h1>
-                      <h1>.</h1>
-                      <h1>.</h1>
-                      <h1>.</h1>
-                      <h1>.</h1>
+                                            <h4 class="card-title">Mi tienda</h4>
+                                            <CProducts/>                                      
                                             </div>
                                       </div>
                                  

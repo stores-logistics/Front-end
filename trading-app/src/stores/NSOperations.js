@@ -7,30 +7,22 @@ import axios from "axios";
 
 class NSOperations extends React.Component{
 
-        // const RequestQL = gql` 
-        // query{
-        //     allTradings{
-        //       user_id
-        //     }
-        //   }
-        // `
-        // ReturnData = graphql(
-        //     RequestQL,
-        //     {
-
-        //     }
-        // )
-
-
         componentDidMount(){
             const axios = require("axios")
-            axios.get(`http://54.167.116.21:5000/graphiql`, {
-                query: `{ allTradings{
-                    user_id
-                  }
-             }}`
+            axios.post(`http://54.167.116.21:5000/graphql`, {
+                query: `query{
+                    tradingsByStoreId(store_id: ${1})
+                    {
+                      _id
+                      timestamp
+                      store_id
+                      user_id
+                      product_id
+                      price
+                    }
+                  }`
             }).then(res => {
-              console.log(this.setState({stores: res.data}));
+              console.log(this.setState(res));
             }).catch(function(error) {
                 console.log(error);
             })    
@@ -56,6 +48,7 @@ class NSOperations extends React.Component{
                     <thead >
                         <tr id="head_table" >
                             <th scope="col">Operación #</th>
+                            <th scope="col">Hora</th>
                             <th scope="col">Cliente</th>
                             <th scope="col">Producto</th>
                             <th scope="col">Valor</th>
@@ -64,18 +57,7 @@ class NSOperations extends React.Component{
                     <tbody>                    
                         <tr>
                             <td>5cf5ddfde65d16001d96c536</td>
-                            <td>2</td>
-                            <td>12ujashd1221dssadsa</td>
-                            <td>12.2</td>
-                        </tr>
-                        <tr>
-                            <td>5cf5ddfde65d16001d96c536</td>
-                            <td>2</td>
-                            <td>12ujashd1221dssadsa</td>
-                            <td>12.2</td>
-                        </tr>
-                        <tr>
-                            <td>5cf5ddfde65d16001d96c536</td>
+                            <td>2012-03-20</td>
                             <td>2</td>
                             <td>12ujashd1221dssadsa</td>
                             <td>12.2</td>
