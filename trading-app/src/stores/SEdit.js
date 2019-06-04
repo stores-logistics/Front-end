@@ -12,7 +12,7 @@ class SEdit extends React.Component{
                     <form class="form-inline">
                     </form>
                     <div class ="row">
-                            <div class = "col-4">
+                            <div class="col-4">
                                 <div class="card">
                                     <div class="card-body text-center">
                                         <h4 class="card-title">Editar producto</h4>
@@ -22,10 +22,10 @@ class SEdit extends React.Component{
                                              <input type="text" class="form-control" id="inlineFormInputName" placeholder="Nombre"></input>
                                            .
                                             <div class="form-group row">
-                                                <div class = "col-6">
+                                                <div class="col-6">
                                                 <input type="text" class="form-control" id="inlineFormInputName" placeholder="Stock"></input>
                                                 </div>
-                                                <div class = "col-6">
+                                                <div class="col-6">
                                                 <input type="text" class="form-control" id="inlineFormInputName" placeholder="Precio"></input>
                                                 </div>
                                              </div>
@@ -36,19 +36,19 @@ class SEdit extends React.Component{
                                         </div>
                                     </div>
                                 </div>
-                            <div class = "col-8">
+                            <div class="col-8">
                               <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                                 <div class="mainflip">
                                     {/* <div class="frontside">  */}
                                         <div class="card">
                                             <div class="card-body text-center">
                                                 <h4 class="card-title">Inventario</h4>
-                                            <div class = "container-fluid">
-                                                <div class = "row">
+                                            <div class="container-fluid">
+                                                <div class="row">
                                                 <div class="input-group">
                                                     <input type="text" class="form-control" placeholder="Buscar un producto por ID"></input>
                                                          <div class="input-group-append">
-                                                             <button id = "creditc" class="btn" type="button">
+                                                             <button id="creditc" class="btn" type="button">
                                                                  <i class="fa fa-search" aria-hidden="true"></i>
                                                              </button>
                                                          </div>
@@ -59,7 +59,7 @@ class SEdit extends React.Component{
                                             .
                                                 <table class="table">
                                                     <thead >
-                                                        <tr id = "head_table" >
+                                                        <tr id="head_table" >
                                                             <th scope="col">ID</th>
                                                             <th scope="col">Producto</th>
                                                             <th scope="col">Stock</th>
@@ -67,25 +67,25 @@ class SEdit extends React.Component{
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr  id = "font" >
+                                                        <tr  id="font" >
                                                             <td>123455</td>
                                                             <td>Collar de perlas</td>
                                                             <td>11</td>
                                                             <td>736</td>
                                                         </tr>
-                                                        <tr  id = "font" >
+                                                        <tr  id="font" >
                                                             <td>153494</td>
                                                             <td>Anillo de diamantes</td>
                                                             <td>2</td>
                                                             <td>8550</td>
                                                         </tr>
-                                                        <tr  id = "font" >
+                                                        <tr  id="font" >
                                                             <td>128905</td>
                                                             <td>Reloj de rubies</td>
                                                             <td>19</td>
                                                             <td>1894</td>
                                                         </tr>
-                                                        <tr  id = "font" >
+                                                        <tr  id="font" >
                                                             <td>123455</td>
                                                             <td>Collar de perlas</td>
                                                             <td>11</td>
@@ -123,7 +123,7 @@ class SEdit extends React.Component{
                                                         </tr>
                                                     </tbody>
                                                     </table>
-                                                <div class = "row">
+                                                <div class="row">
                                                     <div class ="col-3">
                                                     </div>
                                                     <div class ="col-3">
@@ -132,11 +132,11 @@ class SEdit extends React.Component{
                                                     </div>
                                                     <div class ="col-3 text center">
                                                     <a href="/stores/inventory/edit" class="btn btn-primary">                      
-                                                             <i href = "/add" class="fa fa-pencil" aria-hidden="true"></i>
+                                                             <i href="/add" class="fa fa-pencil" aria-hidden="true"></i>
                                                       </a>  
                                                       .  .
                                                       <a href="/stores/inventory/add" class="btn btn-primary">                      
-                                                             <i href = "/add" class="fa fa-plus" aria-hidden="true"></i>
+                                                             <i href="/add" class="fa fa-plus" aria-hidden="true"></i>
                                                       </a>  
                                                    </div>
                                                 </div>

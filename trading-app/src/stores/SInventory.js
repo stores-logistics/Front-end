@@ -6,7 +6,7 @@ import NSInventory from './NSInventory';
 class SInventory extends React.Component{
     render() {
         return(
-            <div id = "tabn">
+            <div id="tabn">
                 <NSInventory/>
             </div>
         )
