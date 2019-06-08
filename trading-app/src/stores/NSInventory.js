@@ -32,7 +32,7 @@ class NSInventory extends React.Component{
                                         <h4 class="card-title">Tiffany&Co.</h4>
                                         </div>
                                         <div class="col-2">
-                                        <a href="/stores/edit" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                        <a id="icon"  href="/stores/edit" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                                         </div>
                                     </div>
                                       <p><img class=" img-fluid" src="https://res-5.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1475836144/gvs96ywgysb53ivoaxs5.png" alt="card image" height="100" width="100"></img></p>
@@ -75,12 +75,13 @@ class NSInventory extends React.Component{
                                           <div class="card-body text-center">
                                           <div class="row">
                                         <div class="col-2">
+                                        <a id="icon" href="/stores/inventory/add" class="btn"><i href="/add" class="fa fa-plus" aria-hidden="true"></i></a>  
                                         </div>
                                         <div class="col-8">
                                               <h4 class="card-title">Inventario</h4>
                                         </div>
                                         <div class="col-2">
-                                              <a href="/stores/inventory/edit" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                              <a id="icon"  href="/stores/inventory/edit" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                                            </div>
                                             </div>
                                           <div class="container-fluid">
@@ -97,7 +98,7 @@ class NSInventory extends React.Component{
           
                                           </div>
                                           .
-                                              <table class="table">
+                                              <table id="cat" class="table">
                                                   <thead >
                                                       <tr id="head_table" >
                                                           <th scope="col">ID</th>
@@ -170,10 +171,7 @@ class NSInventory extends React.Component{
                                                   </div>
                                                   <div class="col-3">
                                                   </div>
-                                                  <div class="col-3 text center">
-                                                    <a href="/stores/inventory/add" class="btn btn-primary">                      
-                                                           <i href="/add" class="fa fa-plus" aria-hidden="true"></i>
-                                                    </a>  
+                                                  <div class="col-3 text center">                                                 
                                                  </div>
                                               </div>
                                           </div>

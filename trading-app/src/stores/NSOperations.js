@@ -9,7 +9,7 @@ class NSOperations extends React.Component{
 
         componentDidMount(){
             const axios = require("axios")
-            axios.post(`http://54.167.116.21:5000/graphql`, {
+            axios.post(`http://54.91.244.215:5000/graphql`, {
                 query: `query{
                     tradingsByStoreId(store_id: ${1})
                     {
