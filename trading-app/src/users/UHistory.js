@@ -123,6 +123,7 @@ class NSHistory extends React.Component{
                                         <thead >
                                             <tr id="head_table" >
                                                 <th scope="col">Operación #</th>
+                                                <th scope="col">Hora</th>
                                                 <th scope="col">Tienda</th>
                                                 <th scope="col">Producto</th>
                                                 <th scope="col">Valor</th>
