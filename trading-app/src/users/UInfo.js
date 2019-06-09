@@ -45,7 +45,7 @@ class UInfo extends React.Component{
                                                 <input type="text" class="form-control" id="inlineFormInputName" placeholder="# teléfonico"></input>
                                                 </div>
                                                 <div class="col-4">
-                                                <input type="text" class="form-control" id="inlineFormInputName" placeholder="Edad"></input>
+                                                 <input type="text" class="form-control" id="inlineFormInputName" placeholder="Edad"></input>
                                                 </div>
                                             </div>
                                           <input type="text" class="form-control" id="inlineFormInputName" placeholder="Dirección"></input>

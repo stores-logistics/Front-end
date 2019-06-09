@@ -19,3 +19,19 @@
 #op_n{
     width: 150px;
 }
+
+
+#longpage{
+    min-height: 550px;
+    max-height: 550px;  
+}
+
+.cardem {
+    border: none;
+    min-width: 300px;
+    max-width: 300px;
+    max-height: 280px;
+    min-height: 280px;
+    background: rgb(255,255,255 );
+}
+

@@ -60,6 +60,8 @@ class Stores extends React.Component{
                                          </div>
                                        </div>
                                        <hr></hr>
+                                       <a href="/stores" id="verhcompras" class="btn"><strong>Perfil</strong></a>
+                                       <hr></hr>
                                       <a href="/stores/operations" id="verhcompras" class="btn">Ver historial de ventas</a>
                                         <hr></hr>
                                     <a href="/stores/inventory" id="verhcompras" class="btn">Inventario</a>                      

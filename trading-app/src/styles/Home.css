@@ -2,6 +2,7 @@
 #team {
     background:url('http://wallpapers.ae/wp-content/uploads/2017/12/IMG_5394.jpg');
     background-size: cover;
+    min-height: 652px;
   }
 
 .btn-primary:hover,
@@ -164,4 +165,32 @@ section .section-title {
 #lemma{
     font-family: 'PT Serif', serif;
     color: rgb(255,255,255,0.8);
+}
+
+#card-price{
+    color: #00b1fa !important;
+    font-size: 1.4em;
+    font-family: 'Crimson Text', serif;
+}
+
+#card-titles{
+    color: #00577b !important;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.6em;
+    font-style: bold;
+}
+
+#card-texts{
+    font-size: 5em;
+    font-family: 'PT Serif', serif;
+}
+
+
+.cardem {
+    border: none;
+    min-width: 300px;
+    max-width: 300px;
+    max-height: 280px;
+    min-height: 280px;
+    background: rgb(255,255,255 );
 }

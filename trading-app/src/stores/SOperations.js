@@ -32,12 +32,14 @@ class SOperations extends React.Component{
                                         <h4 class="card-title">Tiffany&Co.</h4>
                                         </div>
                                         <div class="col-2">
-                                        <a href="/stores/edit" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                        <a id="icon" href="/stores/edit" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                                         </div>
                                     </div>
                                         <SProfile/>
+                                        <hr></hr>
+                                       <a href="/stores" id="verhcompras" class="btn">Perfil</a>
                                        <hr></hr>
-                                      <a href="/stores/operations" id="verhcompras" class="btn">Ver historial de ventas</a>
+                                      <a href="/stores/operations" id="verhcompras" class="btn"><strong>Ver historial de ventas</strong></a>
                                         <hr></hr>
                                     <a href="/stores/inventory" id="verhcompras" class="btn">Inventario</a>                      
                                       </div>
@@ -47,7 +49,7 @@ class SOperations extends React.Component{
                             <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                               <div class="mainflip">
                                   {/* <div class="frontside">  */}
-                                      <div class="card">
+                                      <div id="longpage" class="card">
                                           <div class="card-body text-center">
                                               <h4 class="card-title">Historial de ventas</h4>
                                               <br></br>

@@ -73,16 +73,6 @@ class NSOperations extends React.Component{
                         {this.displayOperations()}
                     </tbody>
                 </table>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>   
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
             </div>
                   
         )
