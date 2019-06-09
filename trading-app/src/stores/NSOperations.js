@@ -1,10 +1,5 @@
 import React from 'react';
 import '../styles/Stores.css';
-import gql from 'graphql-tag';
-import axios from "axios";
-
-
-
 
 class NSOperations extends React.Component{
 
@@ -36,21 +31,20 @@ class NSOperations extends React.Component{
             })    
         };
 
-        displayOperations(){
+        displayOperations(){            
             return this.state.operList.map( tradings => {
               return(
                 <div>
                     <tr>
                      <td>{tradings._id}</td>
-                      <td>{tradings.date}</td>
-                      <td>{tradings.store_id}</td>
+                      <td>{tradings.timestamp}</td>
+                      <td>{tradings.user_id}</td>
                        <td>{tradings.product_id}</td>
                       <td>{tradings.price}</td>
                     </tr>
                 </div>
-                );
-            })
-      }
+                )
+            })}
         
 
     render() {

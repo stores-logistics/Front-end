@@ -4,6 +4,50 @@ import '../styles/Users.css';
 
 
 class NSHistory extends React.Component{
+
+    constructor(props){
+        super(props);
+        this.state = {
+            operList:[]
+        }
+    }
+
+    componentDidMount(){
+            const axios = require("axios")
+            axios.post(`http://54.91.244.215:5000/graphql`, {
+                query: `query{
+                    allTradings{
+                      _id
+                      timestamp
+                      store_id
+                      user_id
+                      product_id
+                      price
+                    }
+                  }`
+            }).then(res => {
+                // console.log(res);
+                this.setState({
+                    operList:res.data.data.allTradings
+                }) 
+            })    
+        };
+
+        displayOperations(){            
+            return this.state.operList.map( tradings => {
+              return(
+                <div>
+                    <tr>
+                     <td>{tradings._id}</td>
+                      <td>{tradings.timestamp}</td>
+                      <td>{tradings.store_id}</td>
+                       <td>{tradings.product_id}</td>
+                      <td>{tradings.price}</td>
+                    </tr>
+                </div>
+                )
+            })}
+        
     render() {
         return(
             <section id="team" class="pb-5">
@@ -87,14 +131,12 @@ class NSHistory extends React.Component{
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr  id="font" >
-                                                <td>127891</td>
-                                                <td>Tiffany&Co.</td>
-                                                <td>Collar de perlas</td>
-                                                <td>1586</td>
-                                            </tr>                                
+                                            {this.displayOperations()}                              
                                         </tbody>
                                         </table>
+                                        <br></br>
+                                        <br></br>
+                                        <br></br>
                                 </div>
                             </div>
                     </div>
