@@ -31,22 +31,18 @@ class NSOperations extends React.Component{
             })    
         };
 
-        displayOperations(){            
-            return this.state.operList.map( tradings => {
+        displayOperations(){                            
+            return this.state.operList.map( (item,key) => {
               return(
-                <div>
-                    <tr>
-                     <td>{tradings._id}</td>
-                      <td>{tradings.timestamp}</td>
-                      <td>{tradings.user_id}</td>
-                       <td>{tradings.product_id}</td>
-                      <td>{tradings.price}</td>
+                    <tr key = {key}>
+                     <td>{item._id}</td>
+                      <td>{item.timestamp}</td>
+                      <td>{item.user_id}</td>
+                       <td>{item.product_id}</td>
+                      <td>{item.price}</td>
                     </tr>
-                </div>
                 )
-            })}
-        
-
+            })}                
     render() {
         return(
             <div id="operations">

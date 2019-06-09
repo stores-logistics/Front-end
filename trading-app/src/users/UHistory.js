@@ -36,7 +36,6 @@ class NSHistory extends React.Component{
         displayOperations(){            
             return this.state.operList.map( tradings => {
               return(
-                <div>
                     <tr>
                      <td>{tradings._id}</td>
                       <td>{tradings.timestamp}</td>
@@ -44,7 +43,6 @@ class NSHistory extends React.Component{
                        <td>{tradings.product_id}</td>
                       <td>{tradings.price}</td>
                     </tr>
-                </div>
                 )
             })}
         
