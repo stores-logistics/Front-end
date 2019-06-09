@@ -1,9 +1,9 @@
 import React from 'react';
-import '../styles/Stores.css';
+import '../styles/Users.css';
 import CProducts from '../catalog/CProducts';
 
 
-class SEditinfo extends React.Component{
+class UInfo extends React.Component{
     render() {
         return(
           <section id="team" class="pb-5">
@@ -25,46 +25,43 @@ class SEditinfo extends React.Component{
                                   <div class="card-body text-center">
                                   <div class="row">
                                                 <div class="col-1">
-                                                <a id="icon" href="/stores" class="btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                                                <a id="icon" href="/users" class="btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
                                                 </div>
                                                 <div class="col-10">                                      
                                                     <h4 class="card-title">Editar información</h4>
                                                 </div>
                                                 <div class="col-1">
                                                 </div>
-                                                <hr></hr>
                                         </div> 
+                                        <hr></hr>
                                       <div id = "edituser" class="container-fluid">
-                                         <div class="form-group-row">  
+                                         <div   class="form-group-row">  
                                            <input type="text" class="form-control" id="inlineFormInputName" placeholder="Nombre"></input>
-                                         .
+                                         <br></br>
+                                         <input type="text" class="form-control" id="inlineFormInputName" placeholder="Apellido"></input>
+                                          <br></br>
                                           <div class="form-group row">
-                                              <div class="col-6">
-                                                        <select class="form-control" id="exampleFormControlSelect1">
-                                                        <option>Souvenirs</option>
-                                                        <option>Comidas</option>
-                                                        <option>Ropa</option>
-                                                        <option>Salud y belleza</option>
-                                                        </select>              
-                                             </div>
-                                              <div class="col-6">
-                                              <input type="text" class="form-control" id="inlineFormInputName" placeholder="Horario"></input>
-                                              </div>
-                                           </div>
-                                           <input type="text" class="form-control" id="inlineFormInputName" placeholder="Propietario"></input>
-                                              <br></br>
-                                           <input type="text" class="form-control" id="inlineFormInputName" placeholder="Ubicación"></input>
-                                            <br></br>
-                                           <div class="row">
+                                                <div class="col-8">
+                                                <input type="text" class="form-control" id="inlineFormInputName" placeholder="# teléfonico"></input>
+                                                </div>
+                                                <div class="col-4">
+                                                <input type="text" class="form-control" id="inlineFormInputName" placeholder="Edad"></input>
+                                                </div>
+                                            </div>
+                                          <input type="text" class="form-control" id="inlineFormInputName" placeholder="Dirección"></input>
+                                          <br></br>
+                                          <input type="text" class="form-control" id="inlineFormInputName" placeholder="Ciudad"></input>
+                                          <br></br>                                          
+                                            </div> 
+                                            <div class="row">
                                                 <div class="col-10">
                                                 </div>
                                                 <div class="col-7.5">
                                                 </div>
                                                 <div class="col-2.5">
-                                                   <a id="icon" href="/stores" class="btn"><i class="fas fa-check fa2x"></i></a>
+                                                   <a id="icon" href="/users" class="btn"><i class="fas fa-check fa2x"></i></a>
                                                 </div>
-                                            </div>                                            
-                                            </div>   
+                                            </div>  
                                        </div>                                        
                                       </div>
                                   </div>
@@ -100,4 +97,4 @@ class SEditinfo extends React.Component{
     }
 }
 
-export default SEditinfo;
+export default UInfo;

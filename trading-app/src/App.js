@@ -11,6 +11,7 @@ import SEdit from './stores/SEdit'
 import SEditinfo from './stores/SEditinfo'  
 import SAdd from './stores/SAdd'  
 import Users from './users/Users'
+import UInfo from './users/UInfo'
 import UHistory from './users/UHistory'
 import './styles/App.css';
 
@@ -30,6 +31,7 @@ class App extends React.Component{
               <Route exact path = "/stores/edit"component = {SEditinfo} />
               <Route exact path = "/stores/inventory/add" component = {SAdd} />
               <Route exact path = "/users" component = {Users} />
+              <Route exact path = "/users/edit" component = {UInfo} />
               <Route exact path = "/users/history" component = {UHistory} />
             </Switch>
           </BrowserRouter>

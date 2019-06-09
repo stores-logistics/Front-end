@@ -13,16 +13,25 @@ class SEdit extends React.Component{
                     </form>
                     <div class="row">
                             <div class="col-4">
-                                <div class="card">
+                                 <div class="card">
                                     <div class="card-body text-center">
-                                        <h4 class="card-title">Editar producto</h4>
-                                        <hr></hr>
+                                    <div class="row">
+                                                <div class="col-1">
+                                                <a id="icon" href="/stores" class="btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                                                </div>
+                                                <div class="col-10">                                      
+                                                    <h4 class="card-title">Editar información</h4>
+                                                </div>
+                                                <div class="col-1">
+                                                </div>
+                                                <hr></hr>
+                                        </div> 
                                         <div class="container-fluid">
                                            <div class="form-group-row">  
                                              <input type="text" class="form-control" id="inlineFormInputName" placeholder="Nombre"></input>
-                                           .
+                                           <br></br>
                                             <div class="form-group row">
-                                                <div class="col-6">
+                                                 <div class="col-6">
                                                 <input type="text" class="form-control" id="inlineFormInputName" placeholder="Stock"></input>
                                                 </div>
                                                 <div class="col-6">
@@ -30,8 +39,17 @@ class SEdit extends React.Component{
                                                 </div>
                                              </div>
                                              <input type="text" class="form-control" id="inlineFormInputName" placeholder="Descripción"></input>
-                                             .<a href="/stores/inventory" id="verhcompras" class="btn">Guardar cambios</a>
-                                              </div>   
+                                             <br></br>
+                                             <div class="row">
+                                                <div class="col-10">
+                                                </div>
+                                                <div class="col-7.5">
+                                                </div>
+                                                <div class="col-2.5">
+                                                   <a id="icon" href="/stores" class="btn"><i class="fas fa-check fa2x"></i></a>
+                                                </div>
+                                            </div>                                              
+                                            </div>   
                                          </div>                                        
                                         </div>
                                     </div>

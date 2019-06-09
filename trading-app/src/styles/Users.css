@@ -10,10 +10,19 @@
 
 #verhcompras{
     border-radius: 0;
+    /* background-color: #00577b; */
+    color: #00577b;
+    font-family: 'Noto Sans HK', sans-serif;
+}
+
+#btnprinc{
+    border-radius: 0;
+    border-radius: 0;
     background-color: #00577b;
     color: white;
     font-family: 'Noto Sans HK', sans-serif;
-    width: 100%;
+    min-width: 110%;
+    min-height: 150%;
 }
 
 #creditc{
@@ -34,6 +43,10 @@
 #head_table{
     background-color: #D3D3D3;
     color: #00577b;
+    font-family: 'Noto Sans HK', sans-serif;
+}
+
+#edituser{
     font-family: 'Noto Sans HK', sans-serif;
 }
 
