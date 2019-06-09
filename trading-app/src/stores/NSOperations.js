@@ -1,18 +1,25 @@
 import React from 'react';
 import '../styles/Stores.css';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
 import axios from "axios";
+
+
 
 
 class NSOperations extends React.Component{
 
-        componentDidMount(){
+    constructor(props){
+        super(props);
+        this.state = {
+            operList:[]
+        }
+    }
+
+    componentDidMount(){
             const axios = require("axios")
             axios.post(`http://54.91.244.215:5000/graphql`, {
                 query: `query{
-                    tradingsByStoreId(store_id: ${1})
-                    {
+                    allTradings{
                       _id
                       timestamp
                       store_id
@@ -22,11 +29,29 @@ class NSOperations extends React.Component{
                     }
                   }`
             }).then(res => {
-              console.log(this.setState(res));
-            }).catch(function(error) {
-                console.log(error);
+                // console.log(res);
+                this.setState({
+                    operList:res.data.data.allTradings
+                }) 
             })    
         };
+
+        displayOperations(){
+            return this.state.operList.map( tradings => {
+              return(
+                <div>
+                    <tr>
+                     <td>{tradings._id}</td>
+                      <td>{tradings.date}</td>
+                      <td>{tradings.store_id}</td>
+                       <td>{tradings.product_id}</td>
+                      <td>{tradings.price}</td>
+                    </tr>
+                </div>
+                );
+            })
+      }
+        
 
     render() {
         return(
@@ -55,13 +80,7 @@ class NSOperations extends React.Component{
                         </tr>
                     </thead>
                     <tbody>                    
-                        <tr>
-                            <td>5cf5ddfde65d16001d96c536</td>
-                            <td>2012-03-20</td>
-                            <td>2</td>
-                            <td>12ujashd1221dssadsa</td>
-                            <td>12.2</td>
-                        </tr>
+                        {this.displayOperations()}
                     </tbody>
                 </table>
                 <br></br>
@@ -69,7 +88,7 @@ class NSOperations extends React.Component{
                 <br></br>
                 <br></br>
                 <br></br>
-                <br></br>
+                <br></br>   
                 <br></br>
                 <br></br>
                 <br></br>

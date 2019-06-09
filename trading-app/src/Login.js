@@ -7,7 +7,7 @@ class Login extends React.Component{
         return(
             <section id="team" class="pb-5">
                   <nav class="navbar navbar-dark">
-                 <a id = "nav "class="navbar-brand" href="#">
+                 <a id = "nav "class="navbar-brand" href="/">
                   <i class="fa fa-ship fa-1x" aria-hidden="true"></i>
                    <a id = "title">Stores Manager</a>
                       </a>

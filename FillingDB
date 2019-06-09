@@ -1,0 +1,70 @@
+mutation{
+  createProduct(product: {
+    name: "Collar de Perlas"
+    description: "Collar de perlas finas elaborado a mano por artesanos locales, apropiado para cualquier ocasión."
+    type: "Belleza"
+    image: "https://cdn.shopify.com/s/files/1/0764/1881/products/175022_1024x1024.jpg?v=1530742779"
+    storeId: 2
+    quantity: 2
+    cost: 2.1
+  }) {
+    _id
+    name
+    description
+    type
+    image
+    storeId
+    quantity
+    cost
+  }
+
+----------------------------------------------------------------------------------------------------------------
+
+  createUser(user: {
+    name: "Camilo"
+    lastName: "Nieto"
+    cabin: "2019"
+    creditCard: "asdsadasd12312312321"
+  }) {
+    code
+    name
+    lastName
+    cabin
+    creditCard
+  }
+}
+
+----------------------------------------------------------------------------------------------------------------
+mutation{
+  createStore(store: {
+    name: "Tiffany&Co"
+    type: "Accesorios"
+    owner: "Tiffany"
+    ubication: "P2-L126"
+    dates: "L: Closed / M: 9:00 - 16:00 / X: 9:00 - 18:00 / J: Closed / V: 11:00 - 15:00 / S: 9:00 - 18:00 / D: 9:00 - 18:00"
+  }) {
+    id
+    name
+    type
+    owner
+    ubication
+    dates
+  }
+}
+-----------------------------------------------------------------------------------------------------------
+mutation{
+  createTrading(trading: {
+    timestamp: "2012-03-20"
+    store_id: 1
+    user_id: 2
+    product_id: "12ujashd1221dssadsa"
+    price: 12.2
+  }) {
+    _id
+    timestamp
+    store_id
+    user_id
+    product_id
+    price
+  }
+}
