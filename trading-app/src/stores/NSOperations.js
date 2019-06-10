@@ -49,7 +49,7 @@ class NSOperations extends React.Component{
                 <div class="container-fluid">
                     <div class="row">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Buscar una operación"></input>
+                            <input id ="test_i" type="text" class="form-control" placeholder="Buscar una operación"></input>
                             <div class="input-group-append">
                                 <button id="creditc" class="btn" type="button">
                                     <i class="fa fa-search" aria-hidden="true"></i>

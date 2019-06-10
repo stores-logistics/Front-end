@@ -32,6 +32,11 @@
     max-width: 300px;
     max-height: 280px;
     min-height: 280px;
-    background: rgb(255,255,255 );
+    background: rgb(255,255,255);
+}
+
+#test_i{
+    background: rgb(255,255,255,0.5);
+    border-right-color: transparent;    
 }
 

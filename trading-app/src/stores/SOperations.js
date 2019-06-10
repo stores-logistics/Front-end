@@ -15,7 +15,10 @@ class SOperations extends React.Component{
                 </a>
                  <form class="form-inline my-2 my-lg-0">
                      <a href="/login" class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
+                 </form>                 <form class="form-inline my-2 my-lg-0">
+                     <a href="/login" class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
                  </form>
+
 
             </nav> 
               <div class="container">
@@ -39,7 +42,7 @@ class SOperations extends React.Component{
                                         <hr></hr>
                                        <a href="/stores" id="verhcompras" class="btn">Perfil</a>
                                        <hr></hr>
-                                      <a href="/stores/operations" id="verhcompras" class="btn"><strong>Ver historial de ventas</strong></a>
+                                      <a href="/stores/operations" id="verhcompras" class="btn"><strong>Historial de ventas</strong></a>
                                         <hr></hr>
                                     <a href="/stores/inventory" id="verhcompras" class="btn">Inventario</a>                      
                                       </div>
@@ -51,8 +54,7 @@ class SOperations extends React.Component{
                                   {/* <div class="frontside">  */}
                                       <div id="longpage" class="card">
                                           <div class="card-body text-center">
-                                              <h4 class="card-title">Historial de ventas</h4>
-                                              <br></br>
+                                              <h2 class="card-title">Historial de ventas</h2>
                                               <NSOperations/>
                                           </div>
                                       </div>

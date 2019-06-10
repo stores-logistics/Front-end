@@ -67,7 +67,16 @@ class NSHistory extends React.Component{
                 <div class="col-4">
                     <div class="card">
                         <div class="card-body text-center">
-                            <h4 class="card-title">Iván Herrera</h4>
+                        <div class="row">
+                                        <div class="col-2">
+                                        </div>
+                                        <div class="col-8">
+                                        <h4 class="card-title">Iván Herrera</h4>
+                                        </div>
+                                        <div class="col-2">
+                                        <a id="icon" href="/users/edit" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                        </div>
+                            </div>
                             <p><img class=" img-fluid" src="https://image.flaticon.com/icons/svg/1805/1805781.svg   " alt="card image" height="50" width="50"></img></p>
                             <div class="container-fluid">
                              <div class="row">
@@ -108,7 +117,7 @@ class NSHistory extends React.Component{
                                 <div class="container-fluid">
                                     <div class="row">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Buscar una tienda"></input>
+                                        <input id="test_i" type="text" class="form-control" placeholder="Buscar una tienda"></input>
                                              <div class="input-group-append">
                                                  <button id="creditc" class="btn" type="button">
                                                      <i class="fa fa-search" aria-hidden="true"></i>

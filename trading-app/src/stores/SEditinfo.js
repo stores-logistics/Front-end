@@ -36,11 +36,11 @@ class SEditinfo extends React.Component{
                                         </div> 
                                       <div id = "edituser" class="container-fluid">
                                          <div class="form-group-row">  
-                                           <input type="text" class="form-control" id="inlineFormInputName" placeholder="Nombre"></input>
-                                         .
+                                           <input id ="test_i" type="text" class="form-control" id="inlineFormInputName" placeholder="Nombre"></input>
+                                          <br></br>
                                           <div class="form-group row">
                                               <div class="col-6">
-                                                        <select class="form-control" id="exampleFormControlSelect1">
+                                                        <select id ="test_i" class="form-control" id="exampleFormControlSelect1">
                                                         <option>Souvenirs</option>
                                                         <option>Comidas</option>
                                                         <option>Ropa</option>
@@ -48,12 +48,12 @@ class SEditinfo extends React.Component{
                                                         </select>              
                                              </div>
                                               <div class="col-6">
-                                              <input type="text" class="form-control" id="inlineFormInputName" placeholder="Horario"></input>
+                                              <input id ="test_i" type="text" class="form-control" id="inlineFormInputName" placeholder="Horario"></input>
                                               </div>
                                            </div>
-                                           <input type="text" class="form-control" id="inlineFormInputName" placeholder="Propietario"></input>
+                                           <input id ="test_i" type="text" class="form-control" id="inlineFormInputName" placeholder="Propietario"></input>
                                               <br></br>
-                                           <input type="text" class="form-control" id="inlineFormInputName" placeholder="Ubicación"></input>
+                                           <input id ="test_i" type="text" class="form-control" id="inlineFormInputName" placeholder="Ubicación"></input>
                                             <br></br>
                                            <div class="row">
                                                 <div class="col-10">

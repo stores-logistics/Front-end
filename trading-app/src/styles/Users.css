@@ -27,8 +27,11 @@
 
 #creditc{
     border-radius: 0;
-    background-color: #00577b;
-    color: white;
+    background-color:rgb(255,255,255,0.1);
+    color: darkgrey;
+    border-bottom-color: gainsboro;
+    border-right-color: gainsboro;
+    border-top-color: gainsboro;
 }
 
 #usercont #creditc #basic-addon1 #font{

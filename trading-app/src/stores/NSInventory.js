@@ -3,7 +3,46 @@ import '../styles/Stores.css';
 import SProfile from './SProfile'
 
 class NSInventory extends React.Component{
-    render() {
+    constructor(props){
+        super(props);
+        this.state = {
+            prodList:[]
+        }
+    }
+
+    componentDidMount(){
+            const axios = require("axios")
+            axios.post(`http://54.91.244.215:5000/graphql`, {
+                query: `query{
+                    allProducts{
+                      _id
+                      name
+                      quantity
+                      cost
+                    }
+                  }`
+            }).then(res => {
+                // console.log(res);
+                this.setState({
+                    prodList:res.data.data.allProducts
+                }) 
+            })    
+        };
+
+        displayProducts(){                            
+            return this.state.prodList.map( (item,key) => {
+              return(
+                    <tr key = {key}>
+                     <td>{item._id}</td>
+                      <td>{item.name}</td>
+                      <td>{item.quantity}</td>
+                       <td>{item.cost}</td>
+                       <td><a id="icon" href="/stores/inventory/edit" class="btn"><i href="/add" class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                    </tr>
+                )
+            })}
+
+    render() { 
         return(
           <section id="team" class="pb-5">
                        <nav class="navbar navbar-dark">
@@ -49,7 +88,7 @@ class NSInventory extends React.Component{
                             <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                               <div class="mainflip">
                                   {/* <div class="frontside">  */}
-                                      <div class="card">
+                                      <div id="longpage" class="card">
                                           <div class="card-body text-center">
                                           <div class="row">
                                         <div class="col-2">
@@ -61,12 +100,12 @@ class NSInventory extends React.Component{
                                         <div class="col-2">
                                            </div>
                                             </div>
-                                          <div class="container-fluid">
+                                          <div id="operations" class="container-fluid">
                                               <div class="row">
                                               <div class="input-group">
-                                                  <input type="text" class="form-control" placeholder="Buscar un producto por ID"></input>
+                                                  <input id ="test_i" type="text" class="form-control" placeholder="Buscar un producto"></input>
                                                        <div class="input-group-append">
-                                                           <button id="creditc" class="btn" type="button">
+                                                           <button id=" " class="btn" type="button">
                                                                <i class="fa fa-search" aria-hidden="true"></i>
                                                            </button>
                                                        </div>
@@ -86,13 +125,7 @@ class NSInventory extends React.Component{
                                                       </tr>
                                                   </thead>
                                                   <tbody>
-                                                      <tr  id="font" >
-                                                          <td>123455</td>
-                                                          <td>Collar de perlas</td>
-                                                          <td>11</td>
-                                                          <td>736</td>
-                                                          <td><a id="icon" href="/stores/inventory/edit" class="btn"><i href="/add" class="fa fa-pencil" aria-hidden="true"></i></a></td>
-                                                      </tr>                                                    
+                                                          {this.displayProducts()}
                                                   </tbody>
                                                   </table>
                                               <div class="row">
