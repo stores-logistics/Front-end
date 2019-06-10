@@ -13,9 +13,7 @@ class SOperations extends React.Component{
                     <i class="fa fa-ship fa-1x" aria-hidden="true"></i>
                     <a id="title">Stores Manager</a>
                 </a>
-                 <form class="form-inline my-2 my-lg-0">
-                     <a href="/login" class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
-                 </form>                 <form class="form-inline my-2 my-lg-0">
+                <form class="form-inline my-2 my-lg-0">
                      <a href="/login" class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
                  </form>
 

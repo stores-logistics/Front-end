@@ -29,7 +29,7 @@ class NSInventory extends React.Component{
             })    
         };
 
-        displayProducts(){                            
+        displayProducts(){   
             return this.state.prodList.map( (item,key) => {
               return(
                     <tr key = {key}>
@@ -105,7 +105,7 @@ class NSInventory extends React.Component{
                                               <div class="input-group">
                                                   <input id ="test_i" type="text" class="form-control" placeholder="Buscar un producto"></input>
                                                        <div class="input-group-append">
-                                                           <button id=" " class="btn" type="button">
+                                                           <button id="creditc" class="btn" type="button">
                                                                <i class="fa fa-search" aria-hidden="true"></i>
                                                            </button>
                                                        </div>

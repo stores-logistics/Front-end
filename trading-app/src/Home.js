@@ -19,14 +19,9 @@ class Home extends React.Component{
             </nav> 
                 <br></br>
     <div class="container">
-        {/* <div id="onboard" class = "container">    */}
                 <h1 id = "onboard">Bienvenido a bordo</h1>
                 <hr id = "hr"></hr>
-            {/* </div> */}
         <br></br>
-{/* 
-     <h4 id = "lemma">Ese objeto que deseas, a un click</h4>
-        <br></br> */}
         <form class="form-inline">
    
         </form>

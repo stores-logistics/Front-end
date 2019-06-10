@@ -33,7 +33,7 @@ class Catalog extends React.Component{
                                   <div class="col-2">
                                   </div>
                               </div>
-                                <p><img class=" img-fluid" src="https://res-5.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1475836144/gvs96ywgysb53ivoaxs5.png" alt="card image" height="100" width="100"></img></p>
+                                <p><img class="img-fluid" src="https://res-5.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1475836144/gvs96ywgysb53ivoaxs5.png" alt="card image" height="100" width="100"></img></p>
                                 <p class="card-text">Productos exclusivos de diseños especiales directamente dentro del crucero</p>
                                 <div class="container-fluid">
                                  <div class="row">
@@ -60,7 +60,7 @@ class Catalog extends React.Component{
                       <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                         <div class="mainflip">
                             {/* <div class="frontside">  */}
-                                <div class="card">
+                                <div id="longpage" class="card">
                                     <div class="card-body text-center">
                                     <h4 class="card-title">Productos disponibles</h4>
                                     <CProducts/>

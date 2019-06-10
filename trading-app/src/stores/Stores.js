@@ -48,10 +48,9 @@ class Stores extends React.Component{
                             <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                               <div class="mainflip">
                                   {/* <div class="frontside">  */}
-                                      <div class="card">
+                                      <div id="longpage" class="card">
                                           <div class="card-body text-center">
                                             <h4 class="card-title">Mi tienda</h4>
-                                            <CProducts/>                                      
                                             </div>
                                       </div>
                                  
