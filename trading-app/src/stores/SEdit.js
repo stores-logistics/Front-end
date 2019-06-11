@@ -2,11 +2,16 @@ import React from 'react';
 import '../styles/Stores.css';
 
 
+
 class SEdit extends React.Component{
+ 
+    
+    
+    
     render() {
         return(
             <section id="team" class="pb-5">
-                                       <nav class="navbar navbar-dark">
+            <nav class="navbar navbar-dark">
                 <a id="nav "class="navbar-brand" href="/">
                   <i class="fa fa-ship fa-1x" aria-hidden="true"></i>
                    <a id="title">Stores Manager</a>

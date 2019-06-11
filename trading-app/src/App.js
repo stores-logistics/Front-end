@@ -15,7 +15,9 @@ import UInfo from './users/UInfo'
 import UHistory from './users/UHistory'
 import './styles/App.css';
 
+
 class App extends React.Component{
+  
   render(){
       return(            
        <div >

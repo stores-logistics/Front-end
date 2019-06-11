@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Stores.css';
+import Api_url from '../App'
 
 class NSOperations extends React.Component{
 
@@ -8,6 +9,8 @@ class NSOperations extends React.Component{
         this.state = {
             operList:[]
         }
+        this.componentDidMount = this.componentDidMount.bind(this);
+        
     }
 
     componentDidMount(){
