@@ -44,8 +44,7 @@ class Home extends React.Component{
                                     <h5 class="card-title">Horarios</h5>
                                     <p class="card-text">Abierto de lunes a jueves 9:00 a.m - 5:00 p.m</p>
                                     <h4 class="card-title">Ubicación</h4>
-                                    <a href="/catalog"  class="btn">Ver productos</a>                                
-                                    <a href="/catalog"  class="btn">Ver productos</a>                                
+                                    <a href="/catalog" id="verprod" class="btn">Ver productos</a>                                
                                 </div>
                             </div>
                         </div>

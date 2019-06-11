@@ -41,3 +41,28 @@
     font-family: 'Noto Sans HK', sans-serif;
 }
 
+
+ #test_d{
+    background: rgb(255,255,255,0.5);
+    font-family: 'Noto Sans HK', sans-serif;
+}
+ 
+#test_dl{
+    background: rgb(255,255,255,0.5);
+    font-family: 'Noto Sans HK', sans-serif;
+    height:60px;
+}
+
+#mw{
+    max-width: 150px;
+    max-height: 150px;
+}
+
+#contprev{
+    background-color: rgb(255,255,255,0.8);
+    min-width: 100%;
+    min-height: 300px;
+    align-content: center;
+    text-align: center;
+    border-radius: 0.5px;
+}

@@ -114,6 +114,7 @@ section .section-title {
 .frontside .card,
 .backside .card {
     min-height: 312px;
+    max-height: 312px;
 }
 
 .backside .card a {
