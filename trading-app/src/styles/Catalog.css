@@ -41,3 +41,19 @@
     padding-right:5;
     padding-left:5;
 }
+
+#contcat{
+    background-color: rgb(255,255,255,0.8);
+    min-width: 100%;
+    min-height: 560px;
+    max-height: 850px;
+    align-content: center;
+    text-align: center;
+    border-radius: 0.5px;
+}
+
+.titlec{
+    color: #00577b !important;
+    font-family: 'Crimson Text', serif;
+    font-size: 2.3em;
+}

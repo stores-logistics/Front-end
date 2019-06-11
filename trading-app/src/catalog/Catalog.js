@@ -45,10 +45,10 @@ class Catalog extends React.Component{
                                     </div>
                                    </div>
                                    <div class="row">
-                                    <div  id="font" class="col-6">
+                                    <div  id="cat" class="col-6">
                                        9:00-16:00
                                     </div>
-                                    <div id="font" class="col-6">
+                                    <div id="cat" class="col-6">
                                         P4-L26
                                     </div>
                                    </div>
@@ -57,17 +57,21 @@ class Catalog extends React.Component{
                             </div>
                         </div>
                     <div class="col-8">
-                      <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                        <div class="mainflip">
-                            {/* <div class="frontside">  */}
-                                <div id="longpage" class="card">
-                                    <div class="card-body text-center">
-                                    <h4 class="card-title">Productos disponibles</h4>
-                                    <CProducts/>
+                      <div className="container" id="contcat">
+                          <br></br>                          
+                            <h2 className="titlec">Catálogo</h2>                            
+                            <br></br>
+                            <div class="input-group">
+                                <input id ="test_i" type="text" class="form-control" placeholder="Buscar un producto"></input>
+                                <div class="input-group-append">
+                                    <button id="creditc" class="btn" type="button">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    </button>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                            <br></br>
+                            <CProducts/>
+                      </div>
                   </div>
                 </div>
         </div>

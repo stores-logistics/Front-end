@@ -169,14 +169,14 @@ section .section-title {
 
 #card-price{
     color: #00b1fa !important;
-    font-size: 1.4em;
+    font-size: 1.7em;
     font-family: 'Crimson Text', serif;
 }
 
 #card-titles{
     color: #00577b !important;
     font-family: 'Crimson Text', serif;
-    font-size: 1.6em;
+    font-size: 1.5em;
     font-style: bold;
 }
 
@@ -193,4 +193,8 @@ section .section-title {
     max-height: 280px;
     min-height: 280px;
     background: rgb(255,255,255 );
+}
+
+#verprod{
+    color: red;
 }

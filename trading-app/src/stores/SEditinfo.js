@@ -36,24 +36,24 @@ class SEditinfo extends React.Component{
                                         </div> 
                                       <div id = "edituser" class="container-fluid">
                                          <div class="form-group-row">  
-                                           <input id ="test_i" type="text" class="form-control" id="inlineFormInputName" placeholder="Nombre"></input>
+                                           <input id ="test_i" type="text" class="form-control" placeholder="Nombre"></input>
                                           <br></br>
                                           <div class="form-group row">
                                               <div class="col-6">
-                                                        <select id ="test_i" class="form-control" id="exampleFormControlSelect1">
+                                                        <select id ="test_i" class="form-control" >
                                                         <option>Souvenirs</option>
                                                         <option>Comidas</option>
                                                         <option>Ropa</option>
                                                         <option>Salud y belleza</option>
                                                         </select>              
-                                             </div>
+                                             </div> 
                                               <div class="col-6">
-                                              <input id ="test_i" type="text" class="form-control" id="inlineFormInputName" placeholder="Horario"></input>
+                                              <input id ="test_i" type="text" class="form-control"  placeholder="Horario"></input>
                                               </div>
                                            </div>
-                                           <input id ="test_i" type="text" class="form-control" id="inlineFormInputName" placeholder="Propietario"></input>
+                                           <input id ="test_i" type="text" class="form-control" placeholder="Propietario"></input>
                                               <br></br>
-                                           <input id ="test_i" type="text" class="form-control" id="inlineFormInputName" placeholder="Ubicación"></input>
+                                           <input id ="test_i" type="text" class="form-control" placeholder="Ubicación"></input>
                                             <br></br>
                                            <div class="row">
                                                 <div class="col-10">
@@ -70,28 +70,21 @@ class SEditinfo extends React.Component{
                                   </div>
                               </div>
                           <div class="col-8">
-                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                              <div class="mainflip">
-                                  {/* <div class="frontside">  */}
-                                      <div class="card">
-                                          <div class="card-body text-center">
-                                          <div class="card-body text-center">
-                                            <h4 class="card-title">Mi tienda</h4>
-                                            <CProducts/>                                      
-                                            </div>
-                                          </div>
-                                      </div>
-                                  {/* </div> */}
-                                  {/* <div class="backside">
-                                      <div class="card">
-                                          <div class="card-body text-center">
-                                              <h4 class="card-title">Información</h4>
-                                              <p class="card-text">Productos exclusivos de diseños especiales directamente dentro del crucero</p>
-                                               <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>                                </div>
-                                      </div>
-                                  </div> */}
-                              </div>
-                          </div>
+                          <div className="container" id="contcat">
+                          <br></br>                          
+                            <h2 className="titlec">Mi tienda</h2>                            
+                            <br></br>
+                            <div class="input-group">
+                                <input id ="test_i" type="text" class="form-control" placeholder="Buscar un producto"></input>
+                                <div class="input-group-append">
+                                    <button id="creditc" class="btn" type="button">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <br></br>
+                            <CProducts/>
+                      </div>
                         </div>
                       </div>
               </div>

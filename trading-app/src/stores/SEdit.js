@@ -60,45 +60,18 @@ class SEdit extends React.Component{
                                 </div>
                                 </div>
                             <div  class="col-8">
-                              <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                                <div class="mainflip">
-                                    {/* <div class="frontside">  */}
-                                        <div id="longpage" class="card">
-                                            <div class="card-body text-center">
-                                                <h4 class="card-title">Editar producto</h4>
-                                               <div className="row">
-                                                   <div className="col4">
-                                                       .
-                                                   </div>
-                                               <div class="col-4">
-                                               <div class="frontside"> 
-                                                    <div class="cardem">
-                                                         <div class="card-body text-center">
-                                                             <br></br>
-                                                              <p><img class=" img-fluid" src="https://www.laroche-posay.es/site/pages/showImageResized.aspx?EncMediaId=YUV4QXhDWnFSTWZzeDV1Y0U1ekowdz09&ImageFormatAppCode=IMAGEFORMAT_ORIGINAL&v=220196063434" alt="card image"  height="65" width="65"></img></p>
-                                                              <h4 class="card-title">Bloqueador Anthelios XL</h4>
-                                                               <p class="card-text">Bloqueador solar de amplio espectro, protege las 24 horas por medio de su fòrmula no grasa e hipoalergénica.</p>
-                                                               <h6 id="card-price"><strong>$32</strong></h6>
-                                                       </div>
-                                                    </div>
-                                                </div>
-                                                <div class="backside">
-                                                <div class="card">
-                                                 <div class="card-body text-center mt-4">
-                                          <p className="card-text">Bloqueador solar de amplio espectro, protege las 24 horas por medio de su fòrmula no grasa e hipoalergénica.</p>
-
-                                     </div>
-                                </div>
-                                    </div>  
-                                                </div>
-                                                <div className="col4">
-                                                         
-                                                   </div>
-                                               </div>
-                                            </div>
+                              <div id="contcat" className="container">
+                                  <br></br>
+                                   <h1 className="titlec">Editar Producto </h1>
+                                   
+                                   <div className="row">
+                                        <div className="col-10">
                                         </div>
-                                </div>
-                            </div>
+                                        <div className="col-2">
+                                            <a id="icon" href="/stores" class="btn"><i class="fas fa-check fa2x"></i></a>
+                                        </div>
+                                   </div>
+                              </div>
                           </div>
                         </div>
                 </div>

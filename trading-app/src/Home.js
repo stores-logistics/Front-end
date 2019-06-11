@@ -35,7 +35,6 @@ class Home extends React.Component{
                                     <p><img class=" img-fluid" src="https://res-5.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1475836144/gvs96ywgysb53ivoaxs5.png" alt="card image"></img></p>
                                     <h4 class="card-title">Tiffany & Co.</h4>
                                     <p class="card-text">Productos exclusivos de diseños especiales directamente dentro del crucero</p>
-                                    {/* <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> */}
                                 </div>
                             </div>
                         </div>
@@ -45,8 +44,8 @@ class Home extends React.Component{
                                     <h5 class="card-title">Horarios</h5>
                                     <p class="card-text">Abierto de lunes a jueves 9:00 a.m - 5:00 p.m</p>
                                     <h4 class="card-title">Ubicación</h4>
-                                    <p class="card-text">Ubicado en el local 4-136</p>
-                                    <a href="/catalog" id ="verhcompras" class="btn">Ver productos</a>                                
+                                    <a href="/catalog"  class="btn">Ver productos</a>                                
+                                    <a href="/catalog"  class="btn">Ver productos</a>                                
                                 </div>
                             </div>
                         </div>
