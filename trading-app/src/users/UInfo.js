@@ -17,79 +17,75 @@ class UInfo extends React.Component{
                  </form>
             </nav>           
               <div class="container">
-                  <form class="form-inline">
+                  <form class="form-in  line">
                   </form>
                   <div class="row">
-                          <div class="col-4">
-                              <div class="card">
+                      <div class="col-4">
+                      <div class="card">
                                   <div class="card-body text-center">
                                   <div class="row">
                                                 <div class="col-1">
                                                 <a id="icon" href="/users" class="btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
                                                 </div>
                                                 <div class="col-10">                                      
-                                                    <h4 class="card-title">Editar información</h4>
+                                                    <h4 class="card-title">Pago</h4>
                                                 </div>
                                                 <div class="col-1">
                                                 </div>
                                         </div> 
-                                        <hr></hr>
+                                        <br></br>
+                                        .
                                       <div id = "edituser" class="container-fluid">
-                                         <div   class="form-group-row">  
-                                           <input type="text" class="form-control" id="inlineFormInputName" placeholder="Nombre"></input>
-                                         <br></br>
-                                         <input type="text" class="form-control" id="inlineFormInputName" placeholder="Apellido"></input>
-                                          <br></br>
-                                          <div class="form-group row">
-                                                <div class="col-8">
-                                                <input type="text" class="form-control" id="inlineFormInputName" placeholder="# teléfonico"></input>
-                                                </div>
-                                                <div class="col-4">
-                                                 <input type="text" class="form-control" id="inlineFormInputName" placeholder="Edad"></input>
-                                                </div>
-                                            </div>
-                                          <input type="text" class="form-control" id="inlineFormInputName" placeholder="Dirección"></input>
-                                          <br></br>
-                                          <input type="text" class="form-control" id="inlineFormInputName" placeholder="Ciudad"></input>
-                                          <br></br>                                          
-                                            </div> 
-                                            <div class="row">
-                                                <div class="col-10">
-                                                </div>
-                                                <div class="col-7.5">
-                                                </div>
-                                                <div class="col-2.5">
-                                                   <a id="icon" href="/users" class="btn"><i class="fas fa-check fa2x"></i></a>
-                                                </div>
-                                            </div>  
+   
                                        </div>                                        
                                       </div>
                                   </div>
-                              </div>
+                      </div>
                           <div class="col-8">
-                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                              <div class="mainflip">
-                                  {/* <div class="frontside">  */}
-                                      <div class="card">
-                                          <div class="card-body text-center">
-                                          <div class="card-body text-center">
-                                            <h4 class="card-title">Mi tienda</h4>
-                                            <CProducts/>                                      
+                              <div className="container" id="contcat">
+                                <br></br>
+                                  <h4 class="card-title">Información personal</h4>
+                                  <br></br>
+                                  <br></br>
+                                  <br></br>
+                                  <div class="row">
+                                      <div class="col-3">
+                                      </div>   
+                                      <div class="col-6">
+                                      <div   class="form-group-row">  
+                                           <input type="text" class="form-control" id="test_d" placeholder="Nombre"></input>
+                                         <br></br>
+                                         <input type="text" class="form-control" id="test_d" placeholder="Apellido"></input>
+                                          <br></br>
+                                          <div class="form-group row">
+                                                <div class="col-8">
+                                                <input type="text" class="form-control" id="test_d" placeholder="# teléfonico"></input>
+                                                </div>
+                                                <div class="col-4">
+                                                 <input type="text" class="form-control" id="test_d" placeholder="Edad"></input>
+                                                </div>
                                             </div>
-                                          </div>
+                                          <input type="text" class="form-control" id="test_d" placeholder="Dirección"></input>
+                                          <br></br>
+                                          <input type="text" class="form-control" id="test_d" placeholder="Ciudad"></input>
+                                          <br></br>                                          
+                                            </div>  
+                                      </div>     
+                                      <div class="col-3">
+                                      </div>                                                                            
+                                  </div>
+                                  <br></br>
+                                  <br></br>
+                                  <div class="row">
+                                    <div class="col-10">
+                                    </div>
+                                      <div class="col-2">
+                                        <a id="icon" href="/users" class="btn"><i class="fas fa-check fa2x"></i></a>
                                       </div>
-                                  {/* </div> */}
-                                  {/* <div class="backside">
-                                      <div class="card">
-                                          <div class="card-body text-center">
-                                              <h4 class="card-title">Información</h4>
-                                              <p class="card-text">Productos exclusivos de diseños especiales directamente dentro del crucero</p>
-                                               <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>                                </div>
-                                      </div>
-                                  </div> */}
+                                    </div> 
                               </div>
+                              
                           </div>
-                        </div>
                       </div>
               </div>
           </section>

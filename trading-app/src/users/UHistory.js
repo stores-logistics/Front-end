@@ -77,7 +77,7 @@ class NSHistory extends React.Component{
                                         <a id="icon" href="/users/edit" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                                         </div>
                             </div>
-                            <p><img class=" img-fluid" src="https://image.flaticon.com/icons/svg/1805/1805781.svg   " alt="card image" height="50" width="50"></img></p>
+                            <p><img class=" img-fluid" src="https://image.flaticon.com/icons/svg/1816/1816075.svg " alt="card image" height="100" width="100"></img></p>
                             <div class="container-fluid">
                              <div class="row">
                                <div id="symbol" class="col-4">
@@ -91,19 +91,22 @@ class NSHistory extends React.Component{
                                 </div>
                                </div>
                                <div class="row">
-                               <div class="col-4">
+                               <div id="cat"class="col-4">
                                   11286535
                                 </div>
-                                <div class="col-4">
+                                <div id="cat" class="col-4">
                                    ***9828
                                 </div>
-                                <div class="col-4">
+                                <div id="cat" class="col-4">
                                     26E
                                 </div>
                                </div>
                              </div>
                              <hr></hr>
-                            <a href="/users" id="verhcompras" class="btn btn-primary btn-sm">Ver mi información</a>                      
+                              <a href="/users" id="verhcompras" class="btn">Perfil</a>                      
+                              <hr></hr>
+                              <a href="/users/history" id="verhcompras" class="btn"><strong>Historial de compras</strong></a>                      
+                    
                             </div>
                         </div>
                     </div>

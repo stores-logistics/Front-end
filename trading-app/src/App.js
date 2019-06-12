@@ -24,7 +24,8 @@ class App extends React.Component{
          <BrowserRouter>
             <Switch>
               <Route exact path = "/" component = {Home} />
-              <Route exact path = "/catalog" component = {Catalog} />
+              <Route exact path = "/catalog/:id" component = {Catalog} />
+              {/* <Route exact path = "/catalog" component = {Catalog} /> */}
               <Route exact path = "/login" component = {Login} />
               <Route exact path = "/stores" component = {Stores} />
               <Route exact path = "/stores/inventory" component = {SInventory} />

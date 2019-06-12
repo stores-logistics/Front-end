@@ -4,6 +4,16 @@ import CProducts from './CProducts';
 
 
 class Catalog extends React.Component{
+
+      componentDidMount () {
+        const { handle } = this.props.match.params
+        console.log(handle)
+        // fetch(`https://api.twitter.com/user/${handle}`)
+        //   .then((user) => {
+        //     this.setState(() => ({ user }))
+        //   })
+      }
+
     render() {
         return(
             <section id="team" class="pb-5">

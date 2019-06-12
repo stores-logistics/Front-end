@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Users.css';
+import  CProducts from '../catalog/CProducts';
 
 class Users extends React.Component{
     render() {
@@ -46,69 +47,30 @@ class Users extends React.Component{
                                          </div>
                                          <div class="row">
                                          <div class="col-4">
-                                            <a id="font">18293</a>
+                                            <a id="cat">18293</a>
                                           </div>
-                                          <div  id="font" class="col-4">
+                                          <div  id="cat" class="col-4">
                                              ***9828
                                           </div>
-                                          <div id="font" class="col-4">
+                                          <div id="cat" class="col-4">
                                               26E
                                           </div>
                                          </div>
                                        </div>
                                        <hr></hr>
-                                      <div className="container">
-                                      <div className="row">
-                                          <div className="col-4">
-                                           <a href="/users/history" id="btnprinc" class="btn"><i class="fas fa-history"></i></a>                      
-                                          </div>
-                                          <div className="col-4">
-                                          <a href="/users/history" id="btnprinc" class="btn"><i class="fas fa-history"></i></a>                      
-                                          </div>
-                                          <div className="col-4">
-                                          <a href="/users/history" id="btnprinc" class="btn"><i class="fas fa-history"></i></a>                      
-                                          </div>
-                                       </div>
-                                      </div>
+                                      <a href="/users/history" id="verhcompras" class="btn"><strong>Perfil</strong></a>                      
+                                      <hr></hr>
                                       <a href="/users/history" id="verhcompras" class="btn">Ver historial de compras</a>                      
                                       </div>
                                   </div>
                               </div>
                           <div class="col-8">
-                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                              <div class="mainflip">
-                                  {/* <div class="frontside">  */}
-                                      <div class="card">
-                                          <div class="card-body text-center">
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           <br></br>
-                                           
-                                            </div>
-                                      </div>
-                              </div>
-                          </div>
+                            <div class="container" id="contcat">
+                              <br></br>                          
+                                <h2 className="titlec">Mi perfil</h2>                            
+                              <br></br>
+                              <CProducts/>
+                            </div>
                         </div>
                       </div>
               </div>
