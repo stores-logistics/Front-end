@@ -15,7 +15,6 @@ class Stores extends React.Component{
                  <form class="form-inline my-2 my-lg-0">
                      <a href="/login" class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
                  </form>
-
             </nav> 
               <div class="container">
                   <form class="form-inline">
@@ -52,8 +51,7 @@ class Stores extends React.Component{
                                           <div class="card-body text-center">
                                             <h4 class="card-title">Mi tienda</h4>
                                             </div>
-                                      </div>
-                                 
+                                      </div>                                 
                               </div>
                           </div>
                         </div>

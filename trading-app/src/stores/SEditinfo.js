@@ -41,10 +41,16 @@ class SEditinfo extends React.Component{
                                           <div class="form-group row">
                                               <div class="col-6">
                                                         <select id ="test_i" class="form-control" >
-                                                        <option>Souvenirs</option>
-                                                        <option>Comidas</option>
-                                                        <option>Ropa</option>
+                                                        <option>Artesanías</option>
+                                                        <option>Café y dulcería</option>
+                                                        <option>Deportes</option>
+                                                        <option>Hogar y decoración</option>
+                                                        <option>Joyería y bisutería</option>
+                                                        <option>Juguetería y librería</option>
+                                                        <option>Maletas y accesorios</option>
+                                                        <option>Ropa y moda</option>
                                                         <option>Salud y belleza</option>
+                                                        <option>Tecnología</option>
                                                         </select>              
                                              </div> 
                                               <div class="col-6">

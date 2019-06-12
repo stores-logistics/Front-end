@@ -15,8 +15,8 @@ class NSInventory extends React.Component{
             axios.post(`http://54.91.244.215:5000/graphql`, {
                 query: `query{
                     allProducts{
-                      _id
                       name
+                      type
                       quantity
                       cost
                     }
@@ -32,9 +32,9 @@ class NSInventory extends React.Component{
         displayProducts(){   
             return this.state.prodList.map( (item,key) => {
               return(
-                    <tr key = {key}>
-                     <td id="mw">{item._id}</td>
+                    <tr key = {key}>                     
                       <td>{item.name}</td>
+                      <td>{item.type}</td>
                       <td>{item.quantity}</td>
                        <td>{item.cost}</td>
                        <td><a id="icon" href="/stores/inventory/edit" class="btn"><i href="/add" class="fa fa-pencil" aria-hidden="true"></i></a></td>
@@ -117,8 +117,8 @@ class NSInventory extends React.Component{
                                               <table id="cat" class="table">
                                                   <thead >
                                                       <tr id="head_table" >
-                                                          <th id="mw" scope="col">ID</th>
-                                                          <th scope="col">Producto</th>
+                                                          <th id="mw" scope="col">Producto</th>
+                                                          <th scope="col">Tipo</th>
                                                           <th scope="col">Stock</th>
                                                           <th scope="col">Valor</th>
                                                           <th></th>

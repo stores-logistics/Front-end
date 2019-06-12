@@ -99,10 +99,16 @@ class SEdit extends React.Component{
                                           <div class="form-group row">
                                               <div class="col-6">
                                                         <select id ="test_d" class="form-control" >
-                                                        <option>Categoría</option>
-                                                        <option>Comidas</option>
-                                                        <option>Ropa</option>
+                                                        <option>Artesanías</option>
+                                                        <option>Café y dulcería</option>
+                                                        <option>Deportes</option>
+                                                        <option>Hogar y decoración</option>
+                                                        <option>Joyería y bisutería</option>
+                                                        <option>Juguetería y librería</option>
+                                                        <option>Maletas y accesorios</option>
+                                                        <option>Ropa y moda</option>
                                                         <option>Salud y belleza</option>
+                                                        <option>Tecnología</option>
                                                         </select>              
                                              </div> 
                                               <div class="col-6">
@@ -133,7 +139,10 @@ class SEdit extends React.Component{
                                     <br></br>
 
                                    <div className="row">
-                                        <div className="col-10">
+                                       <div className="col-1">
+                                       </div>
+                                        <div className="col-9">
+                                        <td><a id="icon" href="/stores/inventory/edit" class="btn"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                         </div>
                                         <div className="col-2">
                                             <a id="icon" href="/stores" class="btn"><i class="fas fa-check fa2x"></i></a>

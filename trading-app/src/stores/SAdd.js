@@ -76,7 +76,7 @@ constructor(props){
     render() {
         return(
           <section id="team" class="pb-5">
-                                         <nav class="navbar navbar-dark">
+            <nav class="navbar navbar-dark">
                 <a id="nav "class="navbar-brand" href="/">
                   <i class="fa fa-ship fa-1x" aria-hidden="true"></i>
                    <a id="title">Stores Manager</a>
@@ -166,10 +166,16 @@ constructor(props){
                                           <div class="form-group row">
                                               <div class="col-6">
                                                         <select name="incat" id ="test_d" class="form-control" onChange={this.updateInput}>
-                                                        <option>Categoría</option>
-                                                        <option>Comidas</option>
-                                                        <option>Ropa</option>
+                                                        <option>Artesanías</option>
+                                                        <option>Café y dulcería</option>
+                                                        <option>Deportes</option>
+                                                        <option>Hogar y decoración</option>
+                                                        <option>Joyería y bisutería</option>
+                                                        <option>Juguetería y librería</option>
+                                                        <option>Maletas y accesorios</option>
+                                                        <option>Ropa y moda</option>
                                                         <option>Salud y belleza</option>
+                                                        <option>Tecnología</option>
                                                         </select>              
                                              </div> 
                                               <div class="col-6">
@@ -177,12 +183,7 @@ constructor(props){
                                               </div>                                              
                                            </div> <div class="form-group row">
                                               <div class="col-6">
-                                                    <select name="incant" id ="test_d" class="form-control" onChange={this.updateInput}>
-                                                        <option>Cantidad</option>
-                                                        <option>1</option>
-                                                        <option>Ropa</option>
-                                                        <option>Salud y belleza</option>
-                                                        </select>              
+                                                    <input  name="incant" id ="test_d" type="text" class="form-control"  placeholder="Stock" onChange={this.updateInput} ></input>           
                                              </div> 
                                               <div class="col-6">
                                               <input  name="inprec" id ="test_d" type="text" class="form-control"  placeholder="Precio" onChange={this.updateInput} ></input>
@@ -203,7 +204,7 @@ constructor(props){
                                         <div className="col-10">
                                         </div>
                                         <div className="col-2">
-                                            <a id="icon" onClick={this.handleSubmit} class="btn"><i class="fas fa-check fa2x" onChange={this.updateInput} ></i></a>
+                                            <a id="icon" href="/stores/inventory" onClick={this.handleSubmit} class="btn"><i class="fas fa-check fa2x" onChange={this.updateInput} ></i></a>
                                         </div>
                                    </div>
                               </div>
