@@ -10,7 +10,6 @@ class Home extends React.Component{
             storeList:[]
         }
         this.componentDidMount = this.componentDidMount.bind(this);
-        
     }
 
     componentDidMount(){
@@ -43,7 +42,7 @@ class Home extends React.Component{
             <div class="frontside"> 
             <div class="card">
                 <div class="card-body text-center">
-                    <p><img class=" img-fluid" src="https://res-5.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1475836144/gvs96ywgysb53ivoaxs5.png" alt="card image"></img></p>
+                    <p><img class=" img-fluid" src={item.image} alt="card image"></img></p>
                     <h4 class="card-title">{item.name}</h4>
                     <p class="card-text">{item.type}</p>
                 </div>

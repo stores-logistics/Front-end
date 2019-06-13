@@ -1,12 +1,87 @@
 import React from 'react';
 import '../styles/Stores.css';
+import API_URL from '../Server';
 
 
 
 class SEdit extends React.Component{
+    
  
+    constructor(props){
+        super(props);
+        
+        this.state = {
+          nombre : '',
+          descripcion : '',
+          categoria : '',
+          imgurl : '',
+          cantidad : '',
+          precio : '',
     
+        }
+        this.updateInput = this.updateInput.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        }
     
+        updateInput(event){
+            switch(event.target.name){
+                case "inombre":
+                        this.setState({nombre : event.target.value})
+                case "indesc":
+                        this.setState({descripcion : event.target.value})
+                case "incat":
+                        this.setState({categoria : event.target.value})
+                case "inimg":
+                        this.setState({imgurl : event.target.value})
+                case "incant":
+                        this.setState({cantidad : event.target.value})
+                case "inprec":
+                        this.setState({precio : event.target.value})
+            }            
+        }
+
+        handleSubmit(){
+            console.log('Your input value is: ' + this.state.nombre);
+            console.log('Your input value is: ' + this.state.descripcion);
+            console.log('Your input value is: ' + this.state.categoria);
+            console.log('Your input value is: ' + this.state.imgurl);
+            console.log('Your input value is: ' + this.state.cantidad);
+            console.log('Your input value is: ' + this.state.precio);
+            
+            const axios = require("axios")
+            axios.post(API_URL, {
+                query:  `mutation{
+                    updateProduct(_id: ${1}, product: {
+                      name: "${this.state.nombre}"
+                      description: "${this.state.descripcion}"
+                      type: "${this.state.categoria}"
+                      image: "${this.state.imgurl}"
+                      storeId: 2
+                      quantity: ${this.state.cantidad}
+                      cost: ${this.state.precio}
+                    }) {
+                      _id
+                      name
+                      description
+                      type
+                      image
+                      storeId
+                      quantity
+                      cost
+                    }
+                  }`
+            });
+        
+    }
+    handleDeletion(){
+        const axios = require("axios")
+        axios.post(API_URL, {
+            query:  `mutation{
+                 deleteProduct(_id: ${1})
+               }`
+        });
+        console.log("sale");
+    }
     
     render() {
         return(
@@ -84,7 +159,7 @@ class SEdit extends React.Component{
                                         </div>
                                    </div>
                                     <div class="row">
-                                        <div class="col-2">
+                                    <div class="col-2">
                                         </div>
                                         <div class="col-8">
                                             <br></br>
@@ -92,13 +167,13 @@ class SEdit extends React.Component{
                                             <br></br>
                                         <div id = "edituser" class="container-fluid">
                                          <div class="form-group-row">  
-                                           <input id ="test_d" type="text" class="form-control" placeholder="Nombre"></input>
+                                           <input name="inombre" id ="test_d" type="text" class="form-control" placeholder="Nombre" onChange={this.updateInput} ></input>
                                           <br></br>
-                                          <input id ="test_dl" type="text" class="form-control" placeholder="Descripción"></input>
+                                          <input name="indesc" id ="test_dl" type="text" class="form-control" placeholder="Descripción" onChange={this.updateInput} ></input>
                                           <br></br>
                                           <div class="form-group row">
                                               <div class="col-6">
-                                                        <select id ="test_d" class="form-control" >
+                                                        <select name="incat" id ="test_d" class="form-control" onChange={this.updateInput}>
                                                         <option>Artesanías</option>
                                                         <option>Café y dulcería</option>
                                                         <option>Deportes</option>
@@ -112,19 +187,14 @@ class SEdit extends React.Component{
                                                         </select>              
                                              </div> 
                                               <div class="col-6">
-                                              <input id ="test_d" type="text" class="form-control"  placeholder="img url"></input>
+                                              <input name="inimg" id ="test_d" type="text" class="form-control"  placeholder="img url" onChange={this.updateInput} ></input>
                                               </div>                                              
-                                           </div>                                                                               <div class="form-group row">
+                                           </div> <div class="form-group row">
                                               <div class="col-6">
-                                                        <select id ="test_d" class="form-control" >
-                                                        <option>Cantidad</option>
-                                                        <option>1</option>
-                                                        <option>Ropa</option>
-                                                        <option>Salud y belleza</option>
-                                                        </select>              
+                                                    <input  name="incant" id ="test_d" type="text" class="form-control"  placeholder="Stock" onChange={this.updateInput} ></input>           
                                              </div> 
                                               <div class="col-6">
-                                              <input id ="test_d" type="text" class="form-control"  placeholder="Precio"></input>
+                                              <input  name="inprec" id ="test_d" type="text" class="form-control"  placeholder="Precio" onChange={this.updateInput} ></input>
                                               </div>
                                               
                                            </div>                                          
@@ -132,8 +202,8 @@ class SEdit extends React.Component{
                                        </div> 
                                         </div>
                                         <div class="col-2">
-                                        </div>                                            
-                                    </div> 
+                                        </div>                                             
+                                    </div>  
                                     <br></br>
                                     <br></br>
                                     <br></br>
@@ -142,10 +212,10 @@ class SEdit extends React.Component{
                                        <div className="col-1">
                                        </div>
                                         <div className="col-9">
-                                        <td><a id="icon" href="/stores/inventory/edit" class="btn"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                                        <td><a id="icon" onClick={this.handleDeletion}  href="/stores/inventory" class="btn"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                         </div>
                                         <div className="col-2">
-                                            <a id="icon" href="/stores" class="btn"><i class="fas fa-check fa2x"></i></a>
+                                        <a id="icon"  href="/stores/inventory" onClick={this.handleSubmit} class="btn"><i class="fas fa-check fa2x" onChange={this.updateInput} ></i></a>
                                         </div>
                                    </div>
                               </div>

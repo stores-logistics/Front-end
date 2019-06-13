@@ -84,7 +84,6 @@ constructor(props){
                  </a>
             </nav>             
                 <div class="container">
-
                     <div class="row"> 
                             <div class="col-4">
                                 <div class="container" id="contprev">
@@ -131,7 +130,7 @@ constructor(props){
                                     </div>
                                 </div>
                             </div>
-                                        </div>                          
+                        </div>                          
                                 </div>
 
                                 </div>
@@ -203,7 +202,7 @@ constructor(props){
                                         <div className="col-10">
                                         </div>
                                         <div className="col-2">
-                                            <a id="icon" href="/stores/inventory" onClick={this.handleSubmit} class="btn"><i class="fas fa-check fa2x" onChange={this.updateInput} ></i></a>
+                                            <a id="icon"  onClick={this.handleSubmit} class="btn"><i class="fas fa-check fa2x" onChange={this.updateInput} ></i></a>
                                         </div>
                                    </div>
                               </div>
