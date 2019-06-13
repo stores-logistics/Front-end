@@ -199,3 +199,8 @@ section .section-title {
 #verprod{
     color: red;
 }
+
+.trans{
+    color: transparent;
+
+}
