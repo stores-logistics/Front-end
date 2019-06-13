@@ -1,6 +1,8 @@
 import React from 'react';
 import '../styles/Stores.css';
 import SProfile from './SProfile'
+import API_URL from '../Server';
+
 
 class NSInventory extends React.Component{
     constructor(props){
@@ -12,7 +14,7 @@ class NSInventory extends React.Component{
 
     componentDidMount(){
             const axios = require("axios")
-            axios.post(`http://54.91.244.215:5000/graphql`, {
+            axios.post(API_URL, {
                 query: `query{
                     allProducts{
                       name

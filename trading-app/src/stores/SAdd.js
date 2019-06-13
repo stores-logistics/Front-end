@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/Stores.css';
-import axios from "axios";
+import API_URL from '../Server';
+
 
 class SAdd extends React.Component{
 
@@ -48,7 +49,7 @@ constructor(props){
         console.log('Your input value is: ' + this.state.precio);
         
         const axios = require("axios")
-        axios.post(`http://54.91.244.215:5000/graphql`, {
+        axios.post(API_URL, {
             query:  `mutation{
                 createProduct(product: {
                   name: "${this.state.nombre}"
@@ -81,9 +82,7 @@ constructor(props){
                   <i class="fa fa-ship fa-1x" aria-hidden="true"></i>
                    <a id="title">Stores Manager</a>
                  </a>
-            </nav> 
-            {/* <Navbar/> */}
-            
+            </nav>             
                 <div class="container">
 
                     <div class="row"> 

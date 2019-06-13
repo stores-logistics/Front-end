@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles/Home.css';
-// import Navbar from './stores/NSInfo.js';
- /* eslint-disable */
+import API_URL from './Server';
 
 class Home extends React.Component{
 
@@ -16,7 +15,7 @@ class Home extends React.Component{
 
     componentDidMount(){
         const axios = require("axios")
-        axios.post(`http://54.91.244.215:5000/graphql`, {
+        axios.post(API_URL, {
             query: `query{
                 allStores{
                   id

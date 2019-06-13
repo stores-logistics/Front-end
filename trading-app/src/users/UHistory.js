@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Users.css';
-// import NSHistory from './NSHistory';
+import API_URL from '../Server';
 
 
 class NSHistory extends React.Component{
@@ -14,7 +14,7 @@ class NSHistory extends React.Component{
 
     componentDidMount(){
             const axios = require("axios")
-            axios.post(`http://54.91.244.215:5000/graphql`, {
+            axios.post(API_URL, {
                 query: `query{
                     allTradings{
                       _id
