@@ -1,18 +1,88 @@
 import React from 'react';
 import '../styles/Catalog.css';
 import CProducts from './CProducts';
+import API_URL from '../Server';
 
 
 class Catalog extends React.Component{
 
-      componentDidMount () {
-        const { handle } = this.props.match.params
-        console.log(handle)
-        // fetch(`https://api.twitter.com/user/${handle}`)
-        //   .then((user) => {
-        //     this.setState(() => ({ user }))
-        //   })
-      }
+    constructor(props){
+        super(props);
+        this.state = {
+            storeInfo:[]
+        }
+    }
+
+    componentDidMount(){
+            const axios = require("axios")
+            axios.post(API_URL, {
+                query: `query{
+                    storeByCode(id: ${null})
+                    {
+                      id
+                      name
+                      type
+                      owner
+                      ubication
+                      dates
+                    }
+                  }`
+            }).then(res => {
+                // console.log(res);
+                this.setState({
+                    storeInfo:res.data.data.allStores
+                }) 
+            })    
+        };
+
+        displayStore(){   
+            return this.state.storeInfo.map( (item,key) => {
+              return(
+                    <div>
+                        <div class="row">
+                            <div class="col-2">
+                            <a id="icon" href="/" class="btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col-8">
+                            <h4 class="card-title">{item.name}</h4>
+                        </div>
+                        <div class="col-2">
+                        </div>
+                        </div>
+                            <p><img class="img-fluid" src="https://res-5.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1475836144/gvs96ywgysb53ivoaxs5.png" alt="card image" height="100" width="100"></img></p>
+                            <p class="card-text">Productos exclusivos de diseños especiales directamente dentro del crucero</p>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div id="symbol" class="col-6">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    </div>
+                                    <div id="symbol" class="col-6">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    </div>
+                                   </div>
+                                   <div class="row">
+                                    <div  id="cat" class="col-6">                                       {item.ubication}
+                                       {item.dates}
+                                    </div>
+                                    <div id="cat" class="col-6">
+                                       {item.ubication}
+                                    </div>
+                                   </div>
+                                 </div>
+                    </div>
+                )
+            })};
+
+
+
+    //   componentDidMount () {
+    //     const { handle } = this.props.match.params
+    //     console.log(handle)
+    //     // fetch(`https://api.twitter.com/user/${handle}`)
+    //     //   .then((user) => {
+    //     //     this.setState(() => ({ user }))
+    //     //   })
+    //   }
 
     render() {
         return(
@@ -27,42 +97,11 @@ class Catalog extends React.Component{
            </form>
       </nav> 
         <div class="container">
-            <form class="form-inline">
-            </form>
                 <div class="row">
                     <div class="col-4">
                         <div class="card">
                             <div class="card-body text-center">
-                              <div class="row">
-                                  <div class="col-2">
-                                  <a id="icon" href="/" class="btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-                                  </div>
-                                  <div class="col-8">
-                                  <h4 class="card-title">Tiffany&Co.</h4>
-                                  </div>
-                                  <div class="col-2">
-                                  </div>
-                              </div>
-                                <p><img class="img-fluid" src="https://res-5.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1475836144/gvs96ywgysb53ivoaxs5.png" alt="card image" height="100" width="100"></img></p>
-                                <p class="card-text">Productos exclusivos de diseños especiales directamente dentro del crucero</p>
-                                <div class="container-fluid">
-                                 <div class="row">
-                                    <div id="symbol" class="col-6">
-                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    </div>
-                                    <div id="symbol" class="col-6">
-                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                    </div>
-                                   </div>
-                                   <div class="row">
-                                    <div  id="cat" class="col-6">
-                                       9:00-16:00
-                                    </div>
-                                    <div id="cat" class="col-6">
-                                        P4-L26
-                                    </div>
-                                   </div>
-                                 </div>
+                                {this.displayStore()}
                                 </div>
                             </div>
                         </div>
