@@ -122,12 +122,11 @@ class SEdit extends React.Component{
                                             <br></br>
                                             <p><img class=" img-fluid" src="https://www.laroche-posay.es/site/pages/showImageResized.aspx?EncMediaId=YUV4QXhDWnFSTWZzeDV1Y0U1ekowdz09&ImageFormatAppCode=IMAGEFORMAT_ORIGINAL&v=220196063434" alt="card image"  height="55" width="55"></img></p>
                                             <h4 id="card-titles">Bloqueador Anthelios XL</h4>
-                                            {/* <p class="card-texts">Bloqueador solar de amplio espectro, protege las 24 horas por medio de su fòrmula no grasa e hipoalergénica.</p> */}
                                              <p className="card-text">330ml</p>
                                             <h6 id="card-price">$32</h6>
                                             </div>
                                           </div>                              
-                                       </div> 
+                                       </div>  
                                      </div>
                                    <div class="backside">
                                   <div class="card">

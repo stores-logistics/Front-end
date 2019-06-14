@@ -17,12 +17,14 @@ class Home extends React.Component{
         axios.post(API_URL, {
             query: `query{
                 allStores{
-                  id
-                  name
-                  type
-                  owner
-                  ubication
-                  dates
+                    code
+                    name
+                    type
+                    owner
+                    ubication
+                    dates
+                    description
+                    img
                 }
               }`
         }).then(res => {
@@ -32,8 +34,8 @@ class Home extends React.Component{
             }) 
         })    
     };
-
-    displayStores(){                            
+ 
+    displayStores(){                        
         return this.state.storeList.map( (item,key) => {
           return(
             <div class="col-xs-12 col-sm-6 col-md-4">
@@ -42,9 +44,11 @@ class Home extends React.Component{
             <div class="frontside"> 
             <div class="card">
                 <div class="card-body text-center">
-                    <p><img class=" img-fluid" src={item.image} alt="card image"></img></p>
+                    <br></br>
+                    <p><img id="image" src={item.img} height="30" width="30"></img></p>
                     <h4 class="card-title">{item.name}</h4>
-                    <p class="card-text">{item.type}</p>
+                    <strong><p class="card-text">{item.type}</p></strong>
+                    <p class="card-text">{item.description}</p>
                 </div>
             </div>
         </div>
@@ -52,11 +56,10 @@ class Home extends React.Component{
             <div class="card">
                 <div class="card-body text-center mt-4">
                     <h5 class="card-title">Horarios</h5>
-                    <p class="card-text">}{item.dates}</p>
+                    <p class="card-text">{item.dates}</p>
                     <h4 class="card-title">Ubicación</h4>
                     <p class="card-text">{item.ubication}</p>
-                    <a href="/catalog/1" id="verprod" class="btn">Ver productos</a> 
-                    <h1 class="trans">............................</h1>                               
+                    <a  href={/catalog/ + item.code} class="btn">Ver productos</a>                       
                 </div>
             </div>
         </div>

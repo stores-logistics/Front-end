@@ -2,54 +2,65 @@ import React from 'react';
 import '../styles/Catalog.css';
 import CProducts from './CProducts';
 import API_URL from '../Server';
-
+import { Route } from "react-router";
+{<Route path='/catalog/:id' component={Catalog}/> }
 
 class Catalog extends React.Component{
 
     constructor(props){
         super(props);
         this.state = {
-            storeInfo:[]
+            storeInfo:[]    
         }
+        this.componentDidMount = this.componentDidMount.bind(this);
+        
     }
 
     componentDidMount(){
-            const axios = require("axios")
-            axios.post(API_URL, {
+        const axios = require("axios")
+        const {id} = this.props.match.params
+            axios.post(API_URL, {       
                 query: `query{
-                    storeByCode(id: ${null})
+                    storeByCode(code: ${id})
                     {
-                      id
+                      code
                       name
                       type
                       owner
                       ubication
                       dates
+                      description
+                      img
                     }
                   }`
-            }).then(res => {
-                // console.log(res);
-                this.setState({
-                    storeInfo:res.data.data.allStores
+            }).then(res => {       
+                var dict = res.data.data.storeByCode 
+                var array = []
+                for(var key in dict) {
+                var value = dict[key];
+                array.push(value)
+                }   
+                    this.setState({
+                    storeInfo: array
                 }) 
             })    
         };
 
-        displayStore(){   
-            return this.state.storeInfo.map( (item,key) => {
-              return(
+        displayStore(){
+            const si = this.state.storeInfo
+                return(
                     <div>
                         <div class="row">
                             <div class="col-2">
                             <a id="icon" href="/" class="btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
                         </div>
                         <div class="col-8">
-                            <h4 class="card-title">{item.name}</h4>
+                            <h4 class="card-title">{si[1]}</h4>
                         </div>
                         <div class="col-2">
                         </div>
                         </div>
-                            <p><img class="img-fluid" src="https://res-5.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1475836144/gvs96ywgysb53ivoaxs5.png" alt="card image" height="100" width="100"></img></p>
+                            <p><img class="img-fluid" src={si[7]} alt="card image" height="100" width="100"></img></p>
                             <p class="card-text">Productos exclusivos de diseños especiales directamente dentro del crucero</p>
                         <div class="container-fluid">
                             <div class="row">
@@ -61,28 +72,17 @@ class Catalog extends React.Component{
                                     </div>
                                    </div>
                                    <div class="row">
-                                    <div  id="cat" class="col-6">                                       {item.ubication}
-                                       {item.dates}
+                                    <div  id="cat" class="col-6">                                      
+                                         L-V 14:00-16:00
                                     </div>
                                     <div id="cat" class="col-6">
-                                       {item.ubication}
+                                         {si[4]}
                                     </div>
                                    </div>
                                  </div>
                     </div>
-                )
-            })};
-
-
-
-    //   componentDidMount () {
-    //     const { handle } = this.props.match.params
-    //     console.log(handle)
-    //     // fetch(`https://api.twitter.com/user/${handle}`)
-    //     //   .then((user) => {
-    //     //     this.setState(() => ({ user }))
-    //     //   })
-    //   }
+                )            
+        };
 
     render() {
         return(

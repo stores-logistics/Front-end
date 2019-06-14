@@ -1,16 +1,15 @@
 import React from 'react';
 import '../styles/Stores.css';
-import SProfile from './SProfile'
 import API_URL from '../Server';
 
 
 class NSInventory extends React.Component{
     constructor(props){
         super(props);
-        this.state = {
-            prodList:[]
-        }
+        this.state = {prodList:[]}
+        this.state = {storeList:[]}
     }
+
 
     componentDidMount(){
             const axios = require("axios")
@@ -28,8 +27,63 @@ class NSInventory extends React.Component{
                 this.setState({
                     prodList:res.data.data.allProducts
                 }) 
-            })    
+            })
+            axios.post(API_URL, {
+                query: `query{
+                    storeByCode(code: ${1})
+                    {
+                      code
+                      name
+                      type
+                      owner
+                      ubication
+                      dates
+                      description
+                      img
+                    }
+                  }`
+            }).then(res => {
+                // console.log(res);
+                this.setState({
+                    storeList:res.data.data.storeByCode
+                }) 
+            })
+            
         };
+
+        displayStoreDetails(){
+            return this.state.storeList.map( (item,key) => {
+                <div key={key}>
+                <p><img class=" img-fluid" src={item.img} alt="card image" height="100" width="100"></img></p>
+                  <div id="cat" class="container-fluid">
+                             <div class="row">
+                               <div id="symbol" class="col-4">
+                                  <i class="fa fa-id-badge" aria-hidden="true"></i>
+                                </div>
+                                <div id="symbol" class="col-4">
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                </div>
+                                <div id="symbol" class="col-4">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                </div>
+                               </div>
+                               <div class="row">
+                               <div class="col-4">
+                                 <a id="cat">114234</a>
+                                  {/* <a id="cat">{item.code}</a> */}
+                                </div>
+                                <div  id="font" class="col-4">
+                                   <a id="cat">{item.dates}</a>
+                                </div>
+                                <div id="font" class="col-4">
+                                    <a id="cat">{item.ubication}</a>
+                                </div>
+                               </div>
+                             </div>
+                            </div>
+
+            })
+        }
 
         displayProducts(){   
             return this.state.prodList.map( (item,key) => {
@@ -76,7 +130,7 @@ class NSInventory extends React.Component{
                                         <a id="icon"  href="/stores/edit" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                                         </div>
                                     </div>
-                                       <SProfile/>
+                                        {this.displayStoreDetails()}
                                        <hr></hr>
                                       <a href="/stores" id="verhcompras" class="btn">Perfil</a>
                                        <hr></hr>

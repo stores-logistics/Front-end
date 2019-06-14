@@ -38,6 +38,11 @@ section .section-title {
     background: rgb(255,255,255,0.8);
 }
 
+#image{
+    max-height: 90px;
+    max-width: 90px;
+}
+
 .image-flip:hover .backside,
 .image-flip.hover .backside {
     -webkit-transform: rotateY(0deg);
