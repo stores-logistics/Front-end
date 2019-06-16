@@ -22,10 +22,9 @@ class Login extends React.Component{
                     this.setState({password : event.target.value})
         }            
     }
-
      
-    handleSubmit(){
-        console.log('Your input value is: ' + this.state.username);
+    HandleLogin(){
+        console.log('Your input name value is: ' + this.state.username);
         console.log('Your input value is: ' + this.state.password);
 
         const axios = require("axios")
@@ -38,7 +37,7 @@ class Login extends React.Component{
     render() {
         return(
             <section id="team" class="pb-5">
-                  <nav class="navbar navbar-dark">
+                  <nav class="navbar navbar-expand-md navbar-dark">
                  <a id = "nav "class="navbar-brand" href="/">
                   <i class="fa fa-ship fa-1x" aria-hidden="true"></i>
                    <a id = "title">Stores Manager</a>
@@ -47,9 +46,9 @@ class Login extends React.Component{
             <br></br>
             <br></br>
             <div class="row">
-                <div class="col-2">                
+                <div class="col-xs-4 col-md-2">                
                 </div>
-                <div class="col-3">
+                <div class="col-xs-4 col-md-3">
                     <br></br>
                     <br></br>
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
@@ -60,12 +59,12 @@ class Login extends React.Component{
                                     <h4 class="card-title">Acceder</h4>
                                     <div class="container-fluid">
                                            <div class="form-group-row">  
-                                             <input type="text" name="username" class="form-control" name="" id="test_d" onChange={this.ProceedLogin} placeholder="Usuario"></input> 
+                                             <input type="text" name="username" class="form-control" id="test_d" onChange={this.ProceedLogin} placeholder="Usuario"></input> 
                                              <br></br>               
                                              <input type="password" name="password"  class="form-control" id="test_d" onChange={this.ProceedLogin} placeholder="Contraseña"></input>
                                              <br></br>
                                              <hr></hr>
-                                               <a onClick={this.HandleLogin} href="/stores" id="verhcompras" onchange={this.ProceedLogin}class="btn">Ingresar</a>
+                                               <a onClick={this.HandleLogin}  id="verhcompras" onchange={this.ProceedLogin}class="btn">Ingresar</a>
                                             </div>   
                                          </div>   
                                 </div>
@@ -73,7 +72,7 @@ class Login extends React.Component{
                     </div>
                 </div>                    
                 </div>
-                <div class="col-7">
+                <div class="col-xs-4 col-md-7">
                 </div>
         </div>
         <br></br>

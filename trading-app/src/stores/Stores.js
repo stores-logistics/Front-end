@@ -32,7 +32,7 @@ class Stores extends React.Component{
                                         </div>
                                     </div>
                                     <div>
-            <p><img class=" img-fluid" src="https://res-5.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1475836144/gvs96ywgysb53ivoaxs5.png" alt="card image" height="100" width="100"></img></p>
+                            <p><img class=" img-fluid" src="https://res-5.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1475836144/gvs96ywgysb53ivoaxs5.png" alt="card image" height="100" width="100"></img></p>
                             <div id="cat" class="container-fluid">
                                        <div class="row">
                                          <div id="symbol" class="col-4">

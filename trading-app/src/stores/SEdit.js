@@ -91,9 +91,7 @@ class SEdit extends React.Component{
                   <i class="fa fa-ship fa-1x" aria-hidden="true"></i>
                    <a id="title">Stores Manager</a>
                  </a>
-            </nav> 
-            {/* <Navbar/> */}
-            
+            </nav>             
                 <div class="container">
                     <form class="form-inline">
                     </form>
