@@ -78,7 +78,7 @@ class Home extends React.Component{
                    <a id = "title">Stores Manager</a>
                  </a>
                  <form class="form-inline my-2 my-lg-0">
-                     <a href="/sregister" class="btn">Registro</a>
+                     <a href="/signup" class="btn">Registro</a>
                      <a href="/login" class="btn">Login</a>
                  </form>
 

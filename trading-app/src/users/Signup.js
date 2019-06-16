@@ -139,116 +139,13 @@ class Signup extends React.Component{
                     <div class="col-xs-6 col-md-10">
                     </div>
                     <div class="col-xs-6 col-md-2">
-                    
-                    <i id ="next" class="fa fa-2x fa-arrow-circle-right" aria-hidden="true"></i>
+                    <a onClick={this.HandleLogin} onchange={this.ProceedLogin}class="btn"><i id ="next" class="fa fa-2x fa-arrow-circle-right" aria-hidden="true"></i></a>
                     </div>
                 </div>           
                 </div>
                 <div class="col-xs-0 col-md-2">
                 </div>
             </div>
-
-            {/* <div class="row">
-                <div class="col-xs-0 col-md-4">
-                </div>
-                <div class="col-xs-12 col-md-4"> 
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <div class="container-fluid">
-                                    <div class="form-group-row">
-                                      <div class="form-group row">
-                                        <div class="col-6">
-                                            <input name="inombre" id ="test_d" type="text" class="form-control" placeholder="Nombre" onChange={this.updateInput} ></input>
-                                        </div> 
-                                        <div class="col-6">
-                                        <input name="inombre" id ="test_d" type="text" class="form-control" placeholder="Apellido" onChange={this.updateInput} ></input>
-                                        </div> 
-                                      </div>
-                                        <input name="indesc" id ="test_d" type="text" class="form-control" placeholder="Dirección" onChange={this.updateInput} ></input>
-                                        <br></br>
-                                      <div class="form-group row">
-                                        <div class="col-6">
-                                            <input name="inombre" id ="test_d" type="text" class="form-control" placeholder="Teléfono" onChange={this.updateInput} ></input>
-                                        </div> 
-                                        <div class="col-6">
-                                             <input name="inombre" id ="test_d" type="text" class="form-control" placeholder="Cabina" onChange={this.updateInput} ></input>
-                                         </div> 
-                                        </div>
-                                            </div>    
-                                         </div>   
-                                </div>
-                            </div>  
-                    </div>
-                </div>                 
-                </div>
-                <div class="col-xs-0 col-md-4">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-3 col-md-2">                
-                </div>
-                <div class="col-xs-6 col-md-4">
-                    <br></br>
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <div class="container-fluid">
-                                    <div class="form-group-row">
-                                        <input name="indesc" id ="test_d" type="text" class="form-control" placeholder="username" onChange={this.updateInput} ></input>
-                                        <br></br>
-                                      <div class="form-group row">
-                                        <div class="col-6">
-                                            <input name="inombre" id ="test_d" type="password" class="form-control" placeholder="contraseña" onChange={this.updateInput} ></input>
-                                        </div> 
-                                        <div class="col-6">
-                                             <input name="inombre" id ="test_d" type="password" class="form-control" placeholder="conf. contraseña" onChange={this.updateInput} ></input>
-                                         </div> 
-                                        </div>
-                                            </div>    
-                                         </div>   
-                                </div>
-                            </div>  
-                    </div>
-                </div>                    
-                </div>
-                <div class="col-xs-3 col-md-4">
-                <br></br>
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <div class="container-fluid">
-                                    <div class="form-group-row">
-                                        <input name="inombre" id ="test_d" type="text" class="form-control" placeholder="Número de tarjeta" onChange={this.updateInput} ></input>
-                                    <br></br>
-
-                                      <div class="form-group row">
-                                        <div class="col-6">
-                                            <input name="inombre" id ="test_d" type="text" class="form-control" placeholder="CVV" onChange={this.updateInput} ></input>
-                                        </div> 
-                                        <div class="col-6">
-                                             <input name="inombre" id ="test_d" type="text" class="form-control" placeholder="Fecha de exp." onChange={this.updateInput} ></input>
-                                         </div> 
-                                        </div>
-                                            </div>    
-                                         </div>   
-                                </div>
-                            </div>  
-                    </div>
-                </div> 
-                
-                </div>
-        </div>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br> */}
             </section>
         )
     }

@@ -51,6 +51,7 @@ class Login extends React.Component{
                 <div class="col-xs-4 col-md-3">
                     <br></br>
                     <br></br>
+                    <br></br>
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                     <div class="mainflip">
                         {/* <div class="frontside">  */}
@@ -62,9 +63,13 @@ class Login extends React.Component{
                                              <input type="text" name="username" class="form-control" id="test_d" onChange={this.ProceedLogin} placeholder="Usuario"></input> 
                                              <br></br>               
                                              <input type="password" name="password"  class="form-control" id="test_d" onChange={this.ProceedLogin} placeholder="Contraseña"></input>
-                                             <br></br>
-                                             <hr></hr>
-                                               <a onClick={this.HandleLogin}  id="verhcompras" onchange={this.ProceedLogin}class="btn">Ingresar</a>
+                                             <div class ="row">
+                                                <div class="col-xs-6 col-md-9">
+                                                </div>
+                                                <div class="col-xs-6 col-md-3">
+                                                   <a onClick={this.HandleLogin}  id="verhcompras" onchange={this.ProceedLogin}class="btn"><i id ="next" class="fa fa-2x fa-arrow-circle-right" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div> 
                                             </div>   
                                          </div>   
                                 </div>
