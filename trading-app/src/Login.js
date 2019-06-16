@@ -3,6 +3,63 @@ import './styles/Login.css';
 import API_URL from './Server'
 
 class Login extends React.Component{
+    
+    toastOnChange(){
+        if (!this.validateUsername()) {
+            this.$toast.open({
+              duration: 500,
+              message: `Only lowercase is allowed`,
+              position: "is-bottom",
+              type: "is-danger"
+            });
+          }
+    }
+
+    validateUsername(){
+        var pattern = /[^a-z]/;
+        return !pattern.test(this.username);
+    }
+
+    HandleLogin(){
+        console.log('Your input name value is: ' + this.state.username);
+        console.log('Your input value is: ' + this.state.password);
+        const axios = require("axios")
+        const loadingComponent = this.$loading.open({
+            container: this.isFullPage ? null : this.$refs.element.$el
+          });
+        axios.post(API_URL, {
+            query:  `mutation{
+                login(credentials: {
+                  username:"${this.state.username}",
+                  password:"${this.state.password}"
+                })  
+              }`
+        }).then(res => {
+            const token = res.data.data.login;
+            console.log(token)
+            if (token !== "-1") {
+              localStorage.setItem("user", token);
+              this.$toast.open({
+                message: "Login is successful",
+                type: "is-success"
+              });
+              setTimeout(() => {
+                this.$router.push("Home");
+                location.reload();
+              }, 600);
+            } else {
+              this.$toast.open({
+                duration: 5000,
+                message: `wrong password/username`,
+                position: "is-bottom",
+                type: "is-danger"
+              });
+              loadingComponent.close()
+            }
+          }).catch(function(error) {
+            console.log(error);
+          });
+    }
 
     constructor(props){
         super(props);       
@@ -22,17 +79,6 @@ class Login extends React.Component{
                     this.setState({password : event.target.value})
         }            
     }
-     
-    HandleLogin(){
-        console.log('Your input name value is: ' + this.state.username);
-        console.log('Your input value is: ' + this.state.password);
-
-        const axios = require("axios")
-        axios.post(API_URL, {
-            query:  ``
-        });
-    
-}
 
     render() {
         return(

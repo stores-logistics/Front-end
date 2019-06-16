@@ -17,34 +17,6 @@ class SSignup extends React.Component{
         this.HandleSignup = this.HandleSignup.bind(this);
     }    
 
-    Encrypt(){
-    var bodyParser = require('body-parser');
-    var bcrypt = require('bcrypt');
-    var usersDB = require('usersDB');
-        
-    app.use(bodyParser.json()) 
-    app.use(bodyParser.urlencoded({ extended: true })) 
-    
-    var BCRYPT_SALT_ROUNDS = 12;
-    app.post('/register', function (req, res, next) {
-      var username = req.body.username;
-      var password = req.body.password;
-    
-      bcrypt.hash(password, BCRYPT_SALT_ROUNDS)
-        .then(function(hashedPassword) {
-            return usersDB.saveUser(username, hashedPassword);
-        })
-        .then(function() {
-            res.send();
-        })
-        .catch(function(error){
-            console.log("Error saving user: ");
-            console.log(error);
-            next();
-        });
-    });
-    }
-
     ProceedSignup(event){
         switch(event.target.name){
             case "nombre":
@@ -59,11 +31,6 @@ class SSignup extends React.Component{
     }
       
     HandleSignup(){
-        console.log('Your input name is: ' + this.state.nombre);
-        console.log('Your input user value is: ' + this.state.username);
-        console.log('Your input password value is: ' + this.state.password);
-        console.log('Your input storeid value is: ' + this.state.storeid);
-
         const axios = require("axios")
         axios.post(API_URL, {
             query:  ``
