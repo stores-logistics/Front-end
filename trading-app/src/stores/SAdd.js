@@ -8,7 +8,6 @@ class SAdd extends React.Component{
  
 constructor(props){
     super(props);
-    
     this.state = {
       nombre : '',
       descripcion : '',
@@ -145,7 +144,7 @@ constructor(props){
                                             <h1 className="titlec">Añadir Producto </h1>
                                         </div>
                                         <div  className="col-2"> 
-                                        {/* <a id="icon"><i class="fa fa-id-card" aria-hidden="true"></i> 124234234</a>                                            */}
+                                        {/* <a id="icon"><i class="fa fa-id-card" aria-hidden="true"></i> 124234234</a> */}
                                         </div>
                                    </div>
                                     <div class="row">

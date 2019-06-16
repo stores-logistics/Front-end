@@ -1,8 +1,40 @@
 import React from 'react';
 import './styles/Login.css';
-
+import API_URL from './Server'
 
 class Login extends React.Component{
+
+    constructor(props){
+        super(props);       
+        this.state = {
+          username: '',
+          password: ''
+        }
+        this.ProceedLogin = this.ProceedLogin.bind(this);
+        this.HandleLogin = this.HandleLogin.bind(this);
+    }    
+
+    ProceedLogin(event){
+        switch(event.target.name){
+            case "username":
+                    this.setState({username : event.target.value})
+            case "password":
+                    this.setState({password : event.target.value})
+        }            
+    }
+
+     
+    handleSubmit(){
+        console.log('Your input value is: ' + this.state.username);
+        console.log('Your input value is: ' + this.state.password);
+
+        const axios = require("axios")
+        axios.post(API_URL, {
+            query:  ``
+        });
+    
+}
+
     render() {
         return(
             <section id="team" class="pb-5">
@@ -28,12 +60,12 @@ class Login extends React.Component{
                                     <h4 class="card-title">Acceder</h4>
                                     <div class="container-fluid">
                                            <div class="form-group-row">  
-                                             <input type="text" class="form-control" id="test_d" placeholder="Usuario"></input> 
+                                             <input type="text" name="username" class="form-control" name="" id="test_d" onChange={this.ProceedLogin} placeholder="Usuario"></input> 
                                              <br></br>               
-                                             <input type="password" class="form-control" id="test_d" placeholder="Contraseña"></input>
+                                             <input type="password" name="password"  class="form-control" id="test_d" onChange={this.ProceedLogin} placeholder="Contraseña"></input>
                                              <br></br>
                                              <hr></hr>
-                                               <a href="/stores" id="verhcompras" class="btn">Ingresar</a>
+                                               <a onClick={this.HandleLogin} href="/stores" id="verhcompras" onchange={this.ProceedLogin}class="btn">Ingresar</a>
                                             </div>   
                                          </div>   
                                 </div>
