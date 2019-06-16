@@ -62,7 +62,7 @@ class NSInventory extends React.Component{
                 var value = dict[key];
                 array.push(value)
                 }  
-                this.setState({c: array})
+                this.setState({storeList: array})
                 console.log(array)
                 this.setState({loaded: true})
                 console.log(this.state.storeList)
@@ -84,6 +84,16 @@ class NSInventory extends React.Component{
                 // console.log(this.state.storeInfo)
             return(
                 <div>
+                     <div class="row">
+                                        <div class="col-2">
+                                        </div>
+                                        <div class="col-8">
+                                        <h4 class="card-title">{si[1]}</h4>
+                                        </div>
+                                        <div class="col-2">
+                                        <a id="icon"  href="/stores/edit" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
                 <p><img class=" img-fluid" src={si[7]}alt="card image" height="100" width="100"></img></p>
                   <div id="cat" class="container-fluid">
                              <div class="row">
@@ -146,17 +156,7 @@ class NSInventory extends React.Component{
                   <div class="row">
                           <div class="col-4">
                               <div class="card">
-                                  <div class="card-body text-center">
-                                  <div class="row">
-                                        <div class="col-2">
-                                        </div>
-                                        <div class="col-8">
-                                        <h4 class="card-title">Tiffany&Co.</h4>
-                                        </div>
-                                        <div class="col-2">
-                                        <a id="icon"  href="/stores/edit" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
+                                  <div class="card-body text-center">                    
                                         {this.displayStoreDetails()}
                                        <hr></hr>
                                       <a href="/stores" id="verhcompras" class="btn">Perfil</a>
