@@ -14,7 +14,7 @@ class Home extends React.Component{
 
     componentDidMount(){
         const axios = require("axios")
-        axios.post(API_URL, {
+        axios.post(API_URL, { 
             query: `query{
                 allStores{
                     code
