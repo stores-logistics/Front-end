@@ -48,7 +48,8 @@ constructor(props){
         console.log('Your input value is: ' + this.state.precio);
         
         const axios = require("axios")
-        axios.post(API_URL,  { headers: {"Authorization" : `Bearer ${tokenStr}`},
+        axios.post(API_URL, { 
+            // headers: {"Authorization" : `Bearer ${tokenStr}`},
             query:  `mutation{
                 createProduct(product: {
                   name: "${this.state.nombre}"

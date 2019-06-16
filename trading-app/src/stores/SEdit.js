@@ -49,7 +49,8 @@ class SEdit extends React.Component{
             console.log('Your input value is: ' + this.state.precio);
             
             const axios = require("axios")
-            axios.post(API_URL, { headers: {"Authorization" : `Bearer ${tokenStr}`},
+            axios.post(API_URL, {
+                //  headers: {"Authorization" : `Bearer ${tokenStr}`},
                 query:  `mutation{
                     updateProduct(_id: ${1}, product: {
                       name: "${this.state.nombre}"

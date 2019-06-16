@@ -3,17 +3,20 @@ import './styles/Login.css';
 import API_URL from './Server'
 
 class Login extends React.Component{
-    
-    toastOnChange(){
-        if (!this.validateUsername()) {
-            this.$toast.open({
-              duration: 500,
-              message: `Only lowercase is allowed`,
-              position: "is-bottom",
-              type: "is-danger"
-            });
-          }
+
+  constructor(props){
+    super(props);       
+    this.state = {
+      username: '',
+      password: '',
+      errors:{},
+      isLoading: false
     }
+    this.ProceedLogin = this.ProceedLogin.bind(this);
+    this.HandleLogin = this.HandleLogin.bind(this);
+}    
+
+
 
     validateUsername(){
         var pattern = /[^a-z]/;
@@ -24,9 +27,6 @@ class Login extends React.Component{
         console.log('Your input name value is: ' + this.state.username);
         console.log('Your input value is: ' + this.state.password);
         const axios = require("axios")
-        const loadingComponent = this.$loading.open({
-            container: this.isFullPage ? null : this.$refs.element.$el
-          });
         axios.post(API_URL, {
             query:  `mutation{
                 login(credentials: {
@@ -39,7 +39,7 @@ class Login extends React.Component{
             console.log(token)
             if (token !== "-1") {
               localStorage.setItem("user", token);
-              this.$toast.open({
+              this.open({
                 message: "Login is successful",
                 type: "is-success"
               });
@@ -48,28 +48,17 @@ class Login extends React.Component{
                 location.reload();
               }, 600);
             } else {
-              this.$toast.open({
+              this.open({
                 duration: 5000,
                 message: `wrong password/username`,
                 position: "is-bottom",
                 type: "is-danger"
               });
-              loadingComponent.close()
             }
           }).catch(function(error) {
             console.log(error);
           });
     }
-
-    constructor(props){
-        super(props);       
-        this.state = {
-          username: '',
-          password: ''
-        }
-        this.ProceedLogin = this.ProceedLogin.bind(this);
-        this.HandleLogin = this.HandleLogin.bind(this);
-    }    
 
     ProceedLogin(event){
         switch(event.target.name){

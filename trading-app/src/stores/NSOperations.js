@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Stores.css';
-import Api_url from '../App'
+import API_URL from '../Server'
 
 class NSOperations extends React.Component{
 
@@ -15,7 +15,8 @@ class NSOperations extends React.Component{
 
     componentDidMount(){
             const axios = require("axios")
-            axios.post(`http://54.91.244.215:5000/graphql`, { headers: {"Authorization" : `Bearer ${tokenStr}`},
+            axios.post(API_URL, { 
+                // headers: {"Authorization" : `Bearer ${tokenStr}`},
                 query: `query{
                     allTradings{
                       _id

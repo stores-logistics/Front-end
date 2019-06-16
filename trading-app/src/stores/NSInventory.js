@@ -22,8 +22,9 @@ class NSInventory extends React.Component{
 
 
     getProducts() {
-            return(
-                axios.post(API_URL, { headers: {"Authorization" : `Bearer ${tokenStr}`},
+             return(
+                axios.post(API_URL, { 
+                    // headers: {"Authorization" : `Bearer ${tokenStr}`},
                     query: `query{
                         allProducts{
                           name
@@ -41,7 +42,8 @@ class NSInventory extends React.Component{
     
     getStoreByCode() {
         return(
-            axios.post(API_URL, { headers: {"Authorization" : `Bearer ${tokenStr}`},
+            axios.post(API_URL, { 
+                // headers: {"Authorization" : `Bearer ${tokenStr}`},
                 query: `query{
                     storeByCode(code: ${2})
                     {
