@@ -11,11 +11,13 @@ class CProducts extends React.Component{
         this.state = {
             cProducts:[]
         } 
+        this.componentDidMount = this.componentDidMount.bind(this);
     }
 
     componentDidMount(){
             const axios = require("axios")
             // const {id} = this.props.match.params
+            // console.log(this.props.match.params)
             axios.post(API_URL, {
                 query: `query{
                     productsByStore(storeId: ${2})

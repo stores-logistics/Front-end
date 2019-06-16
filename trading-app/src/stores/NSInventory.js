@@ -1,36 +1,49 @@
 import React from 'react';
 import '../styles/Stores.css';
 import API_URL from '../Server';
+const axios = require("axios");
 
+
+
+var storedInfo = []
 
 class NSInventory extends React.Component{
     constructor(props){
         super(props);
-        this.state = {prodList:[]}
-        this.state = {storeList:[]}
+        this.state = {
+            prodList:[],
+            storeList:[],
+            loaded: false
+    };
+    this.getProducts = this.getProducts.bind(this);
+    this.getStoreByCode = this.getStoreByCode.bind(this);
+    this.componentWillMount = this.componentWillMount.bind(this);
     }
 
 
-    componentDidMount(){
-            const axios = require("axios")
+    getProducts() {
+            return(
+                axios.post(API_URL, {
+                    query: `query{
+                        allProducts{
+                          name
+                          type
+                          quantity
+                          cost
+                        }
+                      }`
+                }).then(res => {
+                    this.state.prodList = res.data.data.allProducts
+                })
+            )
+      };
+      
+    
+    getStoreByCode() {
+        return(
             axios.post(API_URL, {
                 query: `query{
-                    allProducts{
-                      name
-                      type
-                      quantity
-                      cost
-                    }
-                  }`
-            }).then(res => {
-                // console.log(res);
-                this.setState({
-                    prodList:res.data.data.allProducts
-                }) 
-            })
-            axios.post(API_URL, {
-                query: `query{
-                    storeByCode(code: ${1})
+                    storeByCode(code: ${2})
                     {
                       code
                       name
@@ -43,18 +56,35 @@ class NSInventory extends React.Component{
                     }
                   }`
             }).then(res => {
-                // console.log(res);
-                this.setState({
-                    storeList:res.data.data.storeByCode
-                }) 
+                var dict = res.data.data.storeByCode 
+                var array = []
+                for(var key in dict) {
+                var value = dict[key];
+                array.push(value)
+                }  
+                this.setState({c: array})
+                console.log(array)
+                this.setState({loaded: true})
+                console.log(this.state.storeList)
             })
-            
+        )
+      };
+
+    
+
+    componentWillMount(){
+        console.log("didmount")
+         this.getProducts()
+         this.getStoreByCode()
         };
+        
 
         displayStoreDetails(){
-            return this.state.storeList.map( (item,key) => {
-                <div key={key}>
-                <p><img class=" img-fluid" src={item.img} alt="card image" height="100" width="100"></img></p>
+            const si = this.state.storeList
+                // console.log(this.state.storeInfo)
+            return(
+                <div>
+                <p><img class=" img-fluid" src={si[7]}alt="card image" height="100" width="100"></img></p>
                   <div id="cat" class="container-fluid">
                              <div class="row">
                                <div id="symbol" class="col-4">
@@ -70,19 +100,18 @@ class NSInventory extends React.Component{
                                <div class="row">
                                <div class="col-4">
                                  <a id="cat">114234</a>
-                                  {/* <a id="cat">{item.code}</a> */}
                                 </div>
                                 <div  id="font" class="col-4">
-                                   <a id="cat">{item.dates}</a>
+                                   <a id="cat">L-V 14:00-16:00</a>
                                 </div>
                                 <div id="font" class="col-4">
-                                    <a id="cat">{item.ubication}</a>
+                                    <a id="cat">{si[4]}</a>
                                 </div>
                                </div>
                              </div>
                             </div>
 
-            })
+            )
         }
 
         displayProducts(){   
@@ -111,8 +140,6 @@ class NSInventory extends React.Component{
                  </form>
 
             </nav> 
-          {/* <Navbar/> */}
-          
               <div class="container">
                   <form class="form-inline">
                   </form>

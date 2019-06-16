@@ -10,6 +10,7 @@ import SOperations from './stores/SOperations'
 import SEdit from './stores/SEdit'
 import SEditinfo from './stores/SEditinfo'  
 import SAdd from './stores/SAdd'  
+import SRegister from './stores/Sregister'  
 import Users from './users/Users'
 import UInfo from './users/UInfo'
 import UHistory from './users/UHistory'
@@ -27,6 +28,7 @@ class App extends React.Component{
               <Route exact path = "/catalog/:id" component = {Catalog} />
               {/* <Route exact path = "/catalog" component = {Catalog} /> */}
               <Route exact path = "/login" component = {Login} />
+              <Route exact path = "/sregister" component = {SRegister} />
               <Route exact path = "/stores" component = {Stores} />
               <Route exact path = "/stores/inventory" component = {SInventory} />
               <Route exact path = "/stores/operations" component = {SOperations} />

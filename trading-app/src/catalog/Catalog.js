@@ -34,12 +34,12 @@ class Catalog extends React.Component{
                     }
                   }`
             }).then(res => {       
-                var dict = res.data.data.storeByCode 
-                var array = []
-                for(var key in dict) {
-                var value = dict[key];
-                array.push(value)
-                }   
+                    var dict = res.data.data.storeByCode 
+                    var array = []
+                    for(var key in dict) {
+                    var value = dict[key];
+                    array.push(value)
+                    }   
                     this.setState({
                     storeInfo: array
                 }) 
@@ -61,7 +61,7 @@ class Catalog extends React.Component{
                         </div>
                         </div>
                             <p><img class="img-fluid" src={si[7]} alt="card image" height="100" width="100"></img></p>
-                            <p class="card-text">Productos exclusivos de diseños especiales directamente dentro del crucero</p>
+                            <p class="card-text">{si[6]}</p>
                         <div class="container-fluid">
                             <div class="row">
                                 <div id="symbol" class="col-6">
