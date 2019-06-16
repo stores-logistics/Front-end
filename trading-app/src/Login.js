@@ -11,9 +11,6 @@ class Login extends React.Component{
                   <i class="fa fa-ship fa-1x" aria-hidden="true"></i>
                    <a id = "title">Stores Manager</a>
                       </a>
-                 <form class="form-inline my-2 my-lg-0">
-                     <a href="/login" class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
-                 </form>
             </nav> 
             <br></br>
             <br></br>
@@ -28,19 +25,17 @@ class Login extends React.Component{
                         {/* <div class="frontside">  */}
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <h4 class="card-title">Login</h4>
+                                    <h4 class="card-title">Acceder</h4>
                                     <div class="container-fluid">
                                            <div class="form-group-row">  
-                                             <input type="text" class="form-control" id="inlineFormInputName" placeholder="Usuario"></input> 
+                                             <input type="text" class="form-control" id="test_d" placeholder="Usuario"></input> 
                                              <br></br>               
-                                             <input type="text" class="form-control" id="inlineFormInputName" placeholder="Contraseña"></input>
+                                             <input type="password" class="form-control" id="test_d" placeholder="Contraseña"></input>
                                              <br></br>
-                                                  {/* Aquí va el captcha */}
-                                             <br></br>
+                                             <hr></hr>
                                                <a href="/stores" id="verhcompras" class="btn">Ingresar</a>
                                             </div>   
                                          </div>   
-                                    {/* <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> */}
                                 </div>
                             </div>  
                     </div>

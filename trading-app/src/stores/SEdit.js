@@ -112,7 +112,6 @@ class SEdit extends React.Component{
                                         <a id="icon" href="/stores/inventory/edit" class="btn"><i class="fa fa-refresh" aria-hidden="true"></i></a>
                                         </div>
                                     </div>
-
                             <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                                 <div class="mainflip">
                                 <div class="frontside"> 
