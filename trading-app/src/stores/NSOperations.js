@@ -17,7 +17,6 @@ class NSOperations extends React.Component{
             const axios = require("axios")
             let tokenStr = localStorage.getItem('user')
             axios.post(API_URL, { 
-                headers: {"Authorization" : `Bearer ${tokenStr}`},
                 query: `query{
                     allTradings{
                       _id
@@ -28,8 +27,9 @@ class NSOperations extends React.Component{
                       price
                     }
                   }`
-            }).then(res => {
-                // console.log(res);
+            },
+            {headers: {"Authorization" : `Bearer ${tokenStr}`}}
+            ).then(res => {
                 this.setState({
                     operList:res.data.data.allTradings
                 }) 

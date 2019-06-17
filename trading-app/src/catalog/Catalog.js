@@ -19,8 +19,7 @@ class Catalog extends React.Component{
     componentDidMount(){
         const axios = require("axios")
         const {id} = this.props.match.params
-            axios.post(API_URL, {      
-                headers: {"Public" : `${true}`},  
+            axios.post(API_URL, {                        
                 query: `query{
                     storeByCode(code: ${id})
                     {
@@ -34,7 +33,9 @@ class Catalog extends React.Component{
                       img
                     }
                   }`
-            }).then(res => {       
+            },
+               {headers: {"Public" : true}}    
+            ).then(res => {       
                     var dict = res.data.data.storeByCode 
                     var array = []
                     for(var key in dict) {
@@ -44,7 +45,7 @@ class Catalog extends React.Component{
                     this.setState({
                     storeInfo: array
                 }) 
-            })    
+            })
         };
 
         displayStore(){

@@ -23,7 +23,7 @@ class Login extends React.Component{
     HandleLogin(){
         console.log('Your input name value is: ' + this.state.username);
         console.log('Your input value is: ' + this.state.password);
-        alert("Usuario o contraseña errados, por favor verifica tus credenciales",400);
+        alert("Bienvenido",400);
         const axios = require("axios")
         axios.post(API_URL, {
             query:  `mutation{
@@ -100,7 +100,7 @@ class Login extends React.Component{
                                                 <div class="col-xs-6 col-md-9">
                                                 </div>
                                                 <div class="col-xs-6 col-md-3">
-                                                   <a onClick={this.HandleLogin}  id="verhcompras" onchange={this.ProceedLogin}class="btn"><i id ="next" class="fa fa-2x fa-arrow-circle-right" aria-hidden="true"></i></a>
+                                                   <a onClick={this.HandleLogin} href="/stores" id="verhcompras" onchange={this.ProceedLogin}class="btn"><i id ="next" class="fa fa-2x fa-arrow-circle-right" aria-hidden="true"></i></a>
                                                 </div>
                                             </div> 
                                             </div>   

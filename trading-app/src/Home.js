@@ -15,7 +15,7 @@ class Home extends React.Component{
     componentDidMount(){
         const axios = require("axios")
         axios.post(API_URL, {
-            headers: {"Public" : `${true}`}, 
+            headers: {"Public" : true}, 
             query: `query{                
                 allStores{
                     code
@@ -57,6 +57,7 @@ class Home extends React.Component{
             <div class="card">
                 <div class="card-body text-center mt-4">
                     <h5 class="card-title">Horarios</h5>
+                    <h1>...............................</h1>
                     <p class="card-text">{item.dates}</p>
                     <h4 class="card-title">Ubicación</h4>
                     <p class="card-text">{item.ubication}</p>
