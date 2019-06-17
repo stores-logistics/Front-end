@@ -7,6 +7,14 @@ class Signup extends React.Component{
     constructor(props){
         super(props);       
         this.state = {
+          nombre: '',
+          apellido: '',
+          direccion: '',
+          telefono: '',
+          cabina: '',
+          tajeta: '',
+          cvv: '',
+          vencimiento: '',
           username: '',
           password: ''
         }
@@ -15,23 +23,42 @@ class Signup extends React.Component{
     }    
 
     ProceedLogin(event){
+        console.log("proceed")
         switch(event.target.name){
-            case "username":
+            case "iname":
+                    this.setState({nombre : event.target.value})
+                    console.log("receivedname")
+            case "iapellido":
+                    this.setState({apellido : event.target.value})
+            case "idireccion":
+                    this.setState({direccion : event.target.value})
+            case "itelefono":
+                    this.setState({telefono : event.target.value})
+            case "icabina":
+                    this.setState({cabina : event.target.value})
+            case "itarjeta":
+                    this.setState({tarjeta : event.target.value})
+            case "iusername":
                     this.setState({username : event.target.value})
-            case "password":
+            case "ipassword":
                     this.setState({password : event.target.value})
         }            
     }
      
     HandleLogin(){
-        console.log('Your input name value is: ' + this.state.username);
-        console.log('Your input value is: ' + this.state.password);
+        console.log('name: ' + this.state.nombre);
+        console.log('apellido: ' + this.state.apellido);
+        console.log('direccion: ' + this.state.direccion);
+        console.log('telefono: ' + this.state.telefono);
+        console.log('cabina: ' + this.state.cabina);
+        console.log('tarjeta: ' + this.state.tarjeta);
+        console.log('usuario: ' + this.state.username);
+        console.log('contraseña: ' + this.state.password);
 
-        const axios = require("axios")
-        axios.post(API_URL, {
-            query:  ``
-        });
-    
+        // const axios = require("axios")
+        // axios.post(API_URL, {
+        //     query:  ``
+        // });    
 }
 
     render() {
@@ -58,20 +85,20 @@ class Signup extends React.Component{
                                     <div class="form-group-row">
                                       <div class="form-group row">
                                         <div class="col-6">
-                                            <input name="inombre" id ="test_d" type="text" class="form-control" placeholder="Nombre" onChange={this.updateInput} ></input>
+                                            <input name="iname" id ="test_d" type="text" class="form-control" placeholder="Nombre" onChange={this.updateInput} ></input>
                                         </div> 
                                         <div class="col-6">
-                                        <input name="inombre" id ="test_d" type="text" class="form-control" placeholder="Apellido" onChange={this.updateInput} ></input>
+                                        <input name="iapellido" id ="test_d" type="text" class="form-control" placeholder="Apellido" onChange={this.updateInput} ></input>
                                         </div> 
                                       </div>
-                                        <input name="indesc" id ="test_d" type="text" class="form-control" placeholder="Dirección" onChange={this.updateInput} ></input>
+                                        <input name="idireccion" id ="test_d" type="text" class="form-control" placeholder="Dirección" onChange={this.updateInput} ></input>
                                         <br></br>
                                       <div class="form-group row">
                                         <div class="col-6">
-                                            <input name="inombre" id ="test_d" type="text" class="form-control" placeholder="Teléfono" onChange={this.updateInput} ></input>
+                                            <input name="itelefono" id ="test_d" type="text" class="form-control" placeholder="Teléfono" onChange={this.updateInput} ></input>
                                         </div> 
                                         <div class="col-6">
-                                             <input name="inombre" id ="test_d" type="text" class="form-control" placeholder="Cabina" onChange={this.updateInput} ></input>
+                                             <input name="icabina" id ="test_d" type="text" class="form-control" placeholder="Cabina" onChange={this.updateInput} ></input>
                                          </div> 
                                         </div>
                                         <hr></hr>
@@ -94,7 +121,7 @@ class Signup extends React.Component{
                                 <p class="card-text"><strong>Información de facturación</strong></p>
                                     <div class="container-fluid">
                                     <div class="form-group-row">
-                                        <input name="inombre" id ="test_d" type="text" class="form-control" placeholder="Número de tarjeta" onChange={this.updateInput} ></input>
+                                        <input name="itarjeta" id ="test_d" type="text" class="form-control" placeholder="Número de tarjeta" onChange={this.updateInput} ></input>
                                     <br></br>
 
                                       <div class="form-group row">
@@ -119,14 +146,14 @@ class Signup extends React.Component{
                                 <p class="card-text"><strong>Información de acceso</strong></p>
                                     <div class="container-fluid">
                                     <div class="form-group-row">
-                                        <input name="indesc" id ="test_d" type="text" class="form-control" placeholder="username" onChange={this.updateInput} ></input>
+                                        <input name="iusername" id ="test_d" type="text" class="form-control" placeholder="username" onChange={this.updateInput} ></input>
                                         <br></br>
                                       <div class="form-group row">
                                         <div class="col-6">
-                                            <input name="inombre" id ="test_d" type="password" class="form-control" placeholder="contraseña" onChange={this.updateInput} ></input>
+                                            <input name="ipassword" id ="test_d" type="password" class="form-control" placeholder="contraseña" onChange={this.updateInput} ></input>
                                         </div> 
                                         <div class="col-6">
-                                             <input name="inombre" id ="test_d" type="password" class="form-control" placeholder="conf. contraseña" onChange={this.updateInput} ></input>
+                                             <input  id ="test_d" type="password" class="form-control" placeholder="conf. contraseña" onChange={this.updateInput} ></input>
                                             </div> 
                                         </div>
                                             </div>    

@@ -37,9 +37,19 @@ class SSignup extends React.Component{
             query:  `mutation{
                 createUser(user: {
                   name: "${this.state.nombre}"
+                  lastName: "null"
+                  cabin: "null"
+                  creditCard: "null"
                   username: "${this.state.username}"
                   password: "${this.state.password}"
                   storeId: "${this.state.storeid}"
+                  phoneNumber: "null"
+                  address: "null"
+                  city: "null"
+                  age: 0
+                  avatar: "null"
+                  type: "store"
+                  storeId: "123"
                 }) {
                     code
                     name
@@ -60,7 +70,6 @@ class SSignup extends React.Component{
         });
     
 }
-
     render() {
         return(
             <section id="team" class="pb-5">
