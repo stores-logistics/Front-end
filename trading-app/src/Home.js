@@ -79,15 +79,15 @@ class Home extends React.Component{
                    <a id = "title">Stores Manager</a>
                  </a>
                  <form class="form-inline my-2 my-lg-0">
-                 <li class="nav-item dropdown">
+                 {/* <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                          Registro
                     </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a href="/signup" class="btn">Cliente</a>
-                    <a href="/signup" class="btn">Tienda</a>
+                    <a href="/ssignup" class="btn">Tienda</a>
                 </div>
-                 </li>
+                 </li> */}
                  <a href="/login" class="btn">Login</a>
                  </form>
 

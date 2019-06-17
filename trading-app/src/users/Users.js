@@ -33,7 +33,7 @@ class Users extends React.Component{
                                         <a id="icon" href="/users/edit" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                                         </div>
                                     </div>
-                                      <p><img class=" img-fluid" src="" alt="card image" height="100" width="100"></img></p>
+                                      <p><img class=" img-fluid" src="https://image.flaticon.com/icons/svg/1816/1816075.svg" alt="card image" height="100" width="100"></img></p>
                                       <div class="container-fluid">
                                        <div class="row">
                                          <div id="symbol" class="col-4">

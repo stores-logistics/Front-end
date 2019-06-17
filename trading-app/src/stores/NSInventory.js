@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/Stores.css';
 import API_URL from '../Server';
 const axios = require("axios");
+let tokenStr = localStorage.getItem('user')
 
 
 
@@ -22,7 +23,6 @@ class NSInventory extends React.Component{
 
 
     getProducts() {
-        let tokenStr = localStorage.getItem('user')
         return(
                 axios.post(API_URL, { 
                     headers: {"Authorization" : `Bearer ${tokenStr}`},
@@ -44,7 +44,7 @@ class NSInventory extends React.Component{
     getStoreByCode() {
         return(
             axios.post(API_URL, { 
-                // headers: {"Authorization" : `Bearer ${tokenStr}`},
+                headers: {"Authorization" : `Bearer ${tokenStr}`},
                 query: `query{
                     storeByCode(code: ${2})
                     {

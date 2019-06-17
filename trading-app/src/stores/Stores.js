@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Stores.css';
+import CProducts from '../catalog/CProducts';
 
 class Stores extends React.Component{
     render() {
@@ -47,13 +48,13 @@ class Stores extends React.Component{
                                          </div>
                                          <div class="row">
                                          <div class="col-4">
-                                            <a id="cat">123545</a>
+                                            <a id="cat">114234</a>
                                           </div>
                                           <div  id="font" class="col-4">
-                                             <a id="cat">9-16</a>
+                                             <a id="cat">L-V 14:00-16:00</a>
                                           </div>
                                           <div id="font" class="col-4">
-                                              <a id="cat">4-26</a>
+                                              <a id="cat">4-127</a>
                                           </div>
                                          </div>
                                        </div>
@@ -74,8 +75,10 @@ class Stores extends React.Component{
                                       <div id="longpage" class="card">
                                           <div class="card-body text-center">
                                             <h4 class="card-title">Mi tienda</h4>
+                                            <br></br>
+                                            <CProducts/>                                
                                             </div>
-                                      </div>                                 
+                                      </div> 
                               </div>
                           </div>
                         </div>

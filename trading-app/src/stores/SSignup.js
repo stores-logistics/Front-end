@@ -33,7 +33,30 @@ class SSignup extends React.Component{
     HandleSignup(){
         const axios = require("axios")
         axios.post(API_URL, {
-            query:  ``
+            headers: {"Public" : `${true}`}, 
+            query:  `mutation{
+                createUser(user: {
+                  name: "${this.state.nombre}"
+                  username: "${this.state.username}"
+                  password: "${this.state.password}"
+                  storeId: "${this.state.storeid}"
+                }) {
+                    code
+                    name
+                    lastName
+                    cabin
+                    creditCard
+                    username
+                    password
+                    phoneNumber
+                    address
+                    city
+                    age
+                    avatar
+                    type
+                    storeId
+                }
+              }`
         });
     
 }
