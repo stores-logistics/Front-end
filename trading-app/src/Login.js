@@ -15,9 +15,6 @@ class Login extends React.Component{
     this.ProceedLogin = this.ProceedLogin.bind(this);
     this.HandleLogin = this.HandleLogin.bind(this);
 }    
-
-
-
     validateUsername(){
         var pattern = /[^a-z]/;
         return !pattern.test(this.username);
@@ -33,7 +30,7 @@ class Login extends React.Component{
                   username:"${this.state.username}",
                   password:"${this.state.password}"
                 })  
-              }`
+              }` 
         }).then(res => {
             const token = res.data.data.login;
             console.log(token)

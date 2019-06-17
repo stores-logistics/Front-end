@@ -15,7 +15,7 @@ class Home extends React.Component{
     componentDidMount(){
         const axios = require("axios")
         axios.post(API_URL, {
-            headers: {"Authorization" : `${1}`}, 
+            headers: {"Public" : `${true}`}, 
             query: `query{                
                 allStores{
                     code
@@ -79,13 +79,21 @@ class Home extends React.Component{
                    <a id = "title">Stores Manager</a>
                  </a>
                  <form class="form-inline my-2 my-lg-0">
-                     <a href="/signup" class="btn">Registro</a>
-                     <a href="/login" class="btn">Login</a>
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         Registro
+                    </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a href="/signup" class="btn">Cliente</a>
+                    <a href="/signup" class="btn">Tienda</a>
+                </div>
+                 </li>
+                 <a href="/login" class="btn">Login</a>
                  </form>
 
             </nav> 
                 <br></br>
-    <div class="container">
+         <div class="container">
                 <h1 id = "onboard">Bienvenido a bordo</h1>
                 <hr id = "hr"></hr>
         <br></br>

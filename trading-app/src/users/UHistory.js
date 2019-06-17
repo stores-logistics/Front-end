@@ -14,7 +14,9 @@ class NSHistory extends React.Component{
 
     componentDidMount(){
             const axios = require("axios")
-            axios.post(API_URL, {
+            let tokenStr = localStorage.getItem('user')
+            axios.post(API_URL, {   
+                headers: {"Authorization" : `Bearer ${tokenStr}`},
                 query: `query{
                     allTradings{
                       _id

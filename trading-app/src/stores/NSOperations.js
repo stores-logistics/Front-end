@@ -15,8 +15,9 @@ class NSOperations extends React.Component{
 
     componentDidMount(){
             const axios = require("axios")
+            let tokenStr = localStorage.getItem('user')
             axios.post(API_URL, { 
-                // headers: {"Authorization" : `Bearer ${tokenStr}`},
+                headers: {"Authorization" : `Bearer ${tokenStr}`},
                 query: `query{
                     allTradings{
                       _id

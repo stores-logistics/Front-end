@@ -22,9 +22,10 @@ class NSInventory extends React.Component{
 
 
     getProducts() {
-             return(
+        let tokenStr = localStorage.getItem('user')
+        return(
                 axios.post(API_URL, { 
-                    // headers: {"Authorization" : `Bearer ${tokenStr}`},
+                    headers: {"Authorization" : `Bearer ${tokenStr}`},
                     query: `query{
                         allProducts{
                           name

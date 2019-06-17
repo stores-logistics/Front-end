@@ -19,7 +19,8 @@ class Catalog extends React.Component{
     componentDidMount(){
         const axios = require("axios")
         const {id} = this.props.match.params
-            axios.post(API_URL, {       
+            axios.post(API_URL, {      
+                headers: {"Public" : `${true}`},  
                 query: `query{
                     storeByCode(code: ${id})
                     {
