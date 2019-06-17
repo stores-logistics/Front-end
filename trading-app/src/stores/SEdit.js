@@ -52,7 +52,7 @@ class SEdit extends React.Component{
             axios.post(API_URL, {
                 //  headers: {"Authorization" : `Bearer ${tokenStr}`},
                 query:  `mutation{
-                    updateProduct(_id: ${1}, product: {
+                    updateProduct(_id: ${"5d070d966a8d2c001dad47be"}, product: {
                       name: "${this.state.nombre}"
                       description: "${this.state.descripcion}"
                       type: "${this.state.categoria}"
@@ -118,10 +118,10 @@ class SEdit extends React.Component{
                                     <div class="frontside"> 
                                         <div class="card-body text-center">
                                             <br></br>
-                                            <p><img class=" img-fluid" src="https://www.laroche-posay.es/site/pages/showImageResized.aspx?EncMediaId=YUV4QXhDWnFSTWZzeDV1Y0U1ekowdz09&ImageFormatAppCode=IMAGEFORMAT_ORIGINAL&v=220196063434" alt="card image"  height="55" width="55"></img></p>
-                                            <h4 id="card-titles">Bloqueador Anthelios XL</h4>
-                                             <p className="card-text">330ml</p>
-                                            <h6 id="card-price">$32</h6>
+                                            <p><img class=" img-fluid" src="https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/reader-tote-tiffany-tpendientes-estilo-barra-wire-62271833_991681_ED.jpg" alt="card image"  height="85" width="85"></img></p>
+                                            <h4 id="card-titles">Pendientes estilo barra Wire</h4>
+                                            <br></br>
+                                            <h6 id="card-price">$4150</h6>
                                             </div>
                                           </div>                              
                                        </div>  

@@ -23,7 +23,7 @@ class Login extends React.Component{
     HandleLogin(){
         console.log('Your input name value is: ' + this.state.username);
         console.log('Your input value is: ' + this.state.password);
-        alert("Bienvenido",400);
+        alert("Usuario o contraseña errados, por favor verifica tus credenciales",400);
         const axios = require("axios")
         axios.post(API_URL, {
             query:  `mutation{

@@ -70,8 +70,8 @@ class Users extends React.Component{
                               <br></br>                          
                                 <h2 className="titlec">Mi perfil</h2>                            
                               <br></br>
-                              <CProducts/>
                             </div>
+                            
                         </div>
                       </div>
               </div>

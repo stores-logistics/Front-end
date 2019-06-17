@@ -110,10 +110,11 @@ constructor(props){
                                     <div class="card">
                                     <div class="frontside"> 
                                         <div class="card-body text-center">
-                                            <p><img class=" img-fluid" src="https://www.laroche-posay.es/site/pages/showImageResized.aspx?EncMediaId=YUV4QXhDWnFSTWZzeDV1Y0U1ekowdz09&ImageFormatAppCode=IMAGEFORMAT_ORIGINAL&v=220196063434" alt="card image"  height="40" width="40"></img></p>
-                                            <h4 id="card-titles">Bloqueador Anthelios XL</h4>
-                                             <p className="card-text">330ml</p>
-                                            <h6 id="card-price">$32</h6> 
+                                            <p><img class=" img-fluid" src="https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/reader-tote-tiffany-tpendientes-estilo-barra-wire-62271833_991681_ED.jpg" alt="card image"  height="40" width="40"></img></p>
+                                            <h4 id="card-titles">Pendientes estilo barra Wire</h4>
+                                             {/* <p className="card-text">330ml</p> */}
+                                             <br></br>
+                                            <h6 id="card-price">$4150</h6> 
                                             </div>
                                     </div>                              
                                     </div> 
