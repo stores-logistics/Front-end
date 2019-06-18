@@ -129,18 +129,12 @@ async componentWillMount(){
                                   </div>
                               </div>
                           <div class="col-8">
-                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                              <div class="mainflip">
-                                  {/* <div class="frontside">  */}
-                                      <div id="longpage" class="card">
-                                          <div class="card-body text-center">
-                                            <h4 class="card-title">Mi tienda</h4>
+                          <div className="container" id="contcat">
+                            <br></br>
+                            <h2 className="titlec">Mi tienda</h2>                             
                                             <br></br>
                                             <CProducts/>                                
-                                            </div>
-                                      </div> 
-                              </div>
-                          </div>
+                                      </div>
                         </div>
                       </div>
               </div>
