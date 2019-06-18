@@ -84,10 +84,10 @@ async componentWillMount(){
                      </div>
                      <div class="row">
                      <div class="col-4">
-                       <a id="cat">114234</a>
+                       <a id="cat">{si[0]}</a>
                       </div>
                       <div  id="font" class="col-4">
-                         <a id="cat">L-V 14:00-16:00</a>
+                         <a id="cat">{si[5  ]}</a>
                       </div>
                       <div id="font" class="col-4">
                           <a id="cat">{si[4]}</a>
@@ -98,7 +98,6 @@ async componentWillMount(){
 
   )
 }
-
     render() {
         return(
             <section id="team" class="pb-5">

@@ -7,12 +7,9 @@ let tokenStr = localStorage.getItem('user')
 
 
 
-class SEdit extends React.Component{
-    
- 
+class SEdit extends React.Component{   
     constructor(props){
         super(props);
-        
         this.state = {
           nombre : '',
           descripcion : '',
@@ -78,6 +75,8 @@ class SEdit extends React.Component{
             );
         
     }
+
+
     handleDeletion(){
         const axios = require("axios")
         const {id} = this.props.match.params
@@ -86,7 +85,6 @@ class SEdit extends React.Component{
                  deleteProduct(_id: "${id}")
                }`
         });
-        console.log("sale");
     }
     
     render() {
@@ -103,8 +101,7 @@ class SEdit extends React.Component{
                     </form>
                     <div class="row">
                             <div class="col-4">
-                                 <div class="card">
-                                    <div class="card-body text-center">
+                            <div className="container" id="contcat">
                                     <div class="row">
                                         <div class="col-2">
                                         <a id="icon" href="/stores/inventory" class="btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
@@ -143,8 +140,6 @@ class SEdit extends React.Component{
                                     </div>
                                 </div>
                             </div>
-
-                                </div>
                                 </div>
                                 </div>
                             <div  class="col-8">
@@ -213,7 +208,7 @@ class SEdit extends React.Component{
                                        <div className="col-1">
                                        </div>
                                         <div className="col-9">
-                                        <td><a id="icon" onClick={this.handleDeletion}  href="/stores/inventory" class="btn"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                                        <td><a id="icon" onClick={this.handleDeletion}  class="btn"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                         </div>
                                         <div className="col-2">
                                         <a id="icon" onClick={this.handleSubmit} class="btn"><i class="fas fa-check fa2x" onChange={this.updateInput} ></i></a>

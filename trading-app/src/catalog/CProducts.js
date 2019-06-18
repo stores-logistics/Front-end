@@ -52,7 +52,7 @@ class CProducts extends React.Component{
                                         <div class="card-body text-center">
                                             <p><img class=" img-fluid" src={item.image} alt="card image"  height="30" width="30"></img></p>
                                             <h4 id="card-titles">{item.name}</h4>
-                                            <p class="card-text">330 ml</p>
+                                            <br></br>
                                             <h4 id="card-price">$ {item.cost}</h4>
                                         </div>
                                     </div>

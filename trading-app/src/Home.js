@@ -57,11 +57,11 @@ class Home extends React.Component{
             <div class="card">
                 <div class="card-body text-center mt-4">
                     <h5 class="card-title">Horarios</h5>
-                    <h1>...............................</h1>
                     <p class="card-text">{item.dates}</p>
                     <h4 class="card-title">Ubicación</h4>
                     <p class="card-text">{item.ubication}</p>
-                    <a  href={/catalog/ + item.code} class="btn">Ver productos</a>                       
+                    <a  href={'/catalog/' + item.code} class="btn">Ver productos</a>   
+                    <h1 className="trans">...............................</h1>                    
                 </div>
             </div>
         </div>

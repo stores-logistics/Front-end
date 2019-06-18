@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/Catalog.css';
-import CProducts from './CProducts';
 import API_URL from '../Server';
 import { Route } from "react-router";
 {<Route path='/catalog/:id' component={Catalog}/> }
@@ -10,13 +9,16 @@ class Catalog extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            storeInfo:[]    
-        }
-        this.componentDidMount = this.componentDidMount.bind(this);
-        
+            storeInfo:[],
+            cProducts:[],
+            loaded: false
+    };
+    this.getProducts = this.getProducts.bind(this);
+    this.getStoreByCode = this.getStoreByCode.bind(this);
+    this.componentWillMount = this.componentWillMount.bind(this);
     }
 
-    componentDidMount(){
+    getStoreByCode(){
         const axios = require("axios")
         const {id} = this.props.match.params
             axios.post(API_URL, {                        
@@ -47,6 +49,40 @@ class Catalog extends React.Component{
                 }) 
             })
         };
+
+        getProducts(){
+            const axios = require("axios")
+            const {id} = this.props.match.params
+            // console.log(this.props.match.params)
+            axios.post(API_URL, { 
+                // headers: {"Authorization" : `Bearer ${tokenStr}`},
+                query: `query{
+                    productsByStore(storeId: ${id})
+                    {
+                      _id
+                      name
+                      description
+                      type
+                      image
+                      storeId
+                      quantity
+                      cost
+                    }
+                  }`
+            }).then(res => {
+                console.log(res);
+                this.setState({
+                    cProducts:res.data.data.productsByStore
+                }) 
+            })    
+        };
+
+        async componentWillMount(){
+            await this.getProducts()
+            await this.getStoreByCode()
+           };
+              
+
 
         displayStore(){
             const si = this.state.storeInfo
@@ -86,6 +122,37 @@ class Catalog extends React.Component{
                 )            
         };
 
+        displayCProducts(){   
+            return this.state.cProducts.map( (item,key) => {
+              return(
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                            <div class="mainflip">
+                                <div class="frontside"> 
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <p><img class=" img-fluid" src={item.image} alt="card image"  height="30" width="30"></img></p>
+                                            <h4 id="card-titles">{item.name}</h4>
+                                            <br></br>
+                                            <h4 id="card-price">$ {item.cost}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="backside">
+                                    <div class="card">
+                                        <div class="card-body text-center mt-4">
+                                            <p class="card-text"><strong>{item.type}</strong></p>
+                                            <p class="card-text">{item.description}</p>
+                                            <h6 id="card-price">Stock: {item.quantity}</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                )
+            })};
+
     render() {
         return(
             <section id="team" class="pb-5">
@@ -121,7 +188,9 @@ class Catalog extends React.Component{
                                 </div>
                             </div>
                             <br></br>
-                            <CProducts/>
+                            <div class="row">
+                            {this.displayCProducts()}
+                            </div>
                       </div>
                   </div>
                 </div>
