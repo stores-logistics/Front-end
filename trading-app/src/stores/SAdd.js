@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/Stores.css';
 import API_URL from '../Server';
+let tokenStr = localStorage.getItem('user')
 
 
 class SAdd extends React.Component{
@@ -70,7 +71,9 @@ constructor(props){
                   cost
                 }
               }`
-        });
+        },
+        {headers: {"Authorization" : "Bearer " + tokenStr}}
+        );
     
 }
 

@@ -33,7 +33,7 @@ class App extends React.Component{
               <Route exact path = "/stores" component = {Stores} />
               <Route exact path = "/stores/inventory" component = {SInventory} />
               <Route exact path = "/stores/operations" component = {SOperations} />
-              <Route exact path = "/stores/inventory/edit"component = {SEdit} />
+              <Route exact path = "/stores/inventory/edit/:id"component = {SEdit} />
               <Route exact path = "/stores/edit"component = {SEditinfo} />
               <Route exact path = "/stores/inventory/add" component = {SAdd} />
               <Route exact path = "/users" component = {Users} />

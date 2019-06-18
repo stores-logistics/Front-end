@@ -44,7 +44,6 @@ class NSInventory extends React.Component{
     getStoreByCode() {
         return(
             axios.post(API_URL, { 
-                headers: {"Authorization" : `Bearer ${tokenStr}`},
                 query: `query{
                     storeByCode(code: ${2})
                     {
@@ -58,7 +57,9 @@ class NSInventory extends React.Component{
                       img
                     }
                   }`
-            }).then(res => {
+            },
+            {headers: {"Authorization" :  "Bearer " + tokenStr}}
+            ).then(res => {
                 var dict = res.data.data.storeByCode 
                 var array = []
                 for(var key in dict) {
@@ -75,10 +76,9 @@ class NSInventory extends React.Component{
 
     
 
-    componentWillMount(){
-        console.log("didmount")
-         this.getProducts()
-         this.getStoreByCode()
+    async componentWillMount(){
+         await this.getProducts()
+         await this.getStoreByCode()
         };
         
 
@@ -124,7 +124,7 @@ class NSInventory extends React.Component{
                              </div>
                             </div>
 
-            )
+            ) 
         }
 
         displayProducts(){   
@@ -135,7 +135,7 @@ class NSInventory extends React.Component{
                       <td>{item.type}</td>
                       <td>{item.quantity}</td>
                        <td>{item.cost}</td>
-                       <td><a id="icon" href="/stores/inventory/edit" class="btn"><i href="/add" class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                       <td><a id="icon" href={'/stores/inventory/edit' + item.code} class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
                     </tr>
                 )
             })}

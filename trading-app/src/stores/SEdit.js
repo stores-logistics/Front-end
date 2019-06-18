@@ -1,6 +1,8 @@
 import React from 'react';
 import '../styles/Stores.css';
 import API_URL from '../Server';
+import { Route } from "react-router";
+{<Route path='/stores/inventory/edit/:id' component={SEdit}/> }
 
 
 
@@ -192,12 +194,11 @@ class SEdit extends React.Component{
                                              </div> 
                                               <div class="col-6">
                                               <input  name="inprec" id ="test_d" type="text" class="form-control"  placeholder="Precio" onChange={this.updateInput} ></input>
-                                              </div>
-                                              
+                                              </div>                                              
                                            </div>                                          
                                             </div>   
                                        </div> 
-                                        </div>
+                                        </div> 
                                         <div class="col-2">
                                         </div>                                             
                                     </div>  

@@ -28,7 +28,7 @@ class NSOperations extends React.Component{
                     }
                   }`
             },
-            {headers: {"Authorization" : `Bearer ${tokenStr}`}}
+            {headers: {'authorization' : "Bearer " + tokenStr}}
             ).then(res => {
                 this.setState({
                     operList:res.data.data.allTradings
