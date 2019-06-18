@@ -28,6 +28,7 @@ class NSInventory extends React.Component{
                     headers: {"Authorization" : `Bearer ${tokenStr}`},
                     query: `query{
                         allProducts{
+                          _id
                           name
                           type
                           quantity
@@ -135,7 +136,7 @@ class NSInventory extends React.Component{
                       <td>{item.type}</td>
                       <td>{item.quantity}</td>
                        <td>{item.cost}</td>
-                       <td><a id="icon" href={'/stores/inventory/edit' + item.code} class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                       <td><a id="icon" href={'/stores/inventory/edit/' + item._id} class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
                     </tr>
                 )
             })}

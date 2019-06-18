@@ -110,7 +110,7 @@ class Catalog extends React.Component{
                     <div class="col-8">
                       <div className="container" id="contcat">
                           <br></br>                          
-                            <h2 className="titlec">Catálogo</h2>                            
+                            <h2 className="titlec">Catálogo</h2>                             
                             <br></br>
                             <div class="input-group">
                                 <input id ="test_i" type="text" class="form-control" placeholder="Buscar un producto"></input>

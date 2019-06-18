@@ -3,6 +3,7 @@ import '../styles/Stores.css';
 import API_URL from '../Server';
 import { Route } from "react-router";
 {<Route path='/stores/inventory/edit/:id' component={SEdit}/> }
+let tokenStr = localStorage.getItem('user')
 
 
 
@@ -49,12 +50,11 @@ class SEdit extends React.Component{
             console.log('Your input value is: ' + this.state.imgurl);
             console.log('Your input value is: ' + this.state.cantidad);
             console.log('Your input value is: ' + this.state.precio);
-            
+            const {id} = this.props.match.params
             const axios = require("axios")
             axios.post(API_URL, {
-                //  headers: {"Authorization" : `Bearer ${tokenStr}`},
                 query:  `mutation{
-                    updateProduct(_id: ${"5d070d966a8d2c001dad47be"}, product: {
+                    updateProduct(_id: "${id}", product: {
                       name: "${this.state.nombre}"
                       description: "${this.state.descripcion}"
                       type: "${this.state.categoria}"
@@ -73,14 +73,17 @@ class SEdit extends React.Component{
                       cost
                     }
                   }`
-            });
+            },
+            {headers: {"Authorization" : "Bearer " + tokenStr}}
+            );
         
     }
     handleDeletion(){
         const axios = require("axios")
+        const {id} = this.props.match.params
         axios.post(API_URL, {
             query:  `mutation{
-                 deleteProduct(_id: ${1})
+                 deleteProduct(_id: "${id}")
                }`
         });
         console.log("sale");
@@ -213,7 +216,7 @@ class SEdit extends React.Component{
                                         <td><a id="icon" onClick={this.handleDeletion}  href="/stores/inventory" class="btn"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                         </div>
                                         <div className="col-2">
-                                        <a id="icon"  href="/stores/inventory" onClick={this.handleSubmit} class="btn"><i class="fas fa-check fa2x" onChange={this.updateInput} ></i></a>
+                                        <a id="icon" onClick={this.handleSubmit} class="btn"><i class="fas fa-check fa2x" onChange={this.updateInput} ></i></a>
                                         </div>
                                    </div>
                               </div>
