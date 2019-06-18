@@ -2,6 +2,8 @@ import React from 'react';
 import '../styles/Stores.css';
 import API_URL from '../Server';
 let tokenStr = localStorage.getItem('user')
+import { Route } from "react-router";
+{<Route path='/inventory/add/:sid/:id' component={SAdd}/> }
 
 
 class SAdd extends React.Component{
@@ -16,12 +18,69 @@ constructor(props){
       imgurl : '',
       cantidad : '',
       precio : '',
-
+      cProducts:[],
     }
     this.updateInput = this.updateInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.componentWillMount = this.componentWillMount.bind(this);
     }
-    
+
+    /*
+    reqCardInfo(){
+        const {id} = this.props.match.params
+        const axios = require("axios")
+        axios.post(API_URL, {
+            query:  `query{
+                productByCode(_id: "${id}")
+                {
+                  _id
+                  name
+                  description
+                  type
+                  image
+                  storeId
+                  quantity
+                  cost
+                }
+              }`
+        },
+        {headers: {"Authorization" : "Bearer " + tokenStr}}
+        ).then(res => {
+            var dict = res.data.data.productByCode 
+                var array = []
+                for(var key in dict) {
+                var value = dict[key];
+                array.push(value)
+                console.log(array)
+                }   
+                this.setState({
+                cProducts: array
+            }) 
+        })
+    } 
+*/
+
+    displayBack(){
+        const {id} = this.props.match.params
+        return(
+        <div class="row">
+            <div class="col-2">
+            <a id="icon" href={'/stores/inventory/' + id}class="btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-8">
+            <h4 class="card-title">Preview</h4>
+            </div>
+            <div class="col-2">
+            <a id="icon" href="/stores/inventory/edit" class="btn"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        )
+    }
+
+    componentWillMount(){
+        this.displayBack()
+    };
+
     updateInput(event){
         switch(event.target.name){
             case "inombre":
@@ -47,7 +106,8 @@ constructor(props){
         console.log('Your input value is: ' + this.state.imgurl);
         console.log('Your input value is: ' + this.state.cantidad);
         console.log('Your input value is: ' + this.state.precio);
-        
+        const {id} = this.props.match.params
+        console.log("ESTE ES EL IDDDD " + id);
         const axios = require("axios")
         axios.post(API_URL, { 
             // headers: {"Authorization" : `Bearer ${tokenStr}`},
@@ -57,7 +117,7 @@ constructor(props){
                   description: "${this.state.descripcion}"
                   type: "${this.state.categoria}"
                   image: "${this.state.imgurl}"
-                  storeId: 2
+                  storeId: ${id}
                   quantity: ${this.state.cantidad}
                   cost: ${this.state.precio}
                 }) {
@@ -73,8 +133,10 @@ constructor(props){
               }`
         },
         {headers: {"Authorization" : "Bearer " + tokenStr}}
-        );
-    
+        ).then(
+            alert("Producto agregado",4000),
+            //location.href= '/stores/inventory/' + id
+        )
 }
 
     render() {
@@ -91,18 +153,7 @@ constructor(props){
                             <div class="col-4">
                                 <div class="container" id="contprev">
                                     <br></br>
-                                    <div class="row">
-                                        <div class="col-2">
-                                        <a id="icon" href="/stores/inventory" class="btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-                                        </div>
-                                        <div class="col-8">
-                                        <h4 class="card-title">Preview</h4>
-                                        </div>
-                                        <div class="col-2">
-                                        <a id="icon" href="/stores/inventory/edit" class="btn"><i class="fa fa-refresh" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-
+                                   {this.displayBack()}
                                 <div className="row">
                                     <div className="col-1">
                                     </div>          

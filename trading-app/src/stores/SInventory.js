@@ -76,6 +76,21 @@ class SInventory extends React.Component{
         )
       };
 
+    displayAdd(){
+        const {id} = this.props.match.params
+        return(
+            <div className="row">
+                        <div class="col-2">
+                             <a id="icon" href={'/stores/inventory/add/' + id} class="btn"><i class="fa fa-plus" aria-hidden="true"></i></a>  
+                        </div>
+                        <div class="col-8">
+                            <h4 class="card-title">Inventario</h4>
+                        </div>
+                        <div class="col-2">
+                        </div>
+            </div>
+        )
+    }
     
 
     async componentWillMount(){
@@ -123,12 +138,19 @@ class SInventory extends React.Component{
                                 </div>
                                </div>
                              </div>
+                             <hr></hr>
+                            <a href={'/stores/' + si[0]}  id="verhcompras" class="btn">Perfil</a>
+                        <hr></hr>
+                            <a href={'/stores/operations/' + si[0]} id="verhcompras" class="btn">Historial de ventas</a>
+                        <hr></hr>
+                            <a href={'/stores/inventory/' + si[0]} id="verhcompras" class="btn"><strong>Inventario</strong></a>                 
                             </div>
 
             ) 
         }
 
         displayProducts(){   
+            const {id} = this.props.match.params
             return this.state.prodList.map( (item,key) => {
               return(
                     <tr key = {key}>                     
@@ -136,7 +158,7 @@ class SInventory extends React.Component{
                       <td>{item.type}</td>
                       <td>{item.quantity}</td>
                        <td>{item.cost}</td>
-                       <td><a id="icon" href={'/stores/inventory/edit/' + item._id} class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                       <td><a id="icon" href={'/stores/inventory/edit/' + id + '/' + item._id} class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
                     </tr>
                 )
             })}
@@ -160,13 +182,7 @@ class SInventory extends React.Component{
                <div class="col-4">
                    <div class="card">
                        <div class="card-body text-center">                    
-                             {this.displayStoreDetails()}
-                            <hr></hr>
-                           <a href="/stores" id="verhcompras" class="btn">Perfil</a>
-                            <hr></hr>
-                           <a href="/stores/operations" id="verhcompras" class="btn">Ver historial de ventas</a>
-                             <hr></hr>
-                         <a href="/stores/inventory" id="verhcompras" class="btn"><strong>Inventario </strong></a>                      
+                             {this.displayStoreDetails()}                   
                            </div>
                        </div>
                    </div>
@@ -176,16 +192,7 @@ class SInventory extends React.Component{
                        {/* <div class="frontside">  */}
                            <div id="longpage" class="card">
                                <div class="card-body text-center">
-                               <div class="row">
-                             <div class="col-2">
-                             <a id="icon" href="/stores/inventory/add" class="btn"><i href="/add" class="fa fa-plus" aria-hidden="true"></i></a>  
-                             </div>
-                             <div class="col-8">
-                                   <h4 class="card-title">Inventario</h4>
-                             </div>
-                             <div class="col-2">
-                                </div>
-                                 </div>
+                             {this.displayAdd()}
                                <div id="operations" class="container-fluid">
                                    <div class="row">
                                    <div class="input-group">

@@ -2,9 +2,8 @@ import React from 'react';
 import '../styles/Stores.css';
 import API_URL from '../Server';
 import { Route } from "react-router";
-{<Route path='/stores/inventory/edit/:id' component={SEdit}/> }
+{<Route path='/stores/inventory/edit/:sid/:id' component={SEdit}/> }
 let tokenStr = localStorage.getItem('user')
-
 
 
 class SEdit extends React.Component{   
@@ -17,11 +16,13 @@ class SEdit extends React.Component{
           imgurl : '',
           cantidad : '',
           precio : '',
-    
+          cProducts:[],
         }
         this.updateInput = this.updateInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.componentWillMount = this.componentWillMount.bind(this);
         }
+
     
         updateInput(event){
             switch(event.target.name){
@@ -40,6 +41,93 @@ class SEdit extends React.Component{
             }            
         }
 
+        reqCardInfo(){
+            const {id} = this.props.match.params
+            const axios = require("axios")
+            axios.post(API_URL, {
+                query:  `query{
+                    productByCode(_id: "${id}")
+                    {
+                      _id
+                      name
+                      description
+                      type
+                      image
+                      storeId
+                      quantity
+                      cost
+                    }
+                  }`
+            },
+            {headers: {"Authorization" : "Bearer " + tokenStr}}
+            ).then(res => {
+                var dict = res.data.data.productByCode 
+                    var array = []
+                    for(var key in dict) {
+                    var value = dict[key];
+                    array.push(value)
+                    }   
+                    this.setState({
+                    cProducts: array
+                }) 
+            })
+        } 
+
+        displayCard(){
+            const si = this.state.cProducts
+                return(
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                            <div class="mainflip">
+                                <div class="frontside"> 
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <p><img class=" img-fluid" src={si[4]} alt="card image"  height="30" width="30"></img></p>
+                                            <h4 id="card-titles">{si[1]}</h4>
+                                            <br></br>
+                                            <h4 id="card-price">$ {si[7]}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="backside">
+                                    <div class="card">
+                                        <div class="card-body text-center mt-4">
+                                            <p class="card-text"><strong>{si[3]}</strong></p>
+                                            <p class="card-text">{si[2]}</p>
+                                            <h6 id="card-price">Stock: {si[6]}</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>        
+                </div>
+                )
+            };
+
+         componentWillMount(){
+         this.reqCardInfo()
+         this.displayCard()
+         this.displayBack()
+           };
+
+        displayBack(){
+            const {sid} = this.props.match.params
+            return(
+            <div class="row">                                        
+                <div class="col-2">
+                <a id="icon" href={'/stores/inventory/' + sid} class="btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-8">
+                <h4 class="card-title">Preview</h4>
+                </div>
+                <div class="col-2">
+                <a id="icon" href="/stores/inventory/edit" class="btn"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            )
+        }
+
+
         handleSubmit(){
             console.log('Your input value is: ' + this.state.nombre);
             console.log('Your input value is: ' + this.state.descripcion);
@@ -48,6 +136,7 @@ class SEdit extends React.Component{
             console.log('Your input value is: ' + this.state.cantidad);
             console.log('Your input value is: ' + this.state.precio);
             const {id} = this.props.match.params
+            const {sid} = this.props.match.params
             const axios = require("axios")
             axios.post(API_URL, {
                 query:  `mutation{
@@ -56,7 +145,7 @@ class SEdit extends React.Component{
                       description: "${this.state.descripcion}"
                       type: "${this.state.categoria}"
                       image: "${this.state.imgurl}"
-                      storeId: 2
+                      storeId: ${sid}
                       quantity: ${this.state.cantidad}
                       cost: ${this.state.precio}
                     }) {
@@ -79,7 +168,9 @@ class SEdit extends React.Component{
 
     handleDeletion(){
         const axios = require("axios")
+        console.log("borrando...")
         const {id} = this.props.match.params
+        console.log(id)
         axios.post(API_URL, {
             query:  `mutation{
                  deleteProduct(_id: "${id}")
@@ -101,45 +192,17 @@ class SEdit extends React.Component{
                     </form>
                     <div class="row">
                             <div class="col-4">
-                            <div className="container" id="contcat">
-                                    <div class="row">
-                                        <div class="col-2">
-                                        <a id="icon" href="/stores/inventory" class="btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-                                        </div>
-                                        <div class="col-8">
-                                        <h4 class="card-title">Preview</h4>
-                                        </div>
-                                        <div class="col-2">
-                                        <a id="icon" href="/stores/inventory/edit" class="btn"><i class="fa fa-refresh" aria-hidden="true"></i></a>
-                                        </div>
+                            <div className="container" id="contcate">
+                                <br></br>
+                                   {this.displayBack()}
+                                    <div className="row">
+                                        <div className="col-2">
+
+                                        </div>       
+                                        <div className="col-8">
+                                        {this.displayCard()}
+                                        </div>                                 
                                     </div>
-                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                                <div class="mainflip">
-                                <div class="frontside"> 
-                                    <div class="cardem">
-                                    <div class="frontside"> 
-                                        <div class="card-body text-center">
-                                            <br></br>
-                                            <p><img class=" img-fluid" src="https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/reader-tote-tiffany-tpendientes-estilo-barra-wire-62271833_991681_ED.jpg" alt="card image"  height="85" width="85"></img></p>
-                                            <h4 id="card-titles">Pendientes estilo barra Wire</h4>
-                                            <br></br>
-                                            <h6 id="card-price">$4150</h6>
-                                            </div>
-                                          </div>                              
-                                       </div>  
-                                     </div>
-                                   <div class="backside">
-                                  <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <br></br>
-                                        <p className="card-text"><strong>Salud y belleza</strong></p>
-                                        <p className="card-text">Bloqueador solar de amplio espectro, protege las 24 horas por medio de su fòrmula no grasa e hipoalergénica.</p>
-                                        <h6 id="card-price">Stock: 55</h6>
-                                     </div>
-                                </div>
-                                    </div>
-                                </div>
-                            </div>
                                 </div>
                                 </div>
                             <div  class="col-8">

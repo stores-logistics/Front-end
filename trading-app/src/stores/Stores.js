@@ -3,12 +3,13 @@ import '../styles/Stores.css';
 import API_URL from '../Server';
 const axios = require("axios");
 let tokenStr = localStorage.getItem('user')
-
+import { Route } from "react-router";
+{<Route path='/stores/:id' component={Stores}/> }
 
 class Stores extends React.Component{
 
   constructor(props){
-    super(props);
+    super(props); 
     this.state = {
         storeList:[],
 };
@@ -17,10 +18,11 @@ this.componentWillMount = this.componentWillMount.bind(this);
 }
 
 getStoreByCode() {
+  const {id} = this.props.match.params
   return(
       axios.post(API_URL, { 
           query: `query{
-              storeByCode(code: ${2})
+              storeByCode(code: ${id})
               {
                 code
                 name
@@ -93,6 +95,12 @@ async componentWillMount(){
                       </div>
                      </div>
                    </div>
+                   <hr></hr>
+                            <a href={'/stores/' + si[0]}  id="verhcompras" class="btn"><strong>Perfil </strong></a>
+                        <hr></hr>
+                            <a href={'/stores/operations/' + si[0]} id="verhcompras" class="btn">Historial de ventas</a>
+                        <hr></hr>
+                            <a href={'/stores/inventory/' + si[0]} id="verhcompras" class="btn">Inventario</a>                 
                   </div>
 
   )
@@ -116,13 +124,7 @@ async componentWillMount(){
                           <div class="col-4">
                               <div class="card">
                                   <div class="card-body text-center">
-                                  {this.displayStoreDetails()}
-                                       <hr></hr>
-                                       <a href="/stores" id="verhcompras" class="btn"><strong>Perfil</strong></a>
-                                       <hr></hr>
-                                      <a href="/stores/operations" id="verhcompras" class="btn">Ver historial de ventas</a>
-                                        <hr></hr>
-                                    <a href="/stores/inventory" id="verhcompras" class="btn">Inventario</a>                      
+                                  {this.displayStoreDetails()}                    
                                       </div>
                                   </div>
                               </div>

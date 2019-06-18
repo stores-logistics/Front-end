@@ -30,12 +30,12 @@ class App extends React.Component{
               <Route exact path = "/login" component = {Login} />
               <Route exact path = "/signup" component = {Signup} />
               <Route exact path = "/ssignup" component = {SSignup} />
-              <Route exact path = "/stores" component = {Stores} />
+              <Route exact path = "/stores/:id" component = {Stores} />
               <Route exact path = "/stores/inventory/:id" component = {SInventory} />
               <Route exact path = "/stores/operations/:id" component = {SOperations} />
-              <Route exact path = "/stores/inventory/edit/:id"component = {SEdit} />
-              <Route exact path = "/stores/edit"component = {SEditinfo} />
-              <Route exact path = "/stores/inventory/add" component = {SAdd} />
+              <Route exact path = "/stores/inventory/edit/:sid/:id"component = {SEdit} />
+              <Route exact path = "/stores/edit/:id"component = {SEditinfo} />
+              <Route exact path = "/stores/inventory/add/:id" component = {SAdd} />
               <Route exact path = "/users/:id" component = {Users} />
               <Route exact path = "/users/edit" component = {UInfo} />
               <Route exact path = "/users/history" component = {UHistory} />

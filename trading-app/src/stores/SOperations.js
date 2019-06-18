@@ -3,8 +3,9 @@ import '../styles/Stores.css';
 import NSOperations from './NSOperations';
 import API_URL from '../Server';
 const axios = require("axios");
+import { Route } from "react-router";
+{<Route path='/stores/operations/:id' component={SOperations}/> }
 let tokenStr = localStorage.getItem('user')
-
 
 class SOperations extends React.Component{
 
@@ -12,16 +13,18 @@ class SOperations extends React.Component{
         super(props);
         this.state = {
             storeList:[],
+            operList:[]
     };
     this.getStoreByCode = this.getStoreByCode.bind(this);
     this.componentWillMount = this.componentWillMount.bind(this);
     }
     
     getStoreByCode() {
+      const {id} = this.props.match.params
       return(
           axios.post(API_URL, { 
               query: `query{
-                  storeByCode(code: ${2})
+                  storeByCode(code: ${id})
                   {
                     code
                     name
@@ -50,8 +53,34 @@ class SOperations extends React.Component{
       )
     };
 
+    getOperationsbyId(){
+      const axios = require("axios")
+      const {id} = this.props.match.params
+      let tokenStr = localStorage.getItem('user')
+      axios.post(API_URL, { 
+          query: `query{
+            tradingsByStoreId(store_id: ${id})
+            {
+              _id
+              timestamp
+              store_id
+              user_id
+              product_id
+              price
+            }
+          }`
+      },
+      {headers: {'authorization' : "Bearer " + tokenStr}}
+      ).then(res => {
+          this.setState({
+              operList:res.data.data.allTradings
+          }) 
+      }) 
+    };
+
     async componentWillMount(){
         await this.getStoreByCode()
+        await this.getOperationsbyId
        };
 
        displayStoreDetails(){
@@ -60,8 +89,8 @@ class SOperations extends React.Component{
         return(
             <div>
                  <div class="row">
-                                    <div class="col-2">
-                                    </div>
+                    <div class="col-2">
+                      </div>
                                     <div class="col-8">
                                     <h4 class="card-title">{si[1]}</h4>
                                     </div>
@@ -94,10 +123,29 @@ class SOperations extends React.Component{
                             </div>
                            </div>
                          </div>
+                         <hr></hr>
+                            <a href={'/stores/' + si[0]}  id="verhcompras" class="btn">Perfil</a>
+                        <hr></hr>
+                            <a href={'/stores/operations/' + si[0]} id="verhcompras" class="btn"><strong>Historial de ventas</strong></a>
+                        <hr></hr>
+                            <a href={'/stores/inventory/' + si[0]} id="verhcompras" class="btn">Inventario</a>                 
                         </div>
       
         )
       }
+
+      displayOperations(){
+        return this.state.operList.map( (item,key) => {
+          return(
+                <tr key = {key}>
+                 <td>{item._id}</td>
+                  <td>{item.timestamp}</td>
+                  <td>{item.user_id}</td>
+                   <td>{item.product_id}</td>
+                  <td>{item.price}</td>
+                </tr>
+            )
+        })}
 
     render() {
         return(
@@ -120,13 +168,7 @@ class SOperations extends React.Component{
                           <div class="col-4">
                               <div class="card">
                                   <div class="card-body text-center">
-                                  {this.displayStoreDetails()}
-                                        <hr></hr>
-                                       <a href="/stores" id="verhcompras" class="btn">Perfil</a>
-                                       <hr></hr>
-                                      <a href="/stores/operations" id="verhcompras" class="btn"><strong>Historial de ventas</strong></a>
-                                        <hr></hr>
-                                    <a href="/stores/inventory" id="verhcompras" class="btn">Inventario</a>                      
+                                  {this.displayStoreDetails()}     
                                       </div>
                                   </div>
                               </div>
@@ -137,7 +179,35 @@ class SOperations extends React.Component{
                                       <div id="longpage" class="card">
                                           <div class="card-body text-center">
                                               <h2 class="card-title">Historial de ventas</h2>
-                                              <NSOperations/>
+                                              <div id="operations">
+                                                    <div class="container-fluid">
+                                                        <div class="row">
+                                                            <div class="input-group">
+                                                                <input id ="test_i" type="text" class="form-control" placeholder="Buscar una operación"></input>
+                                                                <div class="input-group-append">
+                                                                    <button id="creditc" class="btn" type="button">
+                                                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>          
+                                                    </div>
+                                                    <br></br>
+                                                    <table id="tab_stores" class="table">
+                                                        <thead >
+                                                            <tr id="head_table" >
+                                                                <th scope="col">Operación #</th>
+                                                                <th scope="col">Hora</th>
+                                                                <th scope="col">Cliente</th>
+                                                                <th scope="col">Producto</th>
+                                                                <th scope="col">Valor</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>                    
+                                                            {this.displayOperations()}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                           </div>
                                       </div>
                               </div>
