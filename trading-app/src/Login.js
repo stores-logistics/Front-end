@@ -23,7 +23,6 @@ class Login extends React.Component{
     HandleLogin(){
         console.log('Your input name value is: ' + this.state.username);
         console.log('Your input value is: ' + this.state.password);
-        alert("Bienvenido",400);
         const axios = require("axios")
         axios.post(API_URL, {
             query:  `mutation{
@@ -37,21 +36,10 @@ class Login extends React.Component{
             console.log(token)
             if (token !== "-1") {
               localStorage.setItem("user", token);
-              this.open({
-                message: "Login is successful",
-                type: "is-success"
-              });
-              setTimeout(() => {
-                this.$router.push("Home");
-                location.reload();
-              }, 600);
+              localStorage.setItem("username", this.state.username)
+              alert("Bienvenido",4000)
             } else {
-              this.open({
-                duration: 5000,
-                message: `wrong password/username`,
-                position: "is-bottom",
-                type: "is-danger"
-              });
+              alert("Contraseña/usuario incorrectos, por favor verifica tus credenciales",4000)
             }
           }).catch(function(error) {
             console.log(error);
@@ -87,7 +75,6 @@ class Login extends React.Component{
                     <br></br>
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                     <div class="mainflip">
-                        {/* <div class="frontside">  */}
                             <div class="card">
                                 <div class="card-body text-center">
                                     <h4 class="card-title">Acceder</h4>
@@ -100,7 +87,7 @@ class Login extends React.Component{
                                                 <div class="col-xs-6 col-md-9">
                                                 </div>
                                                 <div class="col-xs-6 col-md-3">
-                                                   <a onClick={this.HandleLogin} href="/stores" id="verhcompras" onchange={this.ProceedLogin}class="btn"><i id ="next" class="fa fa-2x fa-arrow-circle-right" aria-hidden="true"></i></a>
+                                                   <a onClick={this.HandleLogin} id="verhcompras" onchange={this.ProceedLogin} class="btn"><i id ="next" class="fa fa-2x fa-arrow-circle-right" aria-hidden="true"></i></a>
                                                 </div>
                                             </div> 
                                             </div>   
