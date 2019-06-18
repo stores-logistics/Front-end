@@ -2,6 +2,8 @@ import React from 'react';
 import '../styles/Stores.css';
 import API_URL from '../Server';
 const axios = require("axios");
+import { Route } from "react-router";
+{<Route path='/stores/inventory/:id' component={SInventory}/> }
 let tokenStr = localStorage.getItem('user')
 
 class SInventory extends React.Component{
@@ -10,7 +12,7 @@ class SInventory extends React.Component{
         this.state = {
             prodList:[],
             storeList:[],
-            loaded: false
+            loaded: false 
     };
     this.getProducts = this.getProducts.bind(this);
     this.getStoreByCode = this.getStoreByCode.bind(this);
@@ -19,30 +21,33 @@ class SInventory extends React.Component{
 
 
     getProducts() {
-        return(
+        const {id} = this.props.match.params
+        return( 
                 axios.post(API_URL, { 
-                    headers: {"Authorization" : `Bearer ${tokenStr}`},
-                    query: `query{
-                        allProducts{
+                    query: `query{  
+                        productsByStore(storeId: ${id})
+                        {
                           _id
                           name
                           type
                           quantity
                           cost
                         }
-                      }`
-                }).then(res => {
-                    this.state.prodList = res.data.data.allProducts
+                    }`                    
+                },
+                {headers: {"Authorization" : "Bearer" + tokenStr}}
+                ).then(res => {
+                    this.state.prodList = res.data.data.productsByStore
                 })
             )
       };
       
-    
     getStoreByCode() {
+        const {id} = this.props.match.params
         return(
             axios.post(API_URL, { 
                 query: `query{
-                    storeByCode(code: ${2})
+                    storeByCode(code: ${id})
                     {
                       code
                       name
@@ -81,7 +86,6 @@ class SInventory extends React.Component{
 
         displayStoreDetails(){
             const si = this.state.storeList
-                // console.log(this.state.storeInfo)
             return(
                 <div>
                      <div class="row">
@@ -109,10 +113,10 @@ class SInventory extends React.Component{
                                </div>
                                <div class="row">
                                <div class="col-4">
-                                 <a id="cat">114234</a>
+                                 <a id="cat">{si[0]}</a>
                                 </div>
                                 <div  id="font" class="col-4">
-                                   <a id="cat">L-V 14:00-16:00</a>
+                                   <a id="cat">{si[5]}</a>
                                 </div>
                                 <div id="font" class="col-4">
                                     <a id="cat">{si[4]}</a>

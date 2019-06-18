@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/Stores.css';
-import CProducts from '../catalog/CProducts';
 
 
 class SEditinfo extends React.Component{
@@ -89,7 +88,6 @@ class SEditinfo extends React.Component{
                                 </div>
                             </div>
                             <br></br>
-                            <CProducts/>
                       </div>
                         </div>
                       </div>

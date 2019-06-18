@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/Users.css';
-import  CProducts from '../catalog/CProducts';
 import API_URL from '../Server';
 
 class Users extends React.Component{
@@ -70,7 +69,6 @@ class Users extends React.Component{
                               <br></br>                          
                                 <h2 className="titlec">Mi perfil</h2>                            
                               <br></br>
-                              <CProducts/>
                             </div>
                         </div>
                       </div>

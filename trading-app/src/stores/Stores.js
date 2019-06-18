@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/Stores.css';
-import CProducts from '../catalog/CProducts';
 import API_URL from '../Server';
 const axios = require("axios");
 let tokenStr = localStorage.getItem('user')
@@ -132,7 +131,6 @@ async componentWillMount(){
                             <br></br>
                             <h2 className="titlec">Mi tienda</h2>                             
                                             <br></br>
-                                            <CProducts/>                                
                                       </div>
                         </div>
                       </div>

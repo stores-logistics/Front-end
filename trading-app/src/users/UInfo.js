@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/Users.css';
-import CProducts from '../catalog/CProducts';
 
 
 class UInfo extends React.Component{
