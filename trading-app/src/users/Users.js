@@ -13,7 +13,7 @@ class Users extends React.Component{
                    <a id="title">Stores Manager</a>
                  </a>
                  <form class="form-inline my-2 my-lg-0">
-                     <a href="/login" class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
+                     <a href="/" class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
                  </form>
             </nav>           
               <div class="container">
@@ -70,8 +70,8 @@ class Users extends React.Component{
                               <br></br>                          
                                 <h2 className="titlec">Mi perfil</h2>                            
                               <br></br>
+                              <CProducts/>
                             </div>
-                            
                         </div>
                       </div>
               </div>

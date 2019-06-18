@@ -9,8 +9,9 @@ class Login extends React.Component{
     this.state = {
       username: '',
       password: '',
+      href: '',
       errors:{},
-      isLoading: false
+      isLoading: false,
     }
     this.ProceedLogin = this.ProceedLogin.bind(this);
     this.HandleLogin = this.HandleLogin.bind(this);
@@ -36,8 +37,13 @@ class Login extends React.Component{
             console.log(token)
             if (token !== "-1") {
               localStorage.setItem("user", token);
-              localStorage.setItem("username", this.state.username)
-              alert("Bienvenido",4000)
+              if(this.state.username == "caenietoba"){
+                alert("Bienvenido",4000)
+                location.href="/stores"
+              }else{
+                alert("Bienvenido",4000)
+                location.href="/users"
+              }
             } else {
               alert("Contraseña/usuario incorrectos, por favor verifica tus credenciales",4000)
             }
@@ -87,7 +93,7 @@ class Login extends React.Component{
                                                 <div class="col-xs-6 col-md-9">
                                                 </div>
                                                 <div class="col-xs-6 col-md-3">
-                                                   <a onClick={this.HandleLogin} id="verhcompras" onchange={this.ProceedLogin} class="btn"><i id ="next" class="fa fa-2x fa-arrow-circle-right" aria-hidden="true"></i></a>
+                                                   <a onClick={this.HandleLogin}  id="verhcompras" onchange={this.ProceedLogin} class="btn"><i id ="next" class="fa fa-2x fa-arrow-circle-right" aria-hidden="true"></i></a>
                                                 </div>
                                             </div> 
                                             </div>   
