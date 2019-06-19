@@ -12,6 +12,7 @@ class Login extends React.Component{
       href: '',
       errors:{},
       isLoading: false,
+      userinfo: []
     }
     this.ProceedLogin = this.ProceedLogin.bind(this);
     this.HandleLogin = this.HandleLogin.bind(this);
@@ -25,24 +26,47 @@ class Login extends React.Component{
         console.log('Your input name value is: ' + this.state.username);
         console.log('Your input value is: ' + this.state.password);
         const axios = require("axios")
-        axios.post(API_URL, {
+        axios.post(API_URL, { 
             query:  `mutation{
                 login(credentials: {
                   username:"${this.state.username}",
                   password:"${this.state.password}"
                 })  
               }` 
+        },
+        axios.post(API_URL, { 
+            query: `query{
+              userByUsername(username: "${this.state.username}"){
+                code
+                storeId
+                type
+              }
+            }`
         }).then(res => {
+              var dict = res.data.data.userByUsername 
+              var array = []
+              for(var key in dict) {
+              var value = dict[key];
+              array.push(value)
+              }   
+              this.setState({
+              storeInfo: array
+            }) 
+        })   
+        ).then(res => {
             const token = res.data.data.login;
+            const array = this.state.storeInfo
+            console.log(array)
             console.log(token)
             if (token !== "-1") {
-              localStorage.setItem("user", token);
-              if(this.state.username == "caenietoba"){
+              console.log("correcto")
+              localStorage.setItem("user", token);   
+              if(array[2] == "Admin"){
                 alert("Bienvenido",4000)
-                location.href="/stores"
+                location.href= '/stores/' + array[0] 
               }else{
                 alert("Bienvenido",4000)
-                location.href="/users"
+                location.href= '/users/' + array[1]
               }
             } else {
               alert("Contraseña/usuario incorrectos, por favor verifica tus credenciales",4000)
@@ -58,10 +82,10 @@ class Login extends React.Component{
                     this.setState({username : event.target.value})
             case "password":
                     this.setState({password : event.target.value})
-        }            
+        }              
     }
 
-    render() {
+    render() {   
         return(
             <section id="team" class="pb-5">
                   <nav class="navbar navbar-expand-md navbar-dark">

@@ -15,7 +15,6 @@ class Catalog extends React.Component{
     };
     this.getProducts = this.getProducts.bind(this);
     this.getStoreByCode = this.getStoreByCode.bind(this);
-    this.componentWillMount = this.componentWillMount.bind(this);
     }
 
     getStoreByCode(){
@@ -126,29 +125,29 @@ class Catalog extends React.Component{
             return this.state.cProducts.map( (item,key) => {
               return(
                         <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                            <div class="mainflip">
-                                <div class="frontside"> 
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <p><img class=" img-fluid" src={item.image} alt="card image"  height="30" width="30"></img></p>
-                                            <h4 id="card-titles">{item.name}</h4>
-                                            <br></br>
-                                            <h4 id="card-price">$ {item.cost}</h4>
+                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                <div class="mainflip">
+                                    <div class="frontside"> 
+                                        <div class="card">
+                                            <div class="card-body text-center">
+                                                <p><img class=" img-fluid" src={item.image} alt="card image"  height="30" width="30"></img></p>
+                                                <h4 id="card-titles">{item.name}</h4>
+                                                <br></br>
+                                                <h4 id="card-price">$ {item.cost}</h4>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="backside">
-                                    <div class="card">
-                                        <div class="card-body text-center mt-4">
-                                            <p class="card-text"><strong>{item.type}</strong></p>
-                                            <p class="card-text">{item.description}</p>
-                                            <h6 id="card-price">Stock: {item.quantity}</h6>
+                                    <div class="backside">
+                                        <div class="card">
+                                            <div class="card-body text-center mt-4">
+                                                <p class="card-text"><strong>{item.type}</strong></p>
+                                                <p class="card-text">{item.description}</p>
+                                                <h6 id="card-price">Stock: {item.quantity}</h6>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div> 
-                        </div>
+                                </div> 
+                            </div>
                     </div>
                 )
             })};

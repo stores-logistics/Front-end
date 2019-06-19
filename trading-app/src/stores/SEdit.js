@@ -105,10 +105,12 @@ class SEdit extends React.Component{
             };
 
          componentWillMount(){
-         this.reqCardInfo()
-         this.displayCard()
-         this.displayBack()
+                this.reqCardInfo()
+                this.displayCard()
+                this.displayBack()
            };
+
+  
 
         displayBack(){
             const {sid} = this.props.match.params
@@ -126,7 +128,13 @@ class SEdit extends React.Component{
             </div>
             )
         }
-
+/*
+        displayCheck(){
+            const {sid} = this.props.match.params
+            return(
+            )
+        }
+*/
 
         handleSubmit(){
             console.log('Your input value is: ' + this.state.nombre);
@@ -274,7 +282,7 @@ class SEdit extends React.Component{
                                         <td><a id="icon" onClick={this.handleDeletion}  class="btn"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                         </div>
                                         <div className="col-2">
-                                        <a id="icon" onClick={this.handleSubmit} class="btn"><i class="fas fa-check fa2x" onChange={this.updateInput} ></i></a>
+                                        <a id="icon" onClick={this.handleSubmit} href={'/stores/inventory/' + 1} class="btn"><i class="fas fa-check fa2x" onChange={this.updateInput} ></i></a>
                                         </div>
                                    </div>
                               </div>

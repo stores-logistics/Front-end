@@ -12,8 +12,10 @@ class Stores extends React.Component{
     super(props); 
     this.state = {
         storeList:[],
+        cProducts:[]
 };
 this.getStoreByCode = this.getStoreByCode.bind(this);
+this.getProducts = this.getProducts.bind(this);
 this.componentWillMount = this.componentWillMount.bind(this);
 }
 
@@ -51,7 +53,36 @@ getStoreByCode() {
   )
 };
 
+getProducts(){
+  const axios = require("axios")
+  const {id} = this.props.match.params
+  // console.log(this.props.match.params)
+  axios.post(API_URL, { 
+      // headers: {"Authorization" : `Bearer ${tokenStr}`},
+      query: `query{
+          productsByStore(storeId: ${id})
+          {
+            _id
+            name
+            description
+            type
+            image
+            storeId
+            quantity
+            cost
+          }
+        }`
+  }).then(res => {
+      console.log(res);
+      this.setState({
+          cProducts:res.data.data.productsByStore
+      }) 
+  })    
+};
+
+
 async componentWillMount(){
+  await this.getProducts()
   await this.getStoreByCode()
  };
 
@@ -105,6 +136,38 @@ async componentWillMount(){
 
   )
 }
+
+displayCProducts(){   
+  return this.state.cProducts.map( (item,key) => {
+    return(
+              <div class="col-xs-12 col-sm-6 col-md-4">
+                  <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                      <div class="mainflip">
+                          <div class="frontside"> 
+                              <div class="card">
+                                  <div class="card-body text-center">
+                                      <p><img class=" img-fluid" src={item.image} alt="card image"  height="30" width="30"></img></p>
+                                      <h4 id="card-titles">{item.name}</h4>
+                                      <br></br>
+                                      <h4 id="card-price">$ {item.cost}</h4>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="backside">
+                              <div class="card">
+                                  <div class="card-body text-center mt-4">
+                                      <p class="card-text"><strong>{item.type}</strong></p>
+                                      <p class="card-text">{item.description}</p>
+                                      <h6 id="card-price">Stock: {item.quantity}</h6>
+                                  </div>
+                              </div>
+                          </div>
+                      </div> 
+                  </div>
+          </div>
+      )
+  })};
+
     render() {
         return(
             <section id="team" class="pb-5">
@@ -133,6 +196,18 @@ async componentWillMount(){
                             <br></br>
                             <h2 className="titlec">Mi tienda</h2>                             
                                             <br></br>
+                            <div class="input-group">
+                                <input id ="test_i" type="text" class="form-control" placeholder="Buscar un producto"></input>
+                                <div class="input-group-append">
+                                    <button id="creditc" class="btn" type="button">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <br></br>
+                            <div class="row">
+                                {this.displayCProducts()}
+                            </div>
                                       </div>
                         </div>
                       </div>
