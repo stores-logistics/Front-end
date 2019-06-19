@@ -3,7 +3,7 @@ import '../styles/Stores.css';
 import API_URL from '../Server';
 let tokenStr = localStorage.getItem('user')
 import { Route } from "react-router";
-{<Route path='/inventory/add/:sid/:id' component={SAdd}/> }
+{<Route path='/inventory/add/:sid' component={SAdd}/> }
 
 
 class SAdd extends React.Component{
@@ -100,14 +100,7 @@ constructor(props){
     
     
     handleSubmit(){
-        console.log('Your input value is: ' + this.state.nombre);
-        console.log('Your input value is: ' + this.state.descripcion);
-        console.log('Your input value is: ' + this.state.categoria);
-        console.log('Your input value is: ' + this.state.imgurl);
-        console.log('Your input value is: ' + this.state.cantidad);
-        console.log('Your input value is: ' + this.state.precio);
         const {id} = this.props.match.params
-        console.log("ESTE ES EL IDDDD " + id);
         const axios = require("axios")
         axios.post(API_URL, { 
             // headers: {"Authorization" : `Bearer ${tokenStr}`},
@@ -133,10 +126,10 @@ constructor(props){
               }`
         },
         {headers: {"Authorization" : "Bearer " + tokenStr}}
-        ).then(
-            alert("Producto agregado",4000),
-            //location.href= '/stores/inventory/' + id
-        )
+        ).then(res =>{ 
+            alert("Producto añadido al inventario",4000),
+           location.href= '/stores/inventory/' + id 
+        });
 }
 
     render() {

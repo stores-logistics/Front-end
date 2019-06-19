@@ -91,13 +91,13 @@ class SOperations extends React.Component{
                  <div class="row">
                     <div class="col-2">
                       </div>
-                                    <div class="col-8">
-                                    <h4 class="card-title">{si[1]}</h4>
-                                    </div>
-                                    <div class="col-2">
-                                    <a id="icon"  href="/stores/edit" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
+                        <div class="col-8">
+                            <h4 class="card-title">{si[1]}</h4>
+                        </div>
+                        <div class="col-2">
+                           <a id="icon"  href={'/stores/edit/' + si[0]} class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                          </div>
+                         </div>
             <p><img class=" img-fluid" src={si[7]}alt="card image" height="100" width="100"></img></p>
               <div id="cat" class="container-fluid">
                          <div class="row">

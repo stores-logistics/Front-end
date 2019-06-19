@@ -21,6 +21,7 @@ class SEdit extends React.Component{
         this.updateInput = this.updateInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.componentWillMount = this.componentWillMount.bind(this);
+        this.handleDeletion = this.handleDeletion.bind(this);
         }
 
     
@@ -110,8 +111,6 @@ class SEdit extends React.Component{
                 this.displayBack()
            };
 
-  
-
         displayBack(){
             const {sid} = this.props.match.params
             return(
@@ -163,26 +162,34 @@ class SEdit extends React.Component{
                       type
                       image
                       storeId
-                      quantity
+                      quantity 
                       cost
                     }
                   }`
             },
             {headers: {"Authorization" : "Bearer " + tokenStr}}
-            );
-        
+            ).then(res =>{ 
+                alert("Producto modificado",4000),
+               location.href= '/stores/inventory/' + sid 
+            });
     }
 
 
     handleDeletion(){
+        const {id} = this.props.match.params
+        const {sid} = this.props.match.params
         const axios = require("axios")
         console.log("borrando...")
-        const {id} = this.props.match.params
-        console.log(id)
+        
         axios.post(API_URL, {
             query:  `mutation{
                  deleteProduct(_id: "${id}")
                }`
+        },
+        {headers: {"Authorization" : "Bearer " + tokenStr}}
+        ).then(res =>{ 
+            alert("Producto eliminado",4000),
+           location.href= '/stores/inventory/' + sid 
         });
     }
     
@@ -282,7 +289,7 @@ class SEdit extends React.Component{
                                         <td><a id="icon" onClick={this.handleDeletion}  class="btn"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                         </div>
                                         <div className="col-2">
-                                        <a id="icon" onClick={this.handleSubmit} href={'/stores/inventory/' + 1} class="btn"><i class="fas fa-check fa2x" onChange={this.updateInput} ></i></a>
+                                        <a id="icon" onClick={this.handleSubmit}  class="btn"><i class="fas fa-check fa2x" onChange={this.updateInput} ></i></a>
                                         </div>
                                    </div>
                               </div>
