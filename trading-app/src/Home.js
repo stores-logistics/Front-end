@@ -26,7 +26,7 @@ class Home extends React.Component{
                     dates
                     description
                     img
-                }
+                } 
               }`
         }).then(res => {
             // console.log(res);
@@ -77,7 +77,7 @@ class Home extends React.Component{
          <nav class="navbar navbar-dark">
                 <a id = "nav "class="navbar-brand" href="#">
                   <i class="fa fa-ship fa-1x" aria-hidden="true"></i>
-                   <a id = "title">Stores Manager</a>
+                   <a id = "title">Stores Management</a>
                  </a>
                  <form class="form-inline my-2 my-lg-0">
                  {/* <li class="nav-item dropdown">

@@ -67,7 +67,7 @@ class Signup extends React.Component{
                   <nav class="navbar navbar-expand-md navbar-dark">
                  <a id = "nav "class="navbar-brand" href="/">
                   <i class="fa fa-ship fa-1x" aria-hidden="true"></i>
-                   <a id = "title">Stores Manager</a>
+                   <a id = "title">Stores Management</a>
                       </a>
             </nav> 
             <h1 id = "onboard">Registro</h1>

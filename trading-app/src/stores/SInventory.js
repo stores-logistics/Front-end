@@ -61,7 +61,7 @@ class SInventory extends React.Component{
                   }`
             },
             {headers: {'authorization' : "Bearer " + tokenStr}}
-            ).then(res => {
+                ).then(res => {
                 var dict = res.data.data.storeByCode 
                 var array = []
                 for(var key in dict) {
@@ -168,7 +168,7 @@ class SInventory extends React.Component{
             <nav class="navbar navbar-dark">
      <a id="nav "class="navbar-brand" href="/">
        <i class="fa fa-ship fa-1x" aria-hidden="true"></i>
-        <a id="title">Stores Manager</a>
+        <a id="title">Stores Management</a>
       </a>
       <form class="form-inline my-2 my-lg-0">
           <a href="/login" class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>

@@ -37,8 +37,8 @@ class App extends React.Component{
               <Route exact path = "/stores/edit/:id"component = {SEditinfo} />
               <Route exact path = "/stores/inventory/add/:id" component = {SAdd} />
               <Route exact path = "/users/:id" component = {Users} />
-              <Route exact path = "/users/edit" component = {UInfo} />
-              <Route exact path = "/users/history" component = {UHistory} />
+              <Route exact path = "/users/edit/:id" component = {UInfo} />
+              <Route exact path = "/users/history/:id" component = {UHistory} />
             </Switch>
           </BrowserRouter>
        </div>   

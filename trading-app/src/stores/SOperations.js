@@ -153,7 +153,7 @@ class SOperations extends React.Component{
             <nav class="navbar navbar-dark">
                 <a id="nav "class="navbar-brand" href="/">
                     <i class="fa fa-ship fa-1x" aria-hidden="true"></i>
-                    <a id="title">Stores Manager</a>
+                    <a id="title">Stores Management</a>
                 </a>
                 <form class="form-inline my-2 my-lg-0">
                      <a href="/login" class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
@@ -184,7 +184,7 @@ class SOperations extends React.Component{
                                                         <div class="row">
                                                             <div class="input-group">
                                                                 <input id ="test_i" type="text" class="form-control" placeholder="Buscar una operación"></input>
-                                                                <div class="input-group-append">
+                                                           <div class="input-group-append">
                                                                     <button id="creditc" class="btn" type="button">
                                                                         <i class="fa fa-search" aria-hidden="true"></i>
                                                                     </button>

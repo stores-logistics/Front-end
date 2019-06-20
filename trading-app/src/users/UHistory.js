@@ -1,32 +1,129 @@
 import React from 'react';
 import '../styles/Users.css';
 import API_URL from '../Server';
-
+const axios = require("axios");
+let tokenStr = localStorage.getItem('user')
+import { Route } from "react-router";
+{<Route path='/users/history/:id' component={NSHistory}/> }
 
 class NSHistory extends React.Component{
 
     constructor(props){
         super(props);
         this.state = {
-            operList:[]
+            operList:[],
+            userList:[]
         }
+        this.getUserbyCode = this.getUserbyCode.bind(this);
+        this.getTradings = this.getTradings.bind(this);
     }
 
-    componentDidMount(){
+    getUserbyCode() {
+        const {id} = this.props.match.params
+        return(
+            axios.post(API_URL, { 
+                query: `query{
+                  userByCode(code: ${id}){
+                    code
+                    name
+                    lastName
+                    cabin
+                    creditCard
+                    username
+                    password
+                    phoneNumber
+                    address
+                    city
+                    age
+                    avatar
+                    type
+                    storeId
+                  }
+                }`
+            },
+            {headers: {"Authorization" : "Bearer " + tokenStr}}
+            ).then(res => {
+                var dict = res.data.data.userByCode 
+                var array = []
+                for(var key in dict) {
+                var value = dict[key];
+                array.push(value)
+                }  
+                this.setState({userList: array})
+                this.setState({loaded: true})
+            })
+        )
+      };
+
+      displayUserDetails(){
+        const si = this.state.userList
+        return(
+            <div>
+                 <div class="row">
+                                    <div class="col-2">
+                                    </div>
+                                    <div class="col-8">
+                                    <h4 class="card-title">{si[1]}</h4>
+                                    </div>
+                                    <div class="col-2">
+                                    <a id="icon"  href={'/users/edit/' + si[0]} class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+            <p><img class=" img-fluid" src={si[11]}alt="card image" height="100" width="100"></img></p>
+              <div id="cat" class="container-fluid">
+                         <div class="row">
+                           <div id="symbol" class="col-4">
+                              <i class="fa fa-id-badge" aria-hidden="true"></i>
+                            </div>
+                            <div id="symbol" class="col-4">
+                              <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+                            </div>
+                            <div id="symbol" class="col-4">
+                              <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            </div>
+                           </div>
+                           <div class="row">
+                           <div class="col-4">
+                             <a id="cat">{si[0]}</a>
+                            </div>
+                            <div  id="font" class="col-4">
+                               <a id="cat">{si[4]}</a>
+                            </div>
+                            <div id="font" class="col-4">
+                                <a id="cat">{si[3]}</a>
+                            </div>
+                           </div>
+                         </div>
+                         <hr></hr>
+                                  <a href={'/users/' + si[0]}  id="verhcompras" class="btn">Perfil</a>
+                              <hr></hr>
+                                  <a href={'/users/history/' + si[0]} id="verhcompras" class="btn"><strong>Historial de compras</strong></a>
+                        </div>
+      
+        )
+      }
+
+      componentWillMount(){
+         this.getUserbyCode()
+         this.getTradings()
+       };
+      
+    getTradings(){
             const axios = require("axios")
+            const {id} = this.props.match.params
             let tokenStr = localStorage.getItem('user')
             axios.post(API_URL, {   
                 headers: {"Authorization" : `Bearer ${tokenStr}`},
-                query: `query{
-                    allTradings{
-                      _id
-                      timestamp
-                      store_id
-                      user_id
-                      product_id
-                      price
-                    }
-                  }`
+                query: ` tradingsByUserId(user_id: ${id})
+                {
+                  _id
+                  timestamp
+                  store_id
+                  user_id
+                  product_id
+                  price
+                }
+              }`
             }).then(res => {
                 // console.log(res);
                 this.setState({
@@ -54,7 +151,7 @@ class NSHistory extends React.Component{
                      <nav class="navbar navbar-dark">
                 <a id="nav "class="navbar-brand" href="/">
                   <i class="fa fa-ship fa-1x" aria-hidden="true"></i>
-                   <a id="title">Stores Manager</a>
+                   <a id="title">Stores Management</a>
                  </a>
                  <form class="form-inline my-2 my-lg-0">
                      <a href="/login" class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
@@ -69,46 +166,7 @@ class NSHistory extends React.Component{
                 <div class="col-4">
                     <div class="card">
                         <div class="card-body text-center">
-                        <div class="row">
-                                        <div class="col-2">
-                                        </div>
-                                        <div class="col-8">
-                                        <h4 class="card-title">Iván Herrera</h4>
-                                        </div>
-                                        <div class="col-2">
-                                        <a id="icon" href="/users/edit" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                        </div>
-                            </div>
-                            <p><img class=" img-fluid" src="https://image.flaticon.com/icons/svg/1816/1816075.svg " alt="card image" height="100" width="100"></img></p>
-                            <div class="container-fluid">
-                             <div class="row">
-                               <div id="symbol" class="col-4">
-                                  <i class="fa fa-id-badge" aria-hidden="true"></i>
-                                </div>
-                                <div id="symbol" class="col-4">
-                                   <i class="fa fa-credit-card" aria-hidden="true"></i>
-                                </div>
-                                <div id="symbol" class="col-4">
-                                    <i class="fa fa-bed" aria-hidden="true"></i>
-                                </div>
-                               </div>
-                               <div class="row">
-                               <div id="cat"class="col-4">
-                                  11286535
-                                </div>
-                                <div id="cat" class="col-4">
-                                   ***9828
-                                </div>
-                                <div id="cat" class="col-4">
-                                    26E
-                                </div>
-                               </div>
-                             </div>
-                             <hr></hr>
-                              <a href="/users" id="verhcompras" class="btn">Perfil</a>                      
-                              <hr></hr>
-                              <a href="/users/history" id="verhcompras" class="btn"><strong>Historial de compras</strong></a>                      
-                    
+                                {this.displayUserDetails()}
                             </div>
                         </div>
                     </div>
@@ -116,7 +174,7 @@ class NSHistory extends React.Component{
                   <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                     <div class="mainflip">
                         {/* <div class="frontside">  */}
-                            <div class="card">
+                            <div id ="longpage" class="card">
                                 <div class="card-body text-center">
                                     <h4 class="card-title">Historial de compras</h4>
                                 <div class="container-fluid">
@@ -132,8 +190,8 @@ class NSHistory extends React.Component{
                                     </div>
 
                                 </div>
-                                .
-                                    <table class="table">
+                                <br></br>
+                                    <table  id="tab_stores" class="table">
                                         <thead >
                                             <tr id="head_table" >
                                                 <th scope="col">Operación #</th>
@@ -144,7 +202,7 @@ class NSHistory extends React.Component{
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {this.displayOperations()}                              
+                                            {this.displayOperations()}
                                         </tbody>
                                         </table>
                                         <br></br>

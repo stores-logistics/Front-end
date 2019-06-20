@@ -38,7 +38,7 @@ getStoreByCode() {
             }`
       },
       {headers: {"Authorization" : "Bearer " + tokenStr}}
-      ).then(res => {
+      ).then(res => { 
           var dict = res.data.data.storeByCode 
           var array = []
           for(var key in dict) {
@@ -46,9 +46,7 @@ getStoreByCode() {
           array.push(value)
           }  
           this.setState({storeList: array})
-          console.log(array)
           this.setState({loaded: true})
-          console.log(this.state.storeList)
       })
   )
 };
@@ -176,7 +174,7 @@ displayCProducts(){
                   <nav class="navbar navbar-dark">
                 <a id="nav "class="navbar-brand" href="/">
                   <i class="fa fa-ship fa-1x" aria-hidden="true"></i>
-                   <a id="title">Stores Manager</a>
+                   <a id="title">Stores Management</a>
                  </a>
                  <form class="form-inline my-2 my-lg-0">
                      <a href="/login" class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
