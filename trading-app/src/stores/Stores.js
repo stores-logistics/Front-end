@@ -72,7 +72,9 @@ getProducts(){
             cost
           }
         }`
-  }).then(res => {
+  },
+  {headers: {"Authorization" : "Bearer " + tokenStr}}
+  ).then(res => {
       console.log(res);
       this.setState({
           cProducts:res.data.data.productsByStore
