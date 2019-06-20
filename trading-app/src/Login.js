@@ -40,6 +40,7 @@ class Login extends React.Component{
                 code
                 storeId
                 type
+                name
               }
             }`
         }).then(res => {
@@ -61,12 +62,12 @@ class Login extends React.Component{
             if (token !== "-1") {
               console.log("correcto")
               localStorage.setItem("user", token);   
-              if(array[2] == "Admin"){
+              if(array[2] == "Tienda"){
                 alert("Bienvenido",4000)
-                location.href= '/stores/' + array[0] 
+                location.href= '/stores/' + array[1] 
               }else{
                 alert("Bienvenido",4000)
-                location.href= '/users/' + array[1]
+                location.href= '/users/' + array[0]
               }
             } else {
               alert("Contraseña/usuario incorrectos, por favor verifica tus credenciales",4000)

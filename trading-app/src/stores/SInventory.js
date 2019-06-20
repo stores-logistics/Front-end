@@ -35,7 +35,7 @@ class SInventory extends React.Component{
                         }
                     }`                    
                 },
-                {headers: {"Authorization" : "Bearer" + tokenStr}}
+                {headers: {'authorization' : "Bearer " + tokenStr}}
                 ).then(res => {
                     this.state.prodList = res.data.data.productsByStore
                 })
@@ -60,7 +60,7 @@ class SInventory extends React.Component{
                     }
                   }`
             },
-            {headers: {"Authorization" :  "Bearer " + tokenStr}}
+            {headers: {'authorization' : "Bearer " + tokenStr}}
             ).then(res => {
                 var dict = res.data.data.storeByCode 
                 var array = []
