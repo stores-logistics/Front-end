@@ -61,6 +61,10 @@ constructor(props){
 */
 
     displayBack(){
+        if(!localStorage.getItem("user")){
+            location.href= '/login'
+            alert("Por favor inicia sesión",0)
+          } 
         const {id} = this.props.match.params
         return(
         <div class="row">

@@ -94,6 +94,10 @@ class SInventory extends React.Component{
     
 
     async componentWillMount(){
+        if(!localStorage.getItem("user")){
+            location.href= '/login'
+            alert("Por favor inicia sesión",0)
+          } 
          await this.getProducts()
          await this.getStoreByCode()
         };

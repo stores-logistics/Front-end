@@ -167,6 +167,10 @@ class SEditinfo extends React.Component{
                 }
 
                 componentWillMount(){
+                    if(!localStorage.getItem("user")){
+                        location.href= '/login'
+                        alert("Por favor inicia sesión",0)
+                      } 
                     this.getStoreByCode()
                     this.displayCard()
                     this.displayBack()

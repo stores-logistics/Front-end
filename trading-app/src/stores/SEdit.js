@@ -106,6 +106,10 @@ class SEdit extends React.Component{
             };
 
          componentWillMount(){
+            if(!localStorage.getItem("user")){
+                location.href= '/login'
+                alert("Por favor inicia sesión",0)
+              } 
                 this.reqCardInfo()
                 this.displayCard()
                 this.displayBack()

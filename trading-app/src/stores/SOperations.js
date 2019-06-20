@@ -20,6 +20,10 @@ class SOperations extends React.Component{
     }
     
     getStoreByCode() {
+        if(!localStorage.getItem("user")){
+            location.href= '/login'
+            alert("Por favor inicia sesión",0)
+          } 
       const {id} = this.props.match.params
       return(
           axios.post(API_URL, { 
