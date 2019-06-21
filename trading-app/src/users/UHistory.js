@@ -55,6 +55,10 @@ class NSHistory extends React.Component{
         )
       };
 
+      closeSession(){
+        localStorage.clear()
+    }    
+
       displayUserDetails(){
         const si = this.state.userList
         return(
@@ -104,8 +108,13 @@ class NSHistory extends React.Component{
       }
 
       componentWillMount(){
+        if(!localStorage.getItem("user")){
+            location.href= '/login'
+            alert("Por favor inicia sesión",0)
+          }else{
          this.getUserbyCode()
          this.getTradings()
+          }
        };
       
     getTradings(){
@@ -154,7 +163,7 @@ class NSHistory extends React.Component{
                    <a id="title">Stores Management</a>
                  </a>
                  <form class="form-inline my-2 my-lg-0">
-                     <a href="/login" class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
+                     <a href="/" onClick={this.closeSession} class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
                  </form>
 
             </nav> 

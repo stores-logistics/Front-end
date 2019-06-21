@@ -92,6 +92,9 @@ class SInventory extends React.Component{
         )
     }
     
+    closeSession(){
+        localStorage.clear()
+    }
 
     async componentWillMount(){
         if(!localStorage.getItem("user")){
@@ -175,7 +178,7 @@ class SInventory extends React.Component{
         <a id="title">Stores Management</a>
       </a>
       <form class="form-inline my-2 my-lg-0">
-          <a href="/login" class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
+          <a href="/" onClick={this.closeSession} class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
       </form>
 
  </nav> 

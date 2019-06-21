@@ -79,12 +79,17 @@ getStores(){
       this.setState({
           storeList:res.data.data.allStores
       }) 
-  })    
+  })     
 };
 
 async componentWillMount(){
+  if(!localStorage.getItem("user")){
+    location.href= '/login'
+    alert("Por favor inicia sesión",0)
+  }else{
   await this.getUserbyCode()
   await this.getStores()
+  }
  };
 
  displayUserDetails(){
@@ -168,6 +173,10 @@ displayStores(){
   })
 }
 
+closeSession(){
+  localStorage.clear()
+}
+
     render() {
         return(
           <section id="team" class="pb-5">
@@ -177,7 +186,7 @@ displayStores(){
                    <a id="title">Stores Management</a>
                  </a>
                  <form class="form-inline my-2 my-lg-0">
-                     <a href="/" class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
+                     <a href="/" onClick={this.closeSession} class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
                  </form>
             </nav>           
               <div class="container">

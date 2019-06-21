@@ -16,6 +16,7 @@ class Stores extends React.Component{
 };
 this.getStoreByCode = this.getStoreByCode.bind(this);
 this.getProducts = this.getProducts.bind(this);
+this.closeSession = this.closeSession.bind(this);
 this.componentWillMount = this.componentWillMount.bind(this);
 }
 
@@ -80,15 +81,19 @@ getProducts(){
   })    
 };
 
+closeSession(){
+    localStorage.clear()
+}
 
 async componentWillMount(){
     if(!localStorage.getItem("user")){
         location.href= '/login'
         alert("Por favor inicia sesión",0)
-      } 
-  await this.getProducts()
-  await this.getStoreByCode()
- };
+      }else{
+        await this.getProducts()
+        await this.getStoreByCode()
+      }
+     };
 
  displayStoreDetails(){
   const si = this.state.storeList
@@ -181,12 +186,11 @@ displayCProducts(){
                    <a id="title">Stores Management</a>
                  </a>
                  <form class="form-inline my-2 my-lg-0">
-                     <a href="/login" class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
+                     <a href="/" onClick={this.closeSession} class="btn"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
                  </form>
             </nav> 
               <div class="container">
-                  <form class="form-inline">
-                  </form>
+                  <form class="form-inline">                  </form>
                       <div class="row">
                           <div class="col-4">
                               <div class="card">
