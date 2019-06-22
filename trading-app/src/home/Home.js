@@ -1,6 +1,6 @@
 import React from 'react';
-import './styles/Home.css';
-import API_URL from './Server';
+import '../styles/Home.css';
+import API_URL from '../Server';
 
 class Home extends React.Component{
 

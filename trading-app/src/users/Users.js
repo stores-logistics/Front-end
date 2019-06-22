@@ -141,6 +141,7 @@ async componentWillMount(){
 }
 
 displayStores(){
+  const si = this.state.userList
   return this.state.storeList.map( (item,key) => {
     return(
               <div class="col-xs-12 col-sm-6 col-md-4">
@@ -162,7 +163,7 @@ displayStores(){
                                       <p class="card-text">{item.description}</p>
                                       <h4 id="card-titles">Ubicación</h4>
                                       <p class="card-text">{item.ubication}</p>
-                                      <btn class="btn btn-warning">ver catálogo</btn>                                  
+                                      <a  href={'/purchases/catalog/' + si[0] + '/' + item.code} class="btn btn-warning">Comprar  </a>   
                                   </div>
                               </div>
                           </div>
@@ -203,7 +204,7 @@ closeSession(){
                           <div class="col-8">
                             <div class="container" id="contcat">
                               <br></br>                          
-                                <h2 className="titlec">Mi perfil</h2>                            
+                                <h2 className="titlec">Comprar</h2>                            
                               <br></br>
                               <div class="container-fluid">
                                                         <div class="row">
