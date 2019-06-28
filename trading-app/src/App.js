@@ -5,6 +5,7 @@ import Catalog from './home/Catalog'
 import Home from './home/Home'
 import Login from './Login'
 import CatalogPurchases from './purchases/CatalogPurchases'
+import ProductSelected from './purchases/ProductSelected'
 import Signup from './users/Signup'
 import SSignup from './stores/SSignup'  
 import Stores from './stores/Stores'  
@@ -18,18 +19,19 @@ import UInfo from './users/UInfo'
 import UHistory from './users/UHistory'
 import './styles/App.css';
 
-
 class App extends React.Component{
   
   render(){
       return(            
        <div >
+         {/* <Header/> */}
          <BrowserRouter>
             <Switch>
               <Route exact path = "/" component = {Home} />
               <Route exact path = "/catalog/:id" component = {Catalog} />
               <Route exact path = "/login" component = {Login} />
               <Route exact path = "/purchases/catalog/:uid/:sid" component = {CatalogPurchases} />
+              <Route exact path = "/purchases/catalog/product/:uid/:sid" component = {CatalogPurchases} />
               <Route exact path = "/signup" component = {Signup} />
               <Route exact path = "/ssignup" component = {SSignup} />
               <Route exact path = "/stores/:id" component = {Stores} />

@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/Login.css';
 import API_URL from './Server'
 
+
 class Login extends React.Component{
 
   constructor(props){
@@ -60,12 +61,11 @@ class Login extends React.Component{
             console.log(array)
             console.log(token)
             if (token !== "-1") {
-              console.log("correcto")
               localStorage.setItem("user", token);   
-              if(array[2] == "Tienda"){
+              if(array[2] == "Manager"){
                 alert("Bienvenido",4000)
                 location.href= '/stores/' + array[1] 
-              }else{
+              }else if(array[2] == "Passanger"){
                 alert("Bienvenido",4000)
                 location.href= '/users/' + array[0]
               }

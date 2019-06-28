@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Home.css';
+import Header from '../Header';
 import API_URL from '../Server';
 
 class Home extends React.Component{
@@ -74,25 +75,7 @@ class Home extends React.Component{
     render() {
         return(
         <section id="team" class="pb-5">
-         <nav class="navbar navbar-dark">
-                <a id = "nav "class="navbar-brand" href="#">
-                  <i class="fa fa-ship fa-1x" aria-hidden="true"></i>
-                   <a id = "title">Stores Management</a>
-                 </a>
-                 <form class="form-inline my-2 my-lg-0">
-                 {/* <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         Registro
-                    </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a href="/signup" class="btn">Cliente</a>
-                    <a href="/ssignup" class="btn">Tienda</a>
-                </div>
-                 </li> */}
-                 <a href="/login" class="btn">Login</a>
-                 </form>
-
-            </nav> 
+         <Header/>
                 <br></br>
          <div class="container">
                 <h1 id = "onboard">Bienvenido a bordo</h1>
