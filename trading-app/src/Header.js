@@ -12,7 +12,7 @@ class Header extends React.Component{
                <nav class="navbar navbar-dark">
                 <a id = "nav "class="navbar-brand" href="#">
                   <i class="fa fa-ship fa-1x" aria-hidden="true"></i>
-                   <a id = "title">Test Stores Management</a>
+                   <a id = "title">Stores Management</a>
                  </a>
                  <form class="form-inline my-2 my-lg-0">
                  <a href="/login" class="btn">Login</a>

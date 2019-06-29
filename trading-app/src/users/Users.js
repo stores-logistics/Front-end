@@ -23,24 +23,24 @@ getUserbyCode() {
   const {id} = this.props.match.params
   return(
       axios.post(API_URL, { 
-          query: `query{
-            userByCode(code: ${id}){
-              code
-              name
-              lastName
-              cabin
-              creditCard
-              username
-              password
-              phoneNumber
-              address
-              city
-              age
-              avatar
-              type
-              storeId
-            }
-          }`
+            query: `query{
+              userByCode(code: ${id}){
+                code
+                name
+                lastName
+                cabin
+                creditCard
+                username
+                password
+                phoneNumber
+                address
+                city
+                age
+                avatar
+                type
+                storeId
+              }
+            }`
       },
       {headers: {"Authorization" : "Bearer " + tokenStr}}
       ).then(res => {
@@ -59,9 +59,9 @@ getUserbyCode() {
 };
 
 getStores(){
+  console.log("getstores")
   const axios = require("axios")
   axios.post(API_URL, {
-      headers: {"Public" : true}, 
       query: `query{                
           allStores{
               code
@@ -74,7 +74,9 @@ getStores(){
               img
           }
         }`
-  }).then(res => {
+  },
+  {headers: {"Public" : true}} 
+  ).then(res => {
       // console.log(res);
       this.setState({
           storeList:res.data.data.allStores

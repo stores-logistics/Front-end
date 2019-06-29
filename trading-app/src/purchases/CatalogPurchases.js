@@ -15,9 +15,37 @@ class CatalogPurchases extends React.Component{
             cProducts:[],
             loaded: false
     };
-    this.getProducts = this.getProducts.bind(this);
+//    this.getProducts = this.getProducts.bind(this);
     this.getStoreByCode = this.getStoreByCode.bind(this);
     }
+
+
+    getProducts(){
+        const axios = require("axios")
+        const {sid} = this.props.match.params
+        // console.log(this.props.match.params)
+        axios.post(API_URL, { 
+            // headers: {"Authorization" : `Bearer ${tokenStr}`},
+            query: `query{
+                productsByStore(storeId: ${sid})
+                {
+                  _id
+                  name
+                  description
+                  type
+                  image
+                  storeId
+                  quantity
+                  cost
+                }
+              }`
+        }).then(res => {
+            console.log(res);
+            this.setState({
+                cProducts:res.data.data.productsByStore
+            }) 
+        })    
+    };
 
     getStoreByCode(){
         const axios = require("axios")
@@ -51,32 +79,6 @@ class CatalogPurchases extends React.Component{
             })
         };
 
-        getProducts(){
-            const axios = require("axios")
-            const {sid} = this.props.match.params
-            // console.log(this.props.match.params)
-            axios.post(API_URL, { 
-                // headers: {"Authorization" : `Bearer ${tokenStr}`},
-                query: `query{
-                    productsByStore(storeId: ${sid})
-                    {
-                      _id
-                      name
-                      description
-                      type
-                      image
-                      storeId
-                      quantity
-                      cost
-                    }
-                  }`
-            }).then(res => {
-                console.log(res);
-                this.setState({
-                    cProducts:res.data.data.productsByStore
-                }) 
-            })    
-        };
 
         async componentWillMount(){
             if(!localStorage.getItem("user")){
@@ -126,7 +128,7 @@ class CatalogPurchases extends React.Component{
                                    </div>
                                  </div>
                     </div>
-                )            
+                )             
         };
 
         displayCProducts(){  

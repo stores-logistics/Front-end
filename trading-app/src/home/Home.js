@@ -62,7 +62,7 @@ class Home extends React.Component{
                     <h4 class="card-title">Ubicación</h4>
                     <p class="card-text">{item.ubication}</p>
                     <a  href={'/catalog/' + item.code} class="btn btn-warning">Ver productos</a>   
-                    <h1 className="trans">...............................</h1>                    
+                    <h1 className="trans">............................</h1>                    
                 </div>
             </div>
         </div>
