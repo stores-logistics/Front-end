@@ -132,6 +132,7 @@ class CatalogPurchases extends React.Component{
         };
 
         displayCProducts(){  
+            const {uid} = this.props.match.params
             const si = this.state.storeInfo 
             return this.state.cProducts.map( (item,key) => {
               return(
@@ -154,10 +155,10 @@ class CatalogPurchases extends React.Component{
                                                 <p class="card-text"><strong>{item.type}</strong></p>
                                                 <p class="card-text">{item.description}</p>
                                                 <h6 id="card-price">Stock: {item.quantity}</h6>
-                                                <a  href={'/purchases/catalog/product/' + si[0] + '/' + item.code} class="btn btn-warning">Comprar  </a>   
+                                                <a  href={'/purchases/catalog/product/' + si[0] + '/' + uid +'/' + item._id} class="btn btn-warning">Comprar  </a>   
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> 
                                 </div> 
                             </div>
                     </div>

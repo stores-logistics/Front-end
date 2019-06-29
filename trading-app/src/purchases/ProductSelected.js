@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/Stores.css';
 import API_URL from '../Server';
 import { Route } from "react-router";
-{<Route path='/purchases/catalog/:uid/:sid' component={ProductSelected}/> }
+{<Route path='/purchases/catalog/:uid/:sid/:pid' component={ProductSelected}/> }
 let tokenStr = localStorage.getItem('user')
 
 
@@ -10,7 +10,7 @@ class ProductSelected extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-          nombre : '',
+          nombre : '', 
           descripcion : '',
           categoria : '',
           imgurl : '',
