@@ -31,7 +31,7 @@ class App extends React.Component{
               <Route exact path = "/catalog/:id" component = {Catalog} />
               <Route exact path = "/login" component = {Login} />
               <Route exact path = "/purchases/catalog/:uid/:sid" component = {CatalogPurchases} />
-              <Route exact path = "/purchases/catalog/product/:uid/:sid/:pid" component = {CatalogPurchases} />
+              <Route exact path = "/purchases/catalog/product/:uid/:sid/:pid" component = {ProductSelected} />
               <Route exact path = "/signup" component = {Signup} />
               <Route exact path = "/ssignup" component = {SSignup} />
               <Route exact path = "/stores/:id" component = {Stores} />

@@ -15,7 +15,7 @@ class CatalogPurchases extends React.Component{
             cProducts:[],
             loaded: false
     };
-//    this.getProducts = this.getProducts.bind(this);
+    this.getProducts = this.getProducts.bind(this);
     this.getStoreByCode = this.getStoreByCode.bind(this);
     }
 
@@ -155,7 +155,7 @@ class CatalogPurchases extends React.Component{
                                                 <p class="card-text"><strong>{item.type}</strong></p>
                                                 <p class="card-text">{item.description}</p>
                                                 <h6 id="card-price">Stock: {item.quantity}</h6>
-                                                <a  href={'/purchases/catalog/product/' + si[0] + '/' + uid +'/' + item._id} class="btn btn-warning">Comprar  </a>   
+                                                <a  href={'/purchases/catalog/product/' + uid + '/' + si[0] +'/' + item._id} class="btn btn-warning">Comprar  </a>   
                                             </div>
                                         </div>
                                     </div> 
