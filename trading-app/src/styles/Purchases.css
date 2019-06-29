@@ -12,6 +12,7 @@
 #titleee{
     font-family: 'Crimson Text', serif;
     color: #00577b;
+    font-size: 2.3em;
 }
 
 .card-texttt{
@@ -28,4 +29,8 @@
     font-family: 'Work Sans', sans-serif;
     background-color: #00577b;
     color: white;
+}
+
+.img-fluidit{
+    border-radius: 25px;
 }

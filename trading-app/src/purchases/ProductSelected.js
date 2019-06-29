@@ -121,39 +121,21 @@ class ProductSelected extends React.Component{
                                         <a id="icon" href={'/purchases/catalog/' + uid + '/' + sid} class="btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
                                     </div>
                                     <div class="col-8">
-                                        <h2 id="titleee">{si[1]}</h2>
+                                        <h1 id="titleee">{si[1]}</h1>
                                     </div>
                                     <div class="col-2">
                                     </div>
                                 </div>
                                 <br></br>
-                                <img id="img-gg" src={si[4]} alt="card image" height="400" width="400"></img>
+                                <img id="img-gg"  src={si[4]} alt="card image" height="400" width="400"></img>
                                     </div>
                                     </div>
                                 <div  class="col-xs-10 col-4">
                                   <div id="contcat" className="container">
                                       <br></br>
                                       <p class="card-texttt"><strong>Ofrecido por {sis[1]}</strong></p>
-                                       <p><img class=" img-fluid" src={sis[7]} alt="card image"  height="50" width="50"></img></p>
+                                       <p><img class="img-fluidit" src={sis[7]} alt="card image"  height="50" width="50"></img></p>
                                        <h4 class="card-title"> </h4> 
-                                       {/* <div id="cat" class="container-fluid">
-                                        <div class="row">
-                                            <div id="symbol" class="col-6">
-                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                            </div>
-                                            <div id="symbol" class="col-6">
-                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                            </div>
-                                            </div>
-                                            <div class="row">
-                                            <div  id="font" class="col-6">
-                                                <a id="cat">{sis[5]}</a>
-                                            </div>
-                                            <div id="font" class="col-6">
-                                                <a id="cat">{sis[4]}</a>
-                                            </div>
-                                            </div>
-                                        </div> */}
                                         <hr></hr>
                                        <p class="card-text">{si[2]}</p>
                                         <hr></hr>
@@ -162,7 +144,7 @@ class ProductSelected extends React.Component{
                                         <div class="col-1">                                            
                                         </div>
                                          <div class="col-3">
-                                             <p class="card-text"><strong>Pagas</strong></p>                                         
+                                             <p id="card-titleee" class="card-text"><strong>Pagas</strong></p>                                         
                                          </div>          
                                          <div class="col-1">                                            
                                         </div>                               
