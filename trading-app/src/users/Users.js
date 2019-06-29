@@ -165,7 +165,7 @@ displayStores(){
                                       <p class="card-text">{item.description}</p>
                                       <h4 id="card-titles">Ubicación</h4>
                                       <p class="card-text">{item.ubication}</p>
-                                      <a  href={'/purchases/catalog/' + si[0] + '/' + item.code} class="btn btn-warning">Comprar  </a>   
+                                      <a button class="btnn"  href={'/purchases/catalog/' + si[0] + '/' + item.code}>Comprar  </a>   
                                   </div>
                               </div>
                           </div>

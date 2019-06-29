@@ -61,7 +61,7 @@ class Home extends React.Component{
                     <p class="card-text">{item.dates}</p>
                     <h4 class="card-title">Ubicación</h4>
                     <p class="card-text">{item.ubication}</p>
-                    <a  href={'/catalog/' + item.code} class="btn btn-warning">Ver productos</a>   
+                    <a class="btnn"  href={'/catalog/' + item.code} >Ver productos</a>   
                     <h1 className="trans">............................</h1>                    
                 </div>
             </div>
