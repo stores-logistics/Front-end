@@ -23,11 +23,16 @@ class ProductSelected extends React.Component{
 
 
     componentWillMount(){
+        const {id} = this.props.match.params    
         if(!localStorage.getItem("user")){
             location.href= '/login'
             alert("Por favor inicia sesión",0)
           } 
           if((localStorage.getItem("type")) != "Passanger"){
+            location.href= '/'
+            alert("No tienes permiso para acceder a esta sección",0)
+          }
+          if((localStorage.getItem("Id")) != id){
             location.href= '/'
             alert("No tienes permiso para acceder a esta sección",0)
           }

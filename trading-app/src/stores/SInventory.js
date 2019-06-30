@@ -97,6 +97,7 @@ class SInventory extends React.Component{
     }
 
     async componentWillMount(){
+        const {id} = this.props.match.params
         if(!localStorage.getItem("user")){
             location.href= '/login'
             alert("Por favor inicia sesión",0)
@@ -105,6 +106,10 @@ class SInventory extends React.Component{
                 location.href= '/'
                 alert("No tienes permiso para acceder a esta sección",0)
             }
+            if((localStorage.getItem("Id")) != id){
+                location.href= '/'
+                alert("No tienes permiso para acceder a esta sección",0)
+              }
          await this.getProducts()
          await this.getStoreByCode()
         }

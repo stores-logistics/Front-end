@@ -86,14 +86,19 @@ class SOperations extends React.Component{
     }
 
     async componentWillMount(){
+        const {id} = this.props.match.params
         if(!localStorage.getItem("user")){
             location.href= '/login'
             alert("Por favor inicia sesión",0)
           }else{
-        if((localStorage.getItem("type")) != "Manager"){
-            location.href= '/'
-            alert("No tienes permiso para acceder a esta sección",0)
-          }
+            if((localStorage.getItem("type")) != "Manager"){
+                location.href= '/'
+                alert("No tienes permiso para acceder a esta sección",0)
+              }
+              if((localStorage.getItem("Id")) != id){
+                location.href= '/'
+                alert("No tienes permiso para acceder a esta sección",0)
+              }
         await this.getStoreByCode()
         await this.getOperationsbyId()
         await this.translateCodes()
