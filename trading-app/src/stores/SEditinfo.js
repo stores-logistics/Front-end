@@ -139,7 +139,7 @@ class SEditinfo extends React.Component{
                                                 <p class="card-text">{si[5]}</p>
                                                 <h4 class="card-title">Ubicación</h4>
                                                 <p class="card-text">{si[4]}</p>    
-                                                <h1 className="trans">......... ..........</h1>
+                                                <h1 className="trans">..................</h1>
                                             </div>
                                         </div>
                                     </div>
@@ -183,7 +183,7 @@ class SEditinfo extends React.Component{
             <nav class="navbar navbar-dark">
                 <a id="nav "class="navbar-brand" href="/">
                   <i class="fa fa-ship fa-1x" aria-hidden="true"></i>
-                   <a id="title">Stores Manager</a>
+                   <a id="title">Stores Management</a>
                  </a>
             </nav>             
                 <div class="container">
@@ -210,7 +210,7 @@ class SEditinfo extends React.Component{
                                         <div className="col-2">
                                         </div>
                                         <div className="col-8">
-                                            <h1 className="titlec">Editar Producto </h1>
+                                            <h1 className="titlec">Editar mi información</h1>
                                         </div>
                                         <div  className="col-2"> 
                                         <a id="icon"><i class="fa fa-id-card" aria-hidden="true"></i> 124234234</a>                                           

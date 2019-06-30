@@ -16,9 +16,11 @@ class ProductSelected extends React.Component{
             storeInfo: [],
             loaded: false
     };
-    this.getProduct = this.getProduct.bind(this);
+    this.getProduct = this.getProduct.bind(this); 
     this.getStoreByCode = this.getStoreByCode.bind(this);
     }
+
+
 
     componentWillMount(){
         if(!localStorage.getItem("user")){
@@ -198,7 +200,7 @@ class ProductSelected extends React.Component{
                                        </div>
                                        </div>
                                         <hr></hr>                                       
-                                        <button class="btnn" href="/">Finalizar compra</button>
+                                        <button class="btnn" href="/" >Finalizar compra</button>
                               </div>
                             </div>
                     </div>

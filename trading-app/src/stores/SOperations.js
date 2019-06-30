@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/Stores.css';
-import NSOperations from './NSOperations';
 import API_URL from '../Server';
 const axios = require("axios");
 import { Route } from "react-router";
@@ -13,7 +12,8 @@ class SOperations extends React.Component{
         super(props);
         this.state = {
             storeList:[],
-            operList:[]
+            operList:[],
+            cons1:[]
     };
     this.getStoreByCode = this.getStoreByCode.bind(this);
     this.componentWillMount = this.componentWillMount.bind(this);
@@ -63,8 +63,7 @@ class SOperations extends React.Component{
       let tokenStr = localStorage.getItem('user')
       axios.post(API_URL, { 
           query: `query{
-            tradingsByStoreId(store_id: ${id})
-            {
+            allTradings{
               _id
               timestamp
               store_id
@@ -88,7 +87,8 @@ class SOperations extends React.Component{
 
     async componentWillMount(){
         await this.getStoreByCode()
-        await this.getOperationsbyId
+        await this.getOperationsbyId()
+        await this.translateCodes()
        };
 
        displayStoreDetails(){
@@ -141,6 +141,59 @@ class SOperations extends React.Component{
       
         )
       }
+
+    //   translateCodes(){
+    //     cons1 = this.state.operList
+    //     console.log("cons1" + cons1)
+    //   }
+
+    // getOperationsbyId(){
+    //     const axios = require("axios")
+    //     const {id} = this.props.match.params
+    //     let tokenStr = localStorage.getItem('user')
+    //     axios.post(API_URL, { 
+    //         query: `query{
+    //           allTradings{
+    //             _id
+    //             timestamp
+    //             store_id 
+    //             user_id
+    //             product_id
+    //             price
+    //           }
+    //         }`
+    //     },
+    //     {headers: {'authorization' : "Bearer " + tokenStr}}
+    //     ).then(res => {
+    //         this.setState({
+    //             operList:res.data.data.allTradings
+    //         }) 
+    //     }).then(
+    //       this.state.operList.map( (item) => {
+    //           axios.post(API_URL, { 
+    //               query: `query{
+    //                   userByCode(code: ${item.user_id}){
+    //                     name
+    //                   }
+    //                 }`
+    //           },
+    //           {headers: {"Authorization" : "Bearer " + tokenStr}}
+    //           ).then(res => {
+    //               var dict = res.data.data.userByCode 
+    //               var array = []
+    //               for(var key in dict) {
+    //               var value = dict[key];
+    //               array.push(value)
+    //               }  
+    //               this.setState({userList: array})
+    //               console.log(array)
+    //               this.setState({loaded: true})
+    //               console.log(this.state.userList)
+    //           })
+    //           }
+    //         })
+    //     ) 
+    //   };
 
       displayOperations(){
         return this.state.operList.map( (item,key) => {
