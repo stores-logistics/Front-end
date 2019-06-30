@@ -85,6 +85,10 @@ class CatalogPurchases extends React.Component{
                 location.href= '/login'
                 alert("Por favor inicia sesión",0)
               }else{
+                if((localStorage.getItem("type")) != "Passanger"){
+                    location.href= '/'
+                    alert("No tienes permiso para acceder a esta sección",0)
+                  }
             await this.getProducts()
             await this.getStoreByCode()
             } 

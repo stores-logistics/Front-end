@@ -27,6 +27,10 @@ class ProductSelected extends React.Component{
             location.href= '/login'
             alert("Por favor inicia sesión",0)
           } 
+          if((localStorage.getItem("type")) != "Passanger"){
+            location.href= '/'
+            alert("No tienes permiso para acceder a esta sección",0)
+          }
             this.getStoreByCode()
             this.getProduct()
             this.DisplayTP()

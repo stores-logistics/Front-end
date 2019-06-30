@@ -61,11 +61,16 @@ class Login extends React.Component{
             console.log(array)
             console.log(token)
             if (token !== "-1") {
-              localStorage.setItem("user", token);   
+              localStorage.setItem("user", token); 
+              localStorage.setItem("type", array[2]);
+              localStorage.setItem("Id",array[0]);
               if(array[2] == "Manager"){
-                alert("Bienvenido",4000)
+                alert("Bienvenido",4000) 
                 location.href= '/stores/' + array[1] 
               }else if(array[2] == "Passanger"){
+                alert("Bienvenido",4000)
+                location.href= '/users/' + array[0]
+              }else if(array[2] == "Admin"){
                 alert("Bienvenido",4000)
                 location.href= '/users/' + array[0]
               }

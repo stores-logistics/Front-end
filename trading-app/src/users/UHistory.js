@@ -112,6 +112,10 @@ class NSHistory extends React.Component{
             location.href= '/login'
             alert("Por favor inicia sesión",0)
           }else{
+            if((localStorage.getItem("type")) != "Manager"){
+                location.href= '/'
+                alert("No tienes permiso para acceder a esta sección",0)
+              }
          this.getUserbyCode()
          this.getTradings()
           }

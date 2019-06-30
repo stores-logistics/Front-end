@@ -100,10 +100,15 @@ class SInventory extends React.Component{
         if(!localStorage.getItem("user")){
             location.href= '/login'
             alert("Por favor inicia sesión",0)
-          } 
+          }else{
+            if((localStorage.getItem("type")) != "Manager"){
+                location.href= '/'
+                alert("No tienes permiso para acceder a esta sección",0)
+            }
          await this.getProducts()
          await this.getStoreByCode()
-        };
+        }
+    };
         
 
         displayStoreDetails(){

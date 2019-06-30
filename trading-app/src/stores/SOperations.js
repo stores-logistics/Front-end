@@ -86,9 +86,18 @@ class SOperations extends React.Component{
     }
 
     async componentWillMount(){
+        if(!localStorage.getItem("user")){
+            location.href= '/login'
+            alert("Por favor inicia sesión",0)
+          }else{
+        if((localStorage.getItem("type")) != "Manager"){
+            location.href= '/'
+            alert("No tienes permiso para acceder a esta sección",0)
+          }
         await this.getStoreByCode()
         await this.getOperationsbyId()
         await this.translateCodes()
+          }
        };
 
        displayStoreDetails(){
@@ -155,7 +164,15 @@ class SOperations extends React.Component{
     //         query: `query{
     //           allTradings{
     //             _id
-    //             timestamp
+    //             time  componentWillMount(){
+        //     if(!localStorage.getItem("user")){
+        //         location.href= '/login'
+        //         alert("Por favor inicia sesión",0)
+        //       } 
+        //         this.reqCardInfo()
+        //         this.displayCard()
+        //         this.displayBack()
+        //    };stamp
     //             store_id 
     //             user_id
     //             product_id

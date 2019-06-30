@@ -89,6 +89,10 @@ async componentWillMount(){
     location.href= '/login'
     alert("Por favor inicia sesión",0)
   }else{
+    if((localStorage.getItem("type")) != "Passanger"){
+      location.href= '/'
+      alert("No tienes permiso para acceder a esta sección",0)
+    }
   await this.getUserbyCode()
   await this.getStores()
   }
