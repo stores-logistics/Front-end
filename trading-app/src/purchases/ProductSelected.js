@@ -23,7 +23,7 @@ class ProductSelected extends React.Component{
 
 
     componentWillMount(){
-        const {id} = this.props.match.params    
+        const {uid} = this.props.match.params    
         if(!localStorage.getItem("user")){
             location.href= '/login'
             alert("Por favor inicia sesión",0)
@@ -32,7 +32,7 @@ class ProductSelected extends React.Component{
             location.href= '/'
             alert("No tienes permiso para acceder a esta sección",0)
           }
-          if((localStorage.getItem("Id")) != id){
+          if((localStorage.getItem("Id")) != uid){
             location.href= '/'
             alert("No tienes permiso para acceder a esta sección",0)
           }
