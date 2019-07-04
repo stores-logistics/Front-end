@@ -110,6 +110,7 @@ class SEdit extends React.Component{
                 location.href= '/login'
                 alert("Por favor inicia sesión",0)
               } 
+              
                 this.reqCardInfo()
                 this.displayCard()
                 this.displayBack()
@@ -198,6 +199,7 @@ class SEdit extends React.Component{
     }
     
     render() {
+        const si = this.state.cProducts
         return(
             <section id="team" class="pb-5">
             <nav class="navbar navbar-dark">
@@ -246,7 +248,7 @@ class SEdit extends React.Component{
                                             <br></br>
                                         <div id = "edituser" class="container-fluid">
                                          <div class="form-group-row">  
-                                           <input name="inombre" id ="test_d" type="text" class="form-control" placeholder="Nombre" onChange={this.updateInput} ></input>
+                                           <input name="inombre" id ="test_d" type="text" class="form-control" placeholder="Nombre" value={this.state.cProducts[1]} onChange={this.state.updateInput} ></input>
                                           <br></br>
                                           <input name="indesc" id ="test_dl" type="text" class="form-control" placeholder="Descripción" onChange={this.updateInput} ></input>
                                           <br></br>
