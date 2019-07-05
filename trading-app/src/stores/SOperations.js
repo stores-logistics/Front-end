@@ -63,8 +63,7 @@ class SOperations extends React.Component{
       let tokenStr = localStorage.getItem('user')
       axios.post(API_URL, { 
           query: `query{
-            tradingsByStoreId(store_id: ${id})
-            {
+            allTradings{
               _id
               timestamp
               store_id
@@ -103,7 +102,7 @@ class SOperations extends React.Component{
               }
         await this.getStoreByCode()
         await this.getOperationsbyId()
-        await this.translateCodes()
+//        await this.translateCodes()
           }
        };
 
