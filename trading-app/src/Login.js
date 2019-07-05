@@ -2,6 +2,16 @@ import React from 'react';
 import './styles/Login.css';
 import API_URL from './Server'
 
+const crypto = require('crypto'),
+    algorithm = 'aes-256-ctr',
+    password = 'd6F3Efeq';
+
+function encrypt(text){
+    var cipher = crypto.createCipher(algorithm,password)
+    var crypted = cipher.update(text,'utf8','hex')
+    crypted += cipher.final('hex');
+    return crypted;
+}
 
 class Login extends React.Component{
 
@@ -24,14 +34,12 @@ class Login extends React.Component{
     }
 
     HandleLogin(){
-        console.log('Your input name value is: ' + this.state.username);
-        console.log('Your input value is: ' + this.state.password);
         const axios = require("axios")
         axios.post(API_URL, { 
             query:  `mutation{
                 login(credentials: {
                   username:"${this.state.username}",
-                  password:"${this.state.password}"
+                  password:"${encrypt(this.state.password)}"
                 })  
               }` 
         },
