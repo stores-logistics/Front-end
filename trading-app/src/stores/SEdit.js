@@ -29,16 +29,22 @@ class SEdit extends React.Component{
             switch(event.target.name){
                 case "inombre":
                         this.setState({nombre : event.target.value})
+                break;
                 case "indesc":
                         this.setState({descripcion : event.target.value})
+                break;
                 case "incat":
                         this.setState({categoria : event.target.value})
+                break;
                 case "inimg":
                         this.setState({imgurl : event.target.value})
+                break;
                 case "incant":
                         this.setState({cantidad : event.target.value})
+                break;
                 case "inprec":
                         this.setState({precio : event.target.value})
+                break;
             }            
         }
 
@@ -69,7 +75,12 @@ class SEdit extends React.Component{
                     array.push(value)
                     }   
                     this.setState({
-                    cProducts: array
+                    cProducts: array,
+                    nombre: array[1],
+                    descripcion: array[2],
+                    imgurl: array[4],
+                    cantidad: array[6],                    
+                    precio: array[7]
                 }) 
             })
         } 
@@ -248,9 +259,9 @@ class SEdit extends React.Component{
                                             <br></br>
                                         <div id = "edituser" class="container-fluid">
                                          <div class="form-group-row">  
-                                           <input name="inombre" id ="test_d" type="text" class="form-control" placeholder="Nombre" value={this.state.cProducts[1]} onChange={this.state.updateInput} ></input>
+                                           <input name="inombre" id ="test_d" type="text" class="form-control" placeholder="Nombre" value={this.state.nombre} onChange={this.updateInput} ></input>
                                           <br></br>
-                                          <input name="indesc" id ="test_dl" type="text" class="form-control" placeholder="Descripción" onChange={this.updateInput} ></input>
+                                          <input name="indesc" id ="test_dl" type="text" class="form-control" placeholder="Descripción"  value={this.state.descripcion} onChange={this.updateInput} ></input>
                                           <br></br>
                                           <div class="form-group row">
                                               <div class="col-6">
@@ -268,14 +279,14 @@ class SEdit extends React.Component{
                                                         </select>              
                                              </div> 
                                               <div class="col-6">
-                                              <input name="inimg" id ="test_d" type="text" class="form-control"  placeholder="img url" onChange={this.updateInput} ></input>
+                                              <input name="inimg" id ="test_d" type="text" class="form-control"  placeholder="img url" value={this.state.imgurl} onChange={this.updateInput} ></input>
                                               </div>                                              
                                            </div> <div class="form-group row">
                                               <div class="col-6">
-                                                    <input  name="incant" id ="test_d" type="text" class="form-control"  placeholder="Stock" onChange={this.updateInput} ></input>           
+                                                    <input  name="incant" id ="test_d" type="text" class="form-control"  placeholder="Stock" value={this.state.cantidad} onChange={this.updateInput} ></input>           
                                              </div> 
                                               <div class="col-6">
-                                              <input  name="inprec" id ="test_d" type="text" class="form-control"  placeholder="Precio" onChange={this.updateInput} ></input>
+                                              <input  name="inprec" id ="test_d" type="text" class="form-control"  placeholder="Precio" value={this.state.precio} onChange={this.updateInput} ></input>
                                               </div>                                              
                                            </div>                                          
                                             </div>   

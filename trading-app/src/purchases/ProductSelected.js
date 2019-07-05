@@ -16,6 +16,7 @@ class ProductSelected extends React.Component{
             storeInfo: [],
             loaded: false
     };
+    this.handleSubmit = this.handleSubmit.bind(this); 
     this.getProduct = this.getProduct.bind(this); 
     this.getStoreByCode = this.getStoreByCode.bind(this);
     }
@@ -71,7 +72,7 @@ class ProductSelected extends React.Component{
             }) 
         })
     } 
-
+ 
     getStoreByCode() {
         const {sid} = this.props.match.params
         return(
@@ -103,6 +104,38 @@ class ProductSelected extends React.Component{
             })
         )
       };
+
+        
+      handleSubmit(){
+        const {uid} = this.props.match.params
+        const {sid} = this.props.match.params
+        const {pid} = this.props.match.params
+        const si = this.state.productInfo 
+        const axios = require("axios")
+        axios.post(API_URL, { 
+            query:  `mutation{
+                createTrading(trading: {
+                      timestamp: "25-03-2004 21:30",
+                      store_id: ${sid},
+                      user_id: ${uid},
+                      product_id: "${pid}",
+                      price: ${si[7]}
+               }) {
+                  _id
+                  timestamp
+                  store_id
+                  user_id
+                  product_id
+                  price
+                }
+              }`
+        },
+        {headers: {"Authorization" : "Bearer " + tokenStr}}
+        ).then(res =>{ 
+           alert("Producto comprado",4000)
+        });
+}
+
 
 
     DisplayTP(){
@@ -209,7 +242,7 @@ class ProductSelected extends React.Component{
                                        </div>
                                        </div>
                                         <hr></hr>                                       
-                                        <button class="btnn" href="/" >Finalizar compra</button>
+                                        <button class="btnn" onClick={this.handleSubmit}>Finalizar compra</button>
                               </div>
                             </div>
                     </div>
