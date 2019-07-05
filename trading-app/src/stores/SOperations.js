@@ -229,7 +229,8 @@ class SOperations extends React.Component{
                   <td>{item.price}</td>
                 </tr>
             )
-        })}
+        })
+    }
 
     render() {
         return(
