@@ -35,14 +35,16 @@ class Login extends React.Component{
 
     HandleLogin(){
         const axios = require("axios")
+        /*
         axios.post(API_URL, { 
             query:  `mutation{
                 login(credentials: {
-                  username:"${this.state.username}",
+                  username:"${this.state.username}"
                   password:"${encrypt(this.state.password)}"
                 })  
               }` 
         },
+        */
         axios.post(API_URL, { 
             query: `query{
               userByUsername(username: "${this.state.username}"){
@@ -62,29 +64,31 @@ class Login extends React.Component{
               this.setState({
               storeInfo: array
             }) 
+            localStorage.setItem("user", 1);
+            localStorage.setItem("type", array[2]);
+            localStorage.setItem("Id",array[0]);
+            if(array[2] == "Manager"){
+              alert("Bienvenido",4000) 
+              location.href= '/stores/' + array[0] 
+            }else if(array[2] == "Passanger"){
+              alert("Bienvenido",4000)
+              location.href= '/users/' + array[0]
+            }else if(array[2] == "Admin"){
+              alert("Bienvenido",4000)
+              location.href= '/users/' + array[0]
+            }
+          else {
+            alert("Contraseña/usuario incorrectos, por favor verifica tus credenciales",4000)
+          } 
+            
         })   
-        ).then(res => {
+        .then(res => {
             const token = res.data.data.login;
             const array = this.state.storeInfo
             console.log(array)
             console.log(token)
-            if (token !== "-1") {
               localStorage.setItem("user", token); 
-              localStorage.setItem("type", array[2]);
-              localStorage.setItem("Id",array[0]);
-              if(array[2] == "Manager"){
-                alert("Bienvenido",4000) 
-                location.href= '/stores/' + array[1] 
-              }else if(array[2] == "Passanger"){
-                alert("Bienvenido",4000)
-                location.href= '/users/' + array[0]
-              }else if(array[2] == "Admin"){
-                alert("Bienvenido",4000)
-                location.href= '/users/' + array[0]
-              }
-            } else {
-              alert("Contraseña/usuario incorrectos, por favor verifica tus credenciales",4000)
-            }
+              
           }).catch(function(error) {
             console.log(error);
           });
