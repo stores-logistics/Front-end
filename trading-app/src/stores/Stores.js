@@ -100,7 +100,7 @@ async componentWillMount(){
             alert("No tienes permiso para acceder a esta sección",0)
           }
         await this.getProducts()
-        await this.getStoreByCode()
+        await this.getStoreByCode() 
       }
      };
 

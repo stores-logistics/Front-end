@@ -24,7 +24,7 @@ getUserbyCode() {
   return(
       axios.post(API_URL, { 
             query: `query{
-              userByCode(code: 3){
+              userByCode(code: ${id}){
                 code
                 name
                 lastName
