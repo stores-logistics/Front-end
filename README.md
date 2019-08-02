@@ -1,3 +1,3 @@
 Stores Logistics
 
-Front end.
+Front end featuring react.
